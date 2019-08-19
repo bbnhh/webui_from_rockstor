@@ -27,9 +27,9 @@ sudo systemctl start postgresql
 确认rockstor/bin下的文件都具有可执行权限   
 /opt/rockstor/bin/buildout -N -c /opt/rockstor/buildout.cfg   
 命令执行到最后会启动服务，确认服务启动后，即可进入页面  
-6.更新django数据库
-/opt/rockstor/bin/django makemigration storageadmin
-/opt/rockstor/bin/django migrate storageadmin 
+6.更新django数据库         
+/opt/rockstor/bin/django makemigration storageadmin       
+/opt/rockstor/bin/django migrate storageadmin           
 
 
 
