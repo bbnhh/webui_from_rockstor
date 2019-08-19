@@ -29,15 +29,15 @@ class Pool(models.Model):
     """Name of the pool"""
     name = models.CharField(max_length=4096, unique=True)
     """uuid given automatically by the client"""
-    uuid = models.CharField(max_length=100, null=True)
+    uuid = models.CharField(max_length=100, blank=True ,null=True)
     """size of the pool in KB"""
     size = models.BigIntegerField(default=0)
     raid = models.CharField(max_length=10)
-    toc = models.DateTimeField(auto_now=True)
-    compression = models.CharField(max_length=256, null=True)
-    mnt_options = models.CharField(max_length=4096, null=True)
+    toc = models.DateTimeField(auto_now=True, blank=True , null=True)
+    compression = models.CharField(max_length=256, blank=True, null=True)
+    mnt_options = models.CharField(max_length=4096, blank=True ,null=True)
     """optional aux info. eg: role = root for OS Pool"""
-    role = models.CharField(max_length=256, null=True)
+    role = models.CharField(max_length=256, blank=True, null=True)
 
     def __init__(self, *args, **kwargs):
         super(Pool, self).__init__(*args, **kwargs)
