@@ -24,8 +24,9 @@ sudo systemctl start postgresql
 确认启动是否成功   
 5.部署web   
 把rockstor文件夹放入/opt下   
-确认rockstor/bin下的文件都具有可执行权限   
-/opt/rockstor/bin/buildout -N -c /opt/rockstor/buildout.cfg   
+确认rockstor/bin下的文件都具有可执行权限  
+python /opt/rockstor/bootstrap.py -c /opt/rockstor/buildout.cfg    
+/opt/rockstor/bin/buildout -N -c /opt/rockstor/buildout.cfg      
 命令执行到最后会启动服务，确认服务启动后，即可进入页面  
 6.更新django数据库         
 /opt/rockstor/bin/django makemigration storageadmin       
