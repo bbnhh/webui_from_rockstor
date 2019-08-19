@@ -1,0 +1,12 @@
+#!/usr/bin/python
+
+import sys
+sys.path[0:0] = [
+  '/opt/rockstor/eggs/setuptools-41.1.0-py2.7.egg',
+  '/opt/rockstor/eggs/zc.buildout-2.13.2-py2.7.egg',
+  ]
+
+import zc.buildout.buildout
+
+if __name__ == '__main__':
+    sys.exit(zc.buildout.buildout.main())

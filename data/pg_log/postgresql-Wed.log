@@ -1,0 +1,11 @@
+LOG:  database system was shut down at 2019-08-07 23:04:53 PDT
+LOG:  autovacuum launcher started
+LOG:  database system is ready to accept connections
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2019-08-07 23:04:56 PDT
+LOG:  autovacuum launcher started
+LOG:  database system is ready to accept connections

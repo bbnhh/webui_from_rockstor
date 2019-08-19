@@ -1,0 +1,134 @@
+[18/Aug/2019 05:57:13] ERROR [storageadmin.middleware:33] Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 350, in post
+    import_snapshots(share)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/share_helpers.py", line 209, in import_snapshots
+    share.name)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 749, in snaps_info
+    pool_mnt_pt])
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+[18/Aug/2019 05:58:14] ERROR [storageadmin.views.command:69] Skipping Pool (rockstor_rockstor) mount as there are no attached devices. Moving on.
+[18/Aug/2019 05:58:14] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/commands/refresh-snapshot-state method: POST
+[18/Aug/2019 05:58:14] ERROR [storageadmin.middleware:33] Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 350, in post
+    import_snapshots(share)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/share_helpers.py", line 209, in import_snapshots
+    share.name)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 749, in snaps_info
+    pool_mnt_pt])
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+[18/Aug/2019 05:58:16] ERROR [storageadmin.views.command:69] Skipping Pool (rockstor_rockstor) mount as there are no attached devices. Moving on.
+[18/Aug/2019 05:58:16] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/commands/refresh-snapshot-state method: POST
+[18/Aug/2019 05:58:16] ERROR [storageadmin.middleware:33] Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 350, in post
+    import_snapshots(share)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/share_helpers.py", line 209, in import_snapshots
+    share.name)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 749, in snaps_info
+    pool_mnt_pt])
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+[18/Aug/2019 05:58:48] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/pools method: GET
+[18/Aug/2019 05:58:48] ERROR [storageadmin.middleware:33] Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/generics.py", line 241, in get
+    return self.list(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/mixins.py", line 44, in list
+    return self.get_paginated_response(serializer.data)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 618, in data
+    ret = super(ListSerializer, self).data
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 213, in data
+    self._data = self.to_representation(self.instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 568, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 426, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 299, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 70, in get_attribute
+    instance = getattr(instance, attr)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 86, in free
+    s = pool_usage('%s' % (self.name))
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 1467, in pool_usage
+    out, err, rc = run_command(cmd)
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 121, in run_command
+    raise CommandException(cmd, out, err, rc)
+CommandException: Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+[18/Aug/2019 05:58:49] ERROR [storageadmin.views.command:69] Skipping Pool (rockstor_rockstor) mount as there are no attached devices. Moving on.
+[18/Aug/2019 05:58:49] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/commands/refresh-snapshot-state method: POST
+[18/Aug/2019 05:58:49] ERROR [storageadmin.middleware:33] Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 350, in post
+    import_snapshots(share)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/share_helpers.py", line 209, in import_snapshots
+    share.name)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 749, in snaps_info
+    pool_mnt_pt])
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory

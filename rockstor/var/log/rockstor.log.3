@@ -1,0 +1,53 @@
+[16/Aug/2019 22:04:09] ERROR [storageadmin.middleware:33] Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/po']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 350, in post
+    import_snapshots(share)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/share_helpers.py", line 209, in import_snapshots
+    share.name)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 749, in snaps_info
+    pool_mnt_pt])
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/po']): [Errno 2] No such file or directory
+[16/Aug/2019 22:04:15] DEBUG [fs.btrfs:1426] mntpt: ['48.5G', '']
+[16/Aug/2019 22:04:15] DEBUG [fs.btrfs:1430] KTTT: 52076478464
+[16/Aug/2019 22:04:15] DEBUG [storageadmin.models.pool:87] POOLLLLLL
+[16/Aug/2019 22:04:15] DEBUG [storageadmin.models.pool:88] 52076478464
+[16/Aug/2019 22:04:15] DEBUG [fs.btrfs:1426] mntpt: ['48.5G', '']
+[16/Aug/2019 22:04:15] DEBUG [fs.btrfs:1430] KTTT: 52076478464
+[16/Aug/2019 22:04:15] ERROR [storageadmin.util:44] Exception: unsupported operand type(s) for +: 'NoneType' and 'str'
+Traceback (most recent call last):
+  File "/opt/rockstor/src/rockstor/rest_framework_custom/generic_view.py", line 41, in _handle_exception
+    yield
+  File "/opt/rockstor/src/rockstor/storageadmin/views/disk.py", line 416, in post
+    return self._update_disk_state()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/disk.py", line 75, in _update_disk_state
+    disks = scan_disks(settings.MIN_DISK_SIZE)
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 380, in scan_disks
+    part_regex = base_root_disk + '\d+'
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+[16/Aug/2019 22:04:15] DEBUG [storageadmin.util:45] Current Rockstor version: Unknown Version
+[16/Aug/2019 22:04:15] ERROR [storageadmin.views.command:99] Exception while refreshing state for Pool(po). Moving on: Exception while running command(['sss', 'fi', 'show', '/dev/disk/by-id/wwn-0x6000c291b069fa5b74bc17fa8ebcf907']): [Errno 2] No such file or directory
+[16/Aug/2019 22:04:15] ERROR [storageadmin.views.command:100] Exception while running command(['sss', 'fi', 'show', '/dev/disk/by-id/wwn-0x6000c291b069fa5b74bc17fa8ebcf907']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 80, in _refresh_pool_state
+    is_root_pool)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 260, in get_pool_info
+    o, e, rc = run_command(cmd)
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'fi', 'show', '/dev/disk/by-id/wwn-0x6000c291b069fa5b74bc17fa8ebcf907']): [Errno 2] No such file or directory

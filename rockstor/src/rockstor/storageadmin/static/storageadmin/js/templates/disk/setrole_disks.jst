@@ -1,0 +1,184 @@
+<h3>Configure drive Role / Wipe existing Filesystem / LUKS Format Whole Disk.</h3>
+  Drive Roles inform Rockstor of specific drive treatment and can drastically
+  alter a devices available options: not all roles are compatible. Please see:
+<a href="http://rockstor.com/docs/disks.html#disk-role-configuration"
+   target="_blank">Disk Role Configuration</a> in our online docs.
+<p></p>
+<p class="text-warning">
+  Changing a disk role can result in loss of data, please take care when
+  making changes on this page.
+</p>
+<p class="bg-info">
+  <strong>Note: </strong> No drive role is required for general purpose use.
+  <strong>Roles are for single drive use</strong> and not advised for multi
+  device pool members. <strong>"Whole Disk" is the default and recommended
+  setting.</strong>
+  For <a href="http://rockstor.com/docs/disks.html#import-btrfs-pool"
+  target="_blank">btrfs import</a> select the (btrfs) labeled device and
+  'Submit'. An import icon will then be offered on the Disk Page. Otherwise
+  intended new pool members must first be wiped.
+</p>
+<h4>Roles and their use:</h4>
+<ul>
+  <li>
+    The <strong>Redirect</strong> role is <strong>always required for
+    partitioned drives</strong>. Rockstor will only add the <i>redirect</i>
+    role itself when importing a multi device pool with 'btrfs in partition'
+    members. All other cases require user selection of the desired partition,
+    including on the initial import device. <strong>Only one Redirect role
+    (partition) per device is supported.</strong>
+    <p class="text-warning">
+      A drive's <a href="http://rockstor.com/docs/disks.html#the-disk-redirect-role"
+      target="_blank">Redirect role</a> defines the
+      <a href="http://rockstor.com/docs/disks.html#wiping-a-partition-or-whole-disk" target="_blank">Wipe</a>
+      action. A Redirect + Wipe erases a partitions data and filesystem.
+      No Redirect + Wipe erases the entire drive and all it's partitions.
+      The wipe command used is "wipefs -a devname".
+    </p>
+  </li>
+  <li>
+    The <strong>Archive</strong> role: intended for single external drive use
+    (eg USB).
+    <br>
+    Compatible with the <i>Redirect</i> role.
+    <br>
+    <i>N.B. Not currently implemented</i>
+    <p></p>
+  </li>
+  <li>
+    The <strong>External Import</strong> role: intended for single external
+    drive use (eg USB). A data synchronization role where an external drive's
+    data is to be imported onto a designated internal share.
+    <br>
+    Compatible with the <i>Redirect</i> role.
+    <br>
+    <i>N.B. Not currently implemented</i>
+    <p class="text-warning">
+      Note: The external drive is the master source of truth. If a file is
+      changed on the external drive and the drive is then re-attached, the
+      next sync operation will update the designated share's version. Not
+      the other way around.
+    </p>
+  </li>
+</ul>
+<h4>LUKS Full Disk Encryption:</h4>
+Blank or freshly wiped devices can be LUKS encrypted. <strong>Rockstor does
+not remember or record the associated passphrase.</strong><br>
+<i> A pool is only encrypted if all it's members are LUKS formatted.</i>
+<br>
+<strong>Passphrase Notes</strong> (Only use 7-bit ASCII(32-126) characters <strong>!"#$%&'()*+,-./0-9:;<=>?@A-Z[\]^_`a-z{|}~</strong> )
+<ul>
+    <li>
+        Must be entered on every boot (using local console) unless 'Auto unlock via keyfile" is configured via the
+        Disks page lock icon (<i class="fa fa-lock" title="Full Disk LUKS Container (locked)." rel="tooltip"></i> /
+        <i class="fa fa-unlock" title="Full Disk LUKS Container (unlocked)." rel="tooltip"></i>).
+    </li>
+    <li>
+        Commonly shared across a systems drives: a single power on
+        entry then unlocks all drives.
+    </li>
+    <li>
+        <p class="text-warning">
+LUKS equivalent of system root password: initially the only way to unlock the disk's data.
+        </p>
+    </li>
+</ul>
+
+<div class="row">
+  <div class="col-md-8">
+    <label class="control-label"></label>
+    <div class="form-box">
+      <form class="form-horizontal" id="add-role-disk-form" name="aform">
+        <div class="messages"></div>
+
+        <!-- Form Header Info -->
+        <div class="form-group">
+          <div class="col-sm-offset-4 col-sm-8">
+            <h4>Drive name:&nbsp;&nbsp;<strong>{{diskName}}</strong></h4>
+            <h4>Serial number:&nbsp;&nbsp;<strong>{{serialNumber}}</strong></h4>
+            <h5>A selection of "Whole disk" means no Redirect role.</h5>
+          </div>
+        </div>
+
+        <!-- redirect partition selection -->
+        <div class="form-group">
+          <label class="col-sm-4 control-label" for="redirect_part">Select
+            Partition to use (filesystem)<span class="required"> *</span></label>
+          <div class="col-sm-4">
+            <select class="form-control" id="redirect_part"
+                    name="redirect_part">
+              {{display_disk_partitions}}
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group" id="delete_tick_group">
+          <div class="checkbox">
+            <label class="col-sm-4 control-label" for="delete_tick"></label>
+            <div class="col-sm-4">
+              <input type="checkbox" name="delete_tick" id="delete_tick">
+              <i class="fa fa-eraser"></i>
+              Tick to wipe the data and filesystem on the above 'active' device.
+              Whole Disk removes all partitions.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group" id="delete_tick_warning">
+          <div class="col-sm-offset-4 col-sm-8">
+            <h4><strong><p style="color:red">WARNING: THIS WILL DELETE ALL DATA ON THE ABOVE DEVICE.</p></strong></h4>
+            If unsure please click Cancel.
+          </div>
+        </div>
+
+        <!-- LUKS options, ie Tick Box and pass entries -->
+        <div class="form-group" id="luks_options">
+          <!-- LUKS Enable Tick Box -->
+          <div class="form-group" id="luks_tick_group">
+            <div class="checkbox">
+              <label class="col-sm-4 control-label" for="luks_tick"></label>
+              <div class="col-sm-4">
+                <input type="checkbox" name="luks_tick" id="luks_tick">
+                <i class="fa fa-eye"></i>
+                    Tick to enable Whole Disk Encryption (LUKS Format). See LUKS notes above.
+              </div>
+            </div>
+          </div>
+
+          <!-- LUKS Master Passphrase Group -->
+          <div class="form-group" id="luks_passwords">
+            <!--  LUKS Master Passphrase one  -->
+            <div class="form-group" id="luks_pass_one_group">
+              <label class="col-sm-4 control-label" for="luks_pass_one">LUKS
+                Master Passphrase<span class="required"> *</span></label>
+              <div class="col-sm-4">
+                <input class="form-control shorten-input" type="password"
+                       name="luks_pass_one" id="luks_pass_one"
+                       title="Suggested character length = 14(min)-18 if random, 108-140 if english words.">
+              </div>
+            </div>
+            <!--  LUKS Master Passphrase Two  -->
+            <div class="form-goup" id="luks_pass_two_group">
+              <label class="col-sm-4 control-label" for="luks_pass_two">
+                Retype to Verify<span class="required"> *</span></label>
+              <div class="col-sm-4">
+                <input class="form-control shorten-input" type="password"
+                       name="luks_pass_two" id="luks_pass_two"
+                       title="Suggested character length = 14(min)-18 if random, 108-140 if english words.">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-4 col-sm-8">
+            <a id="cancel" class="btn btn-default">Cancel</a>
+            <input type="Submit" id="role-disk" class="btn btn-primary"
+                   value="Submit"></input>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

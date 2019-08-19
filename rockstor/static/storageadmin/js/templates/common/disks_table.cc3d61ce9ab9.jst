@@ -1,0 +1,28 @@
+<table id="disks-select-table" class="table table-condensed table-bordered share-table tablesorter" summary="List of disks">
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Name</th>
+      <th>Capacity</th>
+      <th>Select All <input type="checkbox" id="checkAll"/></th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each disks}}
+  <tr>
+    <td>{{mathHelper @index}}</td>
+    <td>{{this.name}}
+      {{#if this.parted}}
+      <a href="#disks/role/{{this.id}}" class="user_role_part" data-disk-id="{{this.id}}" title="Partition (Redirect Role), click to review. Note: Capacity is for whole disk when adding so may be inaccurate." rel="tooltip">
+        <i class="glyphicon glyphicon-tags"></i></a>
+      {{/if}}
+      {{#if (isOpenLuks this.role)}}
+      <a href="#disks/luks/{{this.id}}" class="open_luks_drive" data-disk-id="{{this.id}}" title="Open LUKS Volume, click to review." rel="tooltip">
+        <i class="glyphicon glyphicon-eye-open"></i></a>
+      {{/if}}
+    </td>
+    <td>{{humanReadableSize this.size}}</td>
+    <td><input type="checkbox" name="diskid" id="{{this.id}}" value='{"id": {{this.id}}, "name": "{{this.name}}"}' class="diskid"></td>
+  {{/each}}
+  </tbody>
+</table>

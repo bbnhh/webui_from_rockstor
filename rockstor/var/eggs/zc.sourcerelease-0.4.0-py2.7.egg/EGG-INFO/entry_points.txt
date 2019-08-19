@@ -1,0 +1,3 @@
+
+[console_scripts]
+buildout-source-release = zc.sourcerelease:source_release

@@ -1,0 +1,20 @@
+#!/usr/bin/python
+
+import os
+
+join = os.path.join
+base = os.path.dirname(os.path.abspath(os.path.realpath(__file__)))
+base = os.path.dirname(base)
+
+import sys
+sys.path[0:0] = [
+  join(base, 'eggs/zc.sourcerelease-0.4.0-py2.7.egg'),
+  join(base, 'eggs/zc.recipe.egg-2.0.3-py2.7.egg'),
+  join(base, 'eggs/zc.buildout-2.9.4-py2.7.egg'),
+  join(base, 'eggs/setuptools-36.0.1-py2.7.egg'),
+  ]
+
+import zc.sourcerelease
+
+if __name__ == '__main__':
+    sys.exit(zc.sourcerelease.source_release())

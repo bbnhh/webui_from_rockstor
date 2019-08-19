@@ -1,0 +1,1226 @@
+[18/Aug/2019 05:59:54] DEBUG [scripts.initrock:400] migrate (--fake-initial) contenttypes
+[17/Aug/2019 18:00:15] INFO [system.pkg_mgmt:111] No "rockstor" package found: source install?
+[17/Aug/2019 18:00:17] INFO [system.pkg_mgmt:111] No "rockstor" package found: source install?
+[17/Aug/2019 18:00:18] INFO [storageadmin.views.disk:107] Deleting duplicate or fake (by serial) disk db entry. Serial = (fake-serial-b86c1ccb-3f31-48ad-9c8d-73bd90684fe3).
+[17/Aug/2019 18:00:18] ERROR [system.osi:1622] Device (centos-root) not found by command (['/usr/sbin/udevadm', 'info', '--query=property', '--name', 'centos-root'])
+[17/Aug/2019 18:00:18] ERROR [storageadmin.views.command:69] Skipping Pool (rockstor_rockstor) mount as there are no attached devices. Moving on.
+[17/Aug/2019 18:00:18] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/commands/refresh-share-state method: POST
+[17/Aug/2019 18:00:18] ERROR [storageadmin.middleware:33] Exception while running command(['sss', 'subvolume', 'list', '-s', '0']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 345, in post
+    import_shares(p, request)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/share_helpers.py", line 86, in import_shares
+    shares_in_pool = shares_info(pool)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 650, in shares_info
+    snap_idmap = snapshot_idmap(pool_mnt_pt)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 618, in snapshot_idmap
+    out, e, rc = run_command([BTRFS, 'subvolume', 'list', '-s', pool_mnt_pt])
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'subvolume', 'list', '-s', '0']): [Errno 2] No such file or directory
+[17/Aug/2019 18:00:19] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/commands/refresh-snapshot-state method: POST
+[17/Aug/2019 18:00:19] ERROR [storageadmin.middleware:33] Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 350, in post
+    import_snapshots(share)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/share_helpers.py", line 209, in import_snapshots
+    share.name)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 749, in snaps_info
+    pool_mnt_pt])
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+[17/Aug/2019 18:01:19] INFO [storageadmin.views.disk:107] Deleting duplicate or fake (by serial) disk db entry. Serial = (fake-serial-380bc3d2-a7bb-4278-9979-84b121cc2e7a).
+[17/Aug/2019 18:01:19] ERROR [system.osi:1622] Device (centos-root) not found by command (['/usr/sbin/udevadm', 'info', '--query=property', '--name', 'centos-root'])
+[17/Aug/2019 18:01:19] ERROR [storageadmin.views.command:69] Skipping Pool (rockstor_rockstor) mount as there are no attached devices. Moving on.
+[17/Aug/2019 18:01:19] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/commands/refresh-share-state method: POST
+[17/Aug/2019 18:01:19] ERROR [storageadmin.middleware:33] Exception while running command(['sss', 'subvolume', 'list', '-s', '0']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 345, in post
+    import_shares(p, request)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/share_helpers.py", line 86, in import_shares
+    shares_in_pool = shares_info(pool)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 650, in shares_info
+    snap_idmap = snapshot_idmap(pool_mnt_pt)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 618, in snapshot_idmap
+    out, e, rc = run_command([BTRFS, 'subvolume', 'list', '-s', pool_mnt_pt])
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'subvolume', 'list', '-s', '0']): [Errno 2] No such file or directory
+[17/Aug/2019 18:01:19] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/commands/refresh-snapshot-state method: POST
+[17/Aug/2019 18:01:19] ERROR [storageadmin.middleware:33] Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 350, in post
+    import_snapshots(share)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/share_helpers.py", line 209, in import_snapshots
+    share.name)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 749, in snaps_info
+    pool_mnt_pt])
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+[17/Aug/2019 18:01:27] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/shares method: GET
+[17/Aug/2019 18:01:27] ERROR [storageadmin.middleware:33] Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/generics.py", line 241, in get
+    return self.list(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/mixins.py", line 44, in list
+    return self.get_paginated_response(serializer.data)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 618, in data
+    ret = super(ListSerializer, self).data
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 213, in data
+    self._data = self.to_representation(self.instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 568, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 435, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 426, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 299, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 70, in get_attribute
+    instance = getattr(instance, attr)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 86, in free
+    s = pool_usage('%s' % (self.name))
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 1467, in pool_usage
+    out, err, rc = run_command(cmd)
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 121, in run_command
+    raise CommandException(cmd, out, err, rc)
+CommandException: Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+[17/Aug/2019 18:01:28] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/pools method: GET
+[17/Aug/2019 18:01:28] ERROR [storageadmin.middleware:33] Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/generics.py", line 241, in get
+    return self.list(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/mixins.py", line 44, in list
+    return self.get_paginated_response(serializer.data)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 618, in data
+    ret = super(ListSerializer, self).data
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 213, in data
+    self._data = self.to_representation(self.instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 568, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 426, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 299, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 70, in get_attribute
+    instance = getattr(instance, attr)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 86, in free
+    s = pool_usage('%s' % (self.name))
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 1467, in pool_usage
+    out, err, rc = run_command(cmd)
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 121, in run_command
+    raise CommandException(cmd, out, err, rc)
+CommandException: Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+[17/Aug/2019 18:01:28] ERROR [storageadmin.views.network:157] NetworkConnection matching query does not exist.
+Traceback (most recent call last):
+  File "/opt/rockstor/src/rockstor/storageadmin/views/network.py", line 154, in update_connection
+    name=dconfig['connection'])
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: NetworkConnection matching query does not exist.
+[17/Aug/2019 18:01:28] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/shares method: GET
+[17/Aug/2019 18:01:28] ERROR [storageadmin.middleware:33] Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/generics.py", line 241, in get
+    return self.list(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/mixins.py", line 44, in list
+    return self.get_paginated_response(serializer.data)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 618, in data
+    ret = super(ListSerializer, self).data
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 213, in data
+    self._data = self.to_representation(self.instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 568, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 435, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 426, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 299, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 70, in get_attribute
+    instance = getattr(instance, attr)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 86, in free
+    s = pool_usage('%s' % (self.name))
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 1467, in pool_usage
+    out, err, rc = run_command(cmd)
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 121, in run_command
+    raise CommandException(cmd, out, err, rc)
+CommandException: Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+[17/Aug/2019 18:01:28] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/pools method: GET
+[17/Aug/2019 18:01:28] ERROR [storageadmin.middleware:33] Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/generics.py", line 241, in get
+    return self.list(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/mixins.py", line 44, in list
+    return self.get_paginated_response(serializer.data)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 618, in data
+    ret = super(ListSerializer, self).data
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 213, in data
+    self._data = self.to_representation(self.instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 568, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 426, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 299, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 70, in get_attribute
+    instance = getattr(instance, attr)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 86, in free
+    s = pool_usage('%s' % (self.name))
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 1467, in pool_usage
+    out, err, rc = run_command(cmd)
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 121, in run_command
+    raise CommandException(cmd, out, err, rc)
+CommandException: Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+[17/Aug/2019 18:01:33] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/shares method: GET
+[17/Aug/2019 18:01:33] ERROR [storageadmin.middleware:33] Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/generics.py", line 241, in get
+    return self.list(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/mixins.py", line 44, in list
+    return self.get_paginated_response(serializer.data)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 618, in data
+    ret = super(ListSerializer, self).data
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 213, in data
+    self._data = self.to_representation(self.instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 568, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 435, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 426, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 299, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 70, in get_attribute
+    instance = getattr(instance, attr)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 86, in free
+    s = pool_usage('%s' % (self.name))
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 1467, in pool_usage
+    out, err, rc = run_command(cmd)
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 121, in run_command
+    raise CommandException(cmd, out, err, rc)
+CommandException: Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+[17/Aug/2019 18:01:34] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/pools method: GET
+[17/Aug/2019 18:01:34] ERROR [storageadmin.middleware:33] Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/generics.py", line 241, in get
+    return self.list(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/mixins.py", line 44, in list
+    return self.get_paginated_response(serializer.data)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 618, in data
+    ret = super(ListSerializer, self).data
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 213, in data
+    self._data = self.to_representation(self.instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 568, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 426, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 299, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 70, in get_attribute
+    instance = getattr(instance, attr)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 86, in free
+    s = pool_usage('%s' % (self.name))
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 1467, in pool_usage
+    out, err, rc = run_command(cmd)
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 121, in run_command
+    raise CommandException(cmd, out, err, rc)
+CommandException: Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+[17/Aug/2019 18:01:34] ERROR [storageadmin.views.network:157] NetworkConnection matching query does not exist.
+Traceback (most recent call last):
+  File "/opt/rockstor/src/rockstor/storageadmin/views/network.py", line 154, in update_connection
+    name=dconfig['connection'])
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: NetworkConnection matching query does not exist.
+[17/Aug/2019 18:01:34] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/shares method: GET
+[17/Aug/2019 18:01:34] ERROR [storageadmin.middleware:33] Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/generics.py", line 241, in get
+    return self.list(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/mixins.py", line 44, in list
+    return self.get_paginated_response(serializer.data)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 618, in data
+    ret = super(ListSerializer, self).data
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 213, in data
+    self._data = self.to_representation(self.instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 568, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 435, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 426, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 299, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 70, in get_attribute
+    instance = getattr(instance, attr)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 86, in free
+    s = pool_usage('%s' % (self.name))
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 1467, in pool_usage
+    out, err, rc = run_command(cmd)
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 121, in run_command
+    raise CommandException(cmd, out, err, rc)
+CommandException: Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+[17/Aug/2019 18:01:34] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/pools method: GET
+[17/Aug/2019 18:01:34] ERROR [storageadmin.middleware:33] Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/generics.py", line 241, in get
+    return self.list(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/mixins.py", line 44, in list
+    return self.get_paginated_response(serializer.data)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 618, in data
+    ret = super(ListSerializer, self).data
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 213, in data
+    self._data = self.to_representation(self.instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 568, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 426, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 299, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 70, in get_attribute
+    instance = getattr(instance, attr)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 86, in free
+    s = pool_usage('%s' % (self.name))
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 1467, in pool_usage
+    out, err, rc = run_command(cmd)
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 121, in run_command
+    raise CommandException(cmd, out, err, rc)
+CommandException: Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+[17/Aug/2019 18:02:19] INFO [storageadmin.views.disk:107] Deleting duplicate or fake (by serial) disk db entry. Serial = (fake-serial-8eec3695-fb57-46b7-afc3-ff59bc3270a4).
+[17/Aug/2019 18:02:19] ERROR [system.osi:1622] Device (centos-root) not found by command (['/usr/sbin/udevadm', 'info', '--query=property', '--name', 'centos-root'])
+[17/Aug/2019 18:02:20] ERROR [storageadmin.views.command:69] Skipping Pool (rockstor_rockstor) mount as there are no attached devices. Moving on.
+[17/Aug/2019 18:02:20] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/commands/refresh-share-state method: POST
+[17/Aug/2019 18:02:20] ERROR [storageadmin.middleware:33] Exception while running command(['sss', 'subvolume', 'list', '-s', '0']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 345, in post
+    import_shares(p, request)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/share_helpers.py", line 86, in import_shares
+    shares_in_pool = shares_info(pool)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 650, in shares_info
+    snap_idmap = snapshot_idmap(pool_mnt_pt)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 618, in snapshot_idmap
+    out, e, rc = run_command([BTRFS, 'subvolume', 'list', '-s', pool_mnt_pt])
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'subvolume', 'list', '-s', '0']): [Errno 2] No such file or directory
+[17/Aug/2019 18:02:20] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/commands/refresh-snapshot-state method: POST
+[17/Aug/2019 18:02:20] ERROR [storageadmin.middleware:33] Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 350, in post
+    import_snapshots(share)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/share_helpers.py", line 209, in import_snapshots
+    share.name)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 749, in snaps_info
+    pool_mnt_pt])
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+[17/Aug/2019 18:02:28] INFO [storageadmin.views.disk:107] Deleting duplicate or fake (by serial) disk db entry. Serial = (fake-serial-bb675707-5ff2-416e-ae61-90d29a6faff0).
+[17/Aug/2019 18:02:28] ERROR [system.osi:1622] Device (centos-root) not found by command (['/usr/sbin/udevadm', 'info', '--query=property', '--name', 'centos-root'])
+[17/Aug/2019 18:02:28] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/shares method: GET
+[17/Aug/2019 18:02:28] ERROR [storageadmin.middleware:33] Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/generics.py", line 241, in get
+    return self.list(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/mixins.py", line 44, in list
+    return self.get_paginated_response(serializer.data)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 618, in data
+    ret = super(ListSerializer, self).data
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 213, in data
+    self._data = self.to_representation(self.instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 568, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 435, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 426, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 299, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 70, in get_attribute
+    instance = getattr(instance, attr)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 86, in free
+    s = pool_usage('%s' % (self.name))
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 1467, in pool_usage
+    out, err, rc = run_command(cmd)
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 121, in run_command
+    raise CommandException(cmd, out, err, rc)
+CommandException: Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+[17/Aug/2019 18:02:29] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/pools method: GET
+[17/Aug/2019 18:02:29] ERROR [storageadmin.middleware:33] Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/generics.py", line 241, in get
+    return self.list(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/mixins.py", line 44, in list
+    return self.get_paginated_response(serializer.data)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 618, in data
+    ret = super(ListSerializer, self).data
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 213, in data
+    self._data = self.to_representation(self.instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 568, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 426, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 299, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 70, in get_attribute
+    instance = getattr(instance, attr)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 86, in free
+    s = pool_usage('%s' % (self.name))
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 1467, in pool_usage
+    out, err, rc = run_command(cmd)
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 121, in run_command
+    raise CommandException(cmd, out, err, rc)
+CommandException: Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+[17/Aug/2019 18:02:29] ERROR [storageadmin.views.network:157] NetworkConnection matching query does not exist.
+Traceback (most recent call last):
+  File "/opt/rockstor/src/rockstor/storageadmin/views/network.py", line 154, in update_connection
+    name=dconfig['connection'])
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: NetworkConnection matching query does not exist.
+[17/Aug/2019 18:02:29] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/shares method: GET
+[17/Aug/2019 18:02:29] ERROR [storageadmin.middleware:33] Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/generics.py", line 241, in get
+    return self.list(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/mixins.py", line 44, in list
+    return self.get_paginated_response(serializer.data)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 618, in data
+    ret = super(ListSerializer, self).data
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 213, in data
+    self._data = self.to_representation(self.instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 568, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 435, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 426, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 299, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 70, in get_attribute
+    instance = getattr(instance, attr)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 86, in free
+    s = pool_usage('%s' % (self.name))
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 1467, in pool_usage
+    out, err, rc = run_command(cmd)
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 121, in run_command
+    raise CommandException(cmd, out, err, rc)
+CommandException: Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+[17/Aug/2019 18:02:29] ERROR [storageadmin.views.command:69] Skipping Pool (rockstor_rockstor) mount as there are no attached devices. Moving on.
+[17/Aug/2019 18:02:29] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/commands/refresh-share-state method: POST
+[17/Aug/2019 18:02:29] ERROR [storageadmin.middleware:33] Exception while running command(['sss', 'subvolume', 'list', '-s', '0']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 345, in post
+    import_shares(p, request)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/share_helpers.py", line 86, in import_shares
+    shares_in_pool = shares_info(pool)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 650, in shares_info
+    snap_idmap = snapshot_idmap(pool_mnt_pt)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 618, in snapshot_idmap
+    out, e, rc = run_command([BTRFS, 'subvolume', 'list', '-s', pool_mnt_pt])
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'subvolume', 'list', '-s', '0']): [Errno 2] No such file or directory
+[17/Aug/2019 18:02:29] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/pools method: GET
+[17/Aug/2019 18:02:29] ERROR [storageadmin.middleware:33] Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/generics.py", line 241, in get
+    return self.list(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/mixins.py", line 44, in list
+    return self.get_paginated_response(serializer.data)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 618, in data
+    ret = super(ListSerializer, self).data
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 213, in data
+    self._data = self.to_representation(self.instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 568, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 426, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 299, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 70, in get_attribute
+    instance = getattr(instance, attr)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 86, in free
+    s = pool_usage('%s' % (self.name))
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 1467, in pool_usage
+    out, err, rc = run_command(cmd)
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 121, in run_command
+    raise CommandException(cmd, out, err, rc)
+CommandException: Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+[17/Aug/2019 18:02:29] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/commands/refresh-snapshot-state method: POST
+[17/Aug/2019 18:02:29] ERROR [storageadmin.middleware:33] Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 350, in post
+    import_snapshots(share)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/share_helpers.py", line 209, in import_snapshots
+    share.name)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 749, in snaps_info
+    pool_mnt_pt])
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+[17/Aug/2019 18:03:29] INFO [storageadmin.views.disk:107] Deleting duplicate or fake (by serial) disk db entry. Serial = (fake-serial-d2e35aa0-f310-40dc-8644-81cf0fda63a3).
+[17/Aug/2019 18:03:29] ERROR [system.osi:1622] Device (centos-root) not found by command (['/usr/sbin/udevadm', 'info', '--query=property', '--name', 'centos-root'])
+[17/Aug/2019 18:03:30] ERROR [storageadmin.views.command:69] Skipping Pool (rockstor_rockstor) mount as there are no attached devices. Moving on.
+[17/Aug/2019 18:03:30] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/commands/refresh-share-state method: POST
+[17/Aug/2019 18:03:30] ERROR [storageadmin.middleware:33] Exception while running command(['sss', 'subvolume', 'list', '-s', '0']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 345, in post
+    import_shares(p, request)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/share_helpers.py", line 86, in import_shares
+    shares_in_pool = shares_info(pool)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 650, in shares_info
+    snap_idmap = snapshot_idmap(pool_mnt_pt)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 618, in snapshot_idmap
+    out, e, rc = run_command([BTRFS, 'subvolume', 'list', '-s', pool_mnt_pt])
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'subvolume', 'list', '-s', '0']): [Errno 2] No such file or directory
+[17/Aug/2019 18:03:30] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/commands/refresh-snapshot-state method: POST
+[17/Aug/2019 18:03:30] ERROR [storageadmin.middleware:33] Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 350, in post
+    import_snapshots(share)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/share_helpers.py", line 209, in import_snapshots
+    share.name)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 749, in snaps_info
+    pool_mnt_pt])
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+[17/Aug/2019 18:04:30] INFO [storageadmin.views.disk:107] Deleting duplicate or fake (by serial) disk db entry. Serial = (fake-serial-6677c65e-14e5-4071-b635-23fb3a9454b8).
+[17/Aug/2019 18:04:30] ERROR [system.osi:1622] Device (centos-root) not found by command (['/usr/sbin/udevadm', 'info', '--query=property', '--name', 'centos-root'])
+[17/Aug/2019 18:04:30] ERROR [storageadmin.views.command:69] Skipping Pool (rockstor_rockstor) mount as there are no attached devices. Moving on.
+[17/Aug/2019 18:04:30] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/commands/refresh-share-state method: POST
+[17/Aug/2019 18:04:30] ERROR [storageadmin.middleware:33] Exception while running command(['sss', 'subvolume', 'list', '-s', '0']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 345, in post
+    import_shares(p, request)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/share_helpers.py", line 86, in import_shares
+    shares_in_pool = shares_info(pool)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 650, in shares_info
+    snap_idmap = snapshot_idmap(pool_mnt_pt)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 618, in snapshot_idmap
+    out, e, rc = run_command([BTRFS, 'subvolume', 'list', '-s', pool_mnt_pt])
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'subvolume', 'list', '-s', '0']): [Errno 2] No such file or directory
+[17/Aug/2019 18:04:30] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/commands/refresh-snapshot-state method: POST
+[17/Aug/2019 18:04:30] ERROR [storageadmin.middleware:33] Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 350, in post
+    import_snapshots(share)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/share_helpers.py", line 209, in import_snapshots
+    share.name)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 749, in snaps_info
+    pool_mnt_pt])
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+[17/Aug/2019 18:05:31] INFO [storageadmin.views.disk:107] Deleting duplicate or fake (by serial) disk db entry. Serial = (fake-serial-a03735d4-d8b7-4240-8735-d51faaee748e).
+[17/Aug/2019 18:05:31] ERROR [system.osi:1622] Device (centos-root) not found by command (['/usr/sbin/udevadm', 'info', '--query=property', '--name', 'centos-root'])
+[17/Aug/2019 18:05:31] ERROR [storageadmin.views.command:69] Skipping Pool (rockstor_rockstor) mount as there are no attached devices. Moving on.
+[17/Aug/2019 18:05:31] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/commands/refresh-share-state method: POST
+[17/Aug/2019 18:05:31] ERROR [storageadmin.middleware:33] Exception while running command(['sss', 'subvolume', 'list', '-s', '0']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 345, in post
+    import_shares(p, request)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/share_helpers.py", line 86, in import_shares
+    shares_in_pool = shares_info(pool)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 650, in shares_info
+    snap_idmap = snapshot_idmap(pool_mnt_pt)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 618, in snapshot_idmap
+    out, e, rc = run_command([BTRFS, 'subvolume', 'list', '-s', pool_mnt_pt])
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'subvolume', 'list', '-s', '0']): [Errno 2] No such file or directory
+[17/Aug/2019 18:05:31] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/commands/refresh-snapshot-state method: POST
+[17/Aug/2019 18:05:31] ERROR [storageadmin.middleware:33] Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 350, in post
+    import_snapshots(share)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/share_helpers.py", line 209, in import_snapshots
+    share.name)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 749, in snaps_info
+    pool_mnt_pt])
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+[17/Aug/2019 18:06:31] INFO [storageadmin.views.disk:107] Deleting duplicate or fake (by serial) disk db entry. Serial = (fake-serial-fa0aa4da-c137-42ae-8d5e-cb308a0cfed6).
+[17/Aug/2019 18:06:31] ERROR [system.osi:1622] Device (centos-root) not found by command (['/usr/sbin/udevadm', 'info', '--query=property', '--name', 'centos-root'])
+[17/Aug/2019 18:06:31] ERROR [storageadmin.views.command:69] Skipping Pool (rockstor_rockstor) mount as there are no attached devices. Moving on.
+[17/Aug/2019 18:06:31] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/commands/refresh-share-state method: POST
+[17/Aug/2019 18:06:31] ERROR [storageadmin.middleware:33] Exception while running command(['sss', 'subvolume', 'list', '-s', '0']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 345, in post
+    import_shares(p, request)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/share_helpers.py", line 86, in import_shares
+    shares_in_pool = shares_info(pool)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 650, in shares_info
+    snap_idmap = snapshot_idmap(pool_mnt_pt)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 618, in snapshot_idmap
+    out, e, rc = run_command([BTRFS, 'subvolume', 'list', '-s', pool_mnt_pt])
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'subvolume', 'list', '-s', '0']): [Errno 2] No such file or directory
+[17/Aug/2019 18:06:31] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/commands/refresh-snapshot-state method: POST
+[17/Aug/2019 18:06:31] ERROR [storageadmin.middleware:33] Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/command.py", line 350, in post
+    import_snapshots(share)
+  File "/opt/rockstor/src/rockstor/storageadmin/views/share_helpers.py", line 209, in import_snapshots
+    share.name)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 749, in snaps_info
+    pool_mnt_pt])
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 113, in run_command
+    'Exception while running command({}): {}'.format(cmd, e))
+Exception: Exception while running command(['sss', 'subvolume', 'list', '-u', '-p', '-q', '/rockstor_rockstor']): [Errno 2] No such file or directory
+[17/Aug/2019 18:23:57] INFO [system.pkg_mgmt:111] No "rockstor" package found: source install?
+[17/Aug/2019 18:23:58] INFO [system.pkg_mgmt:111] No "rockstor" package found: source install?
+[17/Aug/2019 18:26:00] ERROR [system.osi:1622] Device (centos-root) not found by command (['/usr/sbin/udevadm', 'info', '--query=property', '--name', 'centos-root'])
+[17/Aug/2019 18:26:00] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/shares method: GET
+[17/Aug/2019 18:26:00] ERROR [storageadmin.middleware:33] Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/generics.py", line 241, in get
+    return self.list(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/mixins.py", line 44, in list
+    return self.get_paginated_response(serializer.data)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 618, in data
+    ret = super(ListSerializer, self).data
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 213, in data
+    self._data = self.to_representation(self.instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 568, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 435, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 426, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 299, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 70, in get_attribute
+    instance = getattr(instance, attr)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 86, in free
+    s = pool_usage('%s' % (self.name))
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 1467, in pool_usage
+    out, err, rc = run_command(cmd)
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 121, in run_command
+    raise CommandException(cmd, out, err, rc)
+CommandException: Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+[17/Aug/2019 18:26:01] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/pools method: GET
+[17/Aug/2019 18:26:01] ERROR [storageadmin.middleware:33] Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/generics.py", line 241, in get
+    return self.list(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/mixins.py", line 44, in list
+    return self.get_paginated_response(serializer.data)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 618, in data
+    ret = super(ListSerializer, self).data
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 213, in data
+    self._data = self.to_representation(self.instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 568, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 426, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 299, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 70, in get_attribute
+    instance = getattr(instance, attr)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 86, in free
+    s = pool_usage('%s' % (self.name))
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 1467, in pool_usage
+    out, err, rc = run_command(cmd)
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 121, in run_command
+    raise CommandException(cmd, out, err, rc)
+CommandException: Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+[17/Aug/2019 18:26:01] ERROR [storageadmin.views.network:157] NetworkConnection matching query does not exist.
+Traceback (most recent call last):
+  File "/opt/rockstor/src/rockstor/storageadmin/views/network.py", line 154, in update_connection
+    name=dconfig['connection'])
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: NetworkConnection matching query does not exist.
+[17/Aug/2019 18:26:01] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/shares method: GET
+[17/Aug/2019 18:26:01] ERROR [storageadmin.middleware:33] Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/generics.py", line 241, in get
+    return self.list(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/mixins.py", line 44, in list
+    return self.get_paginated_response(serializer.data)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 618, in data
+    ret = super(ListSerializer, self).data
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 213, in data
+    self._data = self.to_representation(self.instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 568, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 435, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 426, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 299, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 70, in get_attribute
+    instance = getattr(instance, attr)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 86, in free
+    s = pool_usage('%s' % (self.name))
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 1467, in pool_usage
+    out, err, rc = run_command(cmd)
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 121, in run_command
+    raise CommandException(cmd, out, err, rc)
+CommandException: Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+[17/Aug/2019 18:26:02] ERROR [storageadmin.middleware:32] Exception occurred while processing a request. Path: /api/pools method: GET
+[17/Aug/2019 18:26:02] ERROR [storageadmin.middleware:33] Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 452, in dispatch
+    response = self.handle_exception(exc)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/views.py", line 449, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/generics.py", line 241, in get
+    return self.list(request, *args, **kwargs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/mixins.py", line 44, in list
+    return self.get_paginated_response(serializer.data)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 618, in data
+    ret = super(ListSerializer, self).data
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 213, in data
+    self._data = self.to_representation(self.instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 568, in to_representation
+    self.child.to_representation(item) for item in iterable
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/serializers.py", line 426, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 299, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/opt/rockstor/eggs/djangorestframework-3.1.1-py2.7.egg/rest_framework/fields.py", line 70, in get_attribute
+    instance = getattr(instance, attr)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 86, in free
+    s = pool_usage('%s' % (self.name))
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 1467, in pool_usage
+    out, err, rc = run_command(cmd)
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 121, in run_command
+    raise CommandException(cmd, out, err, rc)
+CommandException: Error running a command. cmd = /usr/sbin/zpool list -H -o free rockstor_rockstor. rc = 1. stdout = ['']. stderr = ["cannot open 'rockstor_rockstor': no such pool", '']
+[17/Aug/2019 18:26:10] INFO [storageadmin.views.disk:107] Deleting duplicate or fake (by serial) disk db entry. Serial = (fake-serial-e0a32358-8cc1-4458-b94d-81a3d8b8474b).
+[17/Aug/2019 18:26:10] ERROR [system.osi:1622] Device (centos-root) not found by command (['/usr/sbin/udevadm', 'info', '--query=property', '--name', 'centos-root'])
+[17/Aug/2019 18:26:11] ERROR [storageadmin.views.network:157] NetworkConnection matching query does not exist.
+Traceback (most recent call last):
+  File "/opt/rockstor/src/rockstor/storageadmin/views/network.py", line 154, in update_connection
+    name=dconfig['connection'])
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: NetworkConnection matching query does not exist.
+[17/Aug/2019 18:27:21] ERROR [system.osi:1622] Device (centos-root) not found by command (['/usr/sbin/udevadm', 'info', '--query=property', '--name', 'centos-root'])
+[17/Aug/2019 18:27:22] ERROR [storageadmin.views.network:157] NetworkConnection matching query does not exist.
+Traceback (most recent call last):
+  File "/opt/rockstor/src/rockstor/storageadmin/views/network.py", line 154, in update_connection
+    name=dconfig['connection'])
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: NetworkConnection matching query does not exist.
+[17/Aug/2019 18:27:52] ERROR [storageadmin.views.network:157] NetworkConnection matching query does not exist.
+Traceback (most recent call last):
+  File "/opt/rockstor/src/rockstor/storageadmin/views/network.py", line 154, in update_connection
+    name=dconfig['connection'])
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: NetworkConnection matching query does not exist.
+[17/Aug/2019 18:38:26] INFO [system.pkg_mgmt:111] No "rockstor" package found: source install?
+[17/Aug/2019 18:38:27] ERROR [system.osi:1622] Device (centos-root) not found by command (['/usr/sbin/udevadm', 'info', '--query=property', '--name', 'centos-root'])
+[17/Aug/2019 18:38:31] INFO [system.pkg_mgmt:111] No "rockstor" package found: source install?
+[17/Aug/2019 18:38:41] INFO [storageadmin.views.disk:107] Deleting duplicate or fake (by serial) disk db entry. Serial = (fake-serial-b685aa01-9af4-4c6a-82e9-448951ceb193).
+[17/Aug/2019 18:38:42] ERROR [system.osi:1622] Device (centos-root) not found by command (['/usr/sbin/udevadm', 'info', '--query=property', '--name', 'centos-root'])
+[17/Aug/2019 18:38:42] ERROR [storageadmin.views.network:157] NetworkConnection matching query does not exist.
+Traceback (most recent call last):
+  File "/opt/rockstor/src/rockstor/storageadmin/views/network.py", line 154, in update_connection
+    name=dconfig['connection'])
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: NetworkConnection matching query does not exist.
+[17/Aug/2019 18:39:00] DEBUG [system.osi:104] Running command: /usr/sbin/zpool create po /dev/disk/by-id/wwn-0x6000c2910a56ad9b274d50307132abc9
+[17/Aug/2019 18:39:02] DEBUG [storageadmin.models.pool:87] POOLLLLLL
+[17/Aug/2019 18:39:02] DEBUG [storageadmin.models.pool:88] 52114227
+[17/Aug/2019 18:39:02] DEBUG [storageadmin.models.pool:87] POOLLLLLL
+[17/Aug/2019 18:39:02] DEBUG [storageadmin.models.pool:88] 52114227
+[17/Aug/2019 18:39:50] DEBUG [storageadmin.models.pool:87] POOLLLLLL
+[17/Aug/2019 18:39:50] DEBUG [storageadmin.models.pool:88] 52114227
+[17/Aug/2019 18:39:50] DEBUG [storageadmin.models.pool:87] POOLLLLLL
+[17/Aug/2019 18:39:50] DEBUG [storageadmin.models.pool:88] 52114227
+[17/Aug/2019 18:39:52] DEBUG [storageadmin.models.pool:87] POOLLLLLL
+[17/Aug/2019 18:39:52] DEBUG [storageadmin.models.pool:88] 52114227
+[17/Aug/2019 18:39:54] DEBUG [storageadmin.models.pool:87] POOLLLLLL
+[17/Aug/2019 18:39:54] DEBUG [storageadmin.models.pool:88] 52114227
+[17/Aug/2019 18:39:54] INFO [storageadmin.views.disk:107] Deleting duplicate or fake (by serial) disk db entry. Serial = (fake-serial-2ca25ca4-b087-4cec-afb3-bf8d87604365).
+[17/Aug/2019 18:39:54] ERROR [system.osi:1622] Device (centos-root) not found by command (['/usr/sbin/udevadm', 'info', '--query=property', '--name', 'centos-root'])
+[17/Aug/2019 18:40:15] INFO [storageadmin.views.disk:107] Deleting duplicate or fake (by serial) disk db entry. Serial = (fake-serial-14ae5f45-8221-427d-b842-e6883c860ec0).
+[17/Aug/2019 18:40:15] ERROR [system.osi:1622] Device (centos-root) not found by command (['/usr/sbin/udevadm', 'info', '--query=property', '--name', 'centos-root'])
+[17/Aug/2019 18:40:49] DEBUG [system.osi:104] Running command: /usr/sbin/zpool create po /dev/disk/by-id/wwn-0x6000c29146e1323b801dddc73ef3b7aa
+[17/Aug/2019 18:40:50] DEBUG [storageadmin.models.pool:87] POOLLLLLL
+[17/Aug/2019 18:40:50] DEBUG [storageadmin.models.pool:88] 52114227
+[17/Aug/2019 18:40:50] DEBUG [storageadmin.models.pool:87] POOLLLLLL
+[17/Aug/2019 18:40:50] DEBUG [storageadmin.models.pool:88] 52114227
+[17/Aug/2019 18:41:10] DEBUG [storageadmin.models.pool:87] POOLLLLLL
+[17/Aug/2019 18:41:10] DEBUG [storageadmin.models.pool:88] 52114227
+[17/Aug/2019 18:41:10] DEBUG [storageadmin.models.pool:87] POOLLLLLL
+[17/Aug/2019 18:41:10] DEBUG [storageadmin.models.pool:88] 52114227
+[17/Aug/2019 18:41:12] DEBUG [storageadmin.views.share:187] LLLLCREATEKKKKK
+[17/Aug/2019 18:41:12] DEBUG [storageadmin.views.share:188] ShareSerializer(<Share: Share object>):
+    id = IntegerField(label='ID', read_only=True)
+    snapshots = SnapshotSerializer(many=True, source='snapshot_set'):
+        id = IntegerField(label='ID', read_only=True)
+        name = CharField(max_length=4096, required=True)
+        real_name = CharField(max_length=4096, required=False)
+        writable = BooleanField(required=False)
+        size = IntegerField(max_value=9223372036854775807, min_value=-9223372036854775808, required=False)
+        toc = DateTimeField(read_only=True)
+        qgroup = CharField(allow_blank=True, allow_null=True, max_length=100, required=False)
+        uvisible = BooleanField(required=False)
+        snap_type = CharField(max_length=64, required=False)
+        rusage = IntegerField(max_value=9223372036854775807, min_value=-9223372036854775808, required=False)
+        eusage = IntegerField(max_value=9223372036854775807, min_value=-9223372036854775808, required=False)
+        share = PrimaryKeyRelatedField(queryset=Share.objects.all(), required=True)
+    pool = PoolInfoSerializer():
+        id = IntegerField(label='ID', read_only=True)
+        disks = DiskInfoSerializer(many=True, source='disk_set'):
+            id = IntegerField(label='ID', read_only=True)
+            pool_name = CharField()
+            power_state = CharField()
+            hdparm_setting = CharField()
+            apm_level = CharField()
+            temp_name = CharField()
+            target_name = CharField()
+            io_error_stats = CharField()
+            name = CharField(max_length=128, validators=[<UniqueValidator(queryset=Disk.attached.all())>])
+            size = IntegerField(max_value=9223372036854775807, min_value=-9223372036854775808, required=False)
+            offline = BooleanField(required=False)
+            parted = BooleanField(required=False)
+            btrfs_uuid = CharField(allow_null=True, max_length=1024, required=False)
+            model = CharField(allow_null=True, max_length=1024, required=False)
+            serial = CharField(allow_null=True, max_length=1024, required=False)
+            transport = CharField(allow_null=True, max_length=1024, required=False)
+            vendor = CharField(allow_null=True, max_length=1024, required=False)
+            smart_available = BooleanField(required=False)
+            smart_enabled = BooleanField(required=False)
+            smart_options = CharField(allow_null=True, max_length=64, required=False)
+            role = CharField(allow_null=True, max_length=1024, required=False)
+            pool = PrimaryKeyRelatedField(allow_null=True, queryset=Pool.objects.all(), required=False)
+        free = IntegerField()
+        reclaimable = IntegerField()
+        mount_status = CharField()
+        is_mounted = BooleanField()
+        quotas_enabled = BooleanField()
+        has_missing_dev = BooleanField()
+        dev_stats_ok = BooleanField()
+        name = CharField(max_length=4096, validators=[<UniqueValidator(queryset=Pool.objects.all())>])
+        uuid = CharField(allow_null=True, max_length=100, required=False)
+        size = IntegerField(max_value=9223372036854775807, min_value=-9223372036854775808, required=False)
+        raid = CharField(max_length=10)
+        toc = DateTimeField(read_only=True)
+        compression = CharField(allow_null=True, max_length=256, required=False)
+        mnt_options = CharField(allow_null=True, max_length=4096, required=False)
+        role = CharField(allow_null=True, max_length=256, required=False)
+    nfs_exports = NFSExportSerializer(many=True, source='nfsexport_set'):
+        id = IntegerField(label='ID', read_only=True)
+        share = CharField(source='share_name')
+        share_id = CharField()
+        mount = CharField(max_length=4096)
+        export_group = PrimaryKeyRelatedField(queryset=NFSExportGroup.objects.all())
+    mount_status = CharField()
+    is_mounted = BooleanField()
+    pqgroup_exist = BooleanField()
+    share_used = IntegerField()
+    poolname = CharField(allow_blank=True, allow_null=True, max_length=4096, required=False)
+    qgroup = CharField(allow_blank=True, allow_null=True, max_length=100, required=False)
+    pqgroup = CharField(allow_blank=True, allow_null=True, max_length=32, required=False)
+    name = CharField(max_length=4096, validators=[<UniqueValidator(queryset=Share.objects.all())>])
+    uuid = CharField(allow_blank=True, allow_null=True, max_length=100, required=False)
+    size = IntegerField(max_value=9223372036854775807, min_value=-9223372036854775808, required=False)
+    owner = CharField(max_length=4096, required=False)
+    group = CharField(max_length=4096, required=False)
+    perms = CharField(max_length=9, required=False)
+    toc = DateTimeField(read_only=True)
+    subvol_name = CharField(max_length=4096)
+    replica = BooleanField(required=False)
+    compression_algo = CharField(allow_null=True, max_length=1024, required=False)
+    rusage = IntegerField(max_value=9223372036854775807, min_value=-9223372036854775808, required=False)
+    eusage = IntegerField(max_value=9223372036854775807, min_value=-9223372036854775808, required=False)
+    pqgroup_rusage = IntegerField(max_value=9223372036854775807, min_value=-9223372036854775808, required=False)
+    pqgroup_eusage = IntegerField(max_value=9223372036854775807, min_value=-9223372036854775808, required=False)
+[17/Aug/2019 18:41:12] DEBUG [storageadmin.models.pool:87] POOLLLLLL
+[17/Aug/2019 18:41:12] DEBUG [storageadmin.models.pool:88] 52114227
+[17/Aug/2019 18:41:12] DEBUG [fs.btrfs:1432] mntpt: ['24K', '']
+[17/Aug/2019 18:41:12] DEBUG [fs.btrfs:1436] KTTT: 24576
+[17/Aug/2019 18:41:12] DEBUG [storageadmin.models.pool:87] POOLLLLLL
+[17/Aug/2019 18:41:12] DEBUG [storageadmin.models.pool:88] 52114227
+[17/Aug/2019 18:41:12] DEBUG [storageadmin.models.pool:87] POOLLLLLL
+[17/Aug/2019 18:41:12] DEBUG [storageadmin.models.pool:88] 52114227
+[17/Aug/2019 18:41:12] DEBUG [fs.btrfs:1432] mntpt: ['24K', '']
+[17/Aug/2019 18:41:12] DEBUG [fs.btrfs:1436] KTTT: 24576
+[17/Aug/2019 18:41:16] INFO [storageadmin.views.disk:107] Deleting duplicate or fake (by serial) disk db entry. Serial = (fake-serial-62787c37-4db3-480a-b9c3-7eef08934d6b).
+[17/Aug/2019 18:41:16] ERROR [system.osi:1622] Device (centos-root) not found by command (['/usr/sbin/udevadm', 'info', '--query=property', '--name', 'centos-root'])
+[17/Aug/2019 18:41:57] ERROR [system.osi:1622] Device (centos-root) not found by command (['/usr/sbin/udevadm', 'info', '--query=property', '--name', 'centos-root'])
+[17/Aug/2019 18:42:57] INFO [storageadmin.views.disk:107] Deleting duplicate or fake (by serial) disk db entry. Serial = (fake-serial-ca7ccfa5-9edb-40ef-b2cb-9fe683cfb5d1).
+[17/Aug/2019 18:42:57] ERROR [system.osi:1622] Device (centos-root) not found by command (['/usr/sbin/udevadm', 'info', '--query=property', '--name', 'centos-root'])

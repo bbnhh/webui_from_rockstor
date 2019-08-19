@@ -1,0 +1,52 @@
+<table id="comp-mnt-optns-table">
+    <tr>
+        <td>Compression algorithm: </td>
+        <td>&nbsp;&nbsp;
+            {{#if (isRoot pool.role)}}
+                {{pool.compression}}
+            {{else}}
+            <strong>
+            <a href="#" id="comprOptn" data-type="select"
+            data-title="Pool compression algorithm.<br><strong>zlib: </strong>
+            slower than lzo but higher compression ratio.<br><strong>lzo: </strong>faster than zlib but lower compression ratio.<br>
+            Pool level compression applies to all it's Shares.<br>Alternatively: consider Share level compression.
+            <br>Unchanged data remains at prior setting until balanced."
+            >{{pool.compression}}
+            </a>
+            </strong>
+            {{/if}}
+        </td>
+    </tr>
+    <tr>
+        <td>Extra mount options: </td>
+        <td>&nbsp;&nbsp;
+            {{#if (isRoot pool.role)}}
+                {{pool.mnt_options}}
+            {{else}}
+            <strong>
+            <a href="#" id="mntOptions" data-type='text' data-title="This is for <strong>Advanced users</strong> to provide specific BTRFS mount options.<br>
+            Type them as a comma separated string of options without any spaces.<br>
+            Allowed options are <strong>alloc_start, autodefrag, clear_cache, commit, compress-force, degraded, discard,
+            fatal_errors, inode_cache, max_inline, metadata_ratio, noacl, noatime, nodatacow, nodatasum, nospace_cache, 
+            nossd, ro, rw, skip_balance, space_cache, ssd, ssd_spread, thread_pool</strong>">
+            {{pool.mnt_options}}</a>
+            </strong>
+            {{/if}}
+        </td>
+    </tr>
+    <tr>
+        <td>Quotas</td>
+        <td>&nbsp;&nbsp;
+            <strong>
+                  <a href="#" id="editQuota" data-type="select" data-title="<strong>Enabled: </strong> (Rockstor default) - Used to track and limit
+                  (pending feature) pool share usage.<br><strong>Disabled: </strong> (optional) - significant performance benefits with
+                  high snapshot count (>200/share) and when balancing large pools (double digit TB).<br>Note: when quotas are
+                  disabled share usage is (currently) not tracked and can show <strong><i>0 bytes.</i></strong>">
+                      {{isEnabledDisabled pool.quotas_enabled}}
+                  </a>
+            </strong>
+        </td>
+    </tr>
+</table>
+
+
