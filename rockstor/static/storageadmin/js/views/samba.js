@@ -25,9 +25,16 @@
  */
 
 SambaView = RockstorLayoutView.extend({
-    events: {
+    /*events: {
         'switchChange.bootstrapSwitch': 'switchStatus',
         'click .delete-samba-export': 'deleteSambaExport'
+    },*/
+        events: {
+        //'switchChange.bootstrapSwitch': 'switchStatus',
+        //'click a[data-action=delete]': 'deleteSambaExport',
+        'click .delete-samba-export': 'deleteSambaExport',
+        'click #js-cancel': 'cancel',
+        'click #js-confirm-smb-delete': 'confirmSmbDelete'
     },
 
     initialize: function() {
@@ -56,7 +63,7 @@ SambaView = RockstorLayoutView.extend({
 
     renderSamba: function() {
         this.freeShares = this.shares.reject(function(share) {
-            var s = this.collection.find(function(sambaShare) {
+            s = this.collection.find(function(sambaShare) {
                 return (sambaShare.get('share') == share.get('name'));
             });
             return !_.isUndefined(s);
@@ -111,14 +118,16 @@ SambaView = RockstorLayoutView.extend({
         }
     },
 
-    deleteSambaExport: function(event) {
+    /*deleteSambaExport: function(event) {
         var _this = this;
         if (event) event.preventDefault();
         var button = $(event.currentTarget);
         if (buttonDisabled(button)) return false;
         if (confirm('Delete samba export... Are you sure? ')) {
             disableButton(button);
+            
             var id = $(event.currentTarget).data('id');
+            alert(id)
             $.ajax({
                 url: '/api/samba/' + id,
                 type: 'DELETE',
@@ -132,7 +141,68 @@ SambaView = RockstorLayoutView.extend({
                 }
             });
         }
+    },*/
+    
+    deleteSambaExport: function(event) {
+        var _this = this;
+        if (event) event.preventDefault();
+        var button = $(event.currentTarget);
+        if (buttonDisabled(button)) return false;
+        id = button.attr('data-id');
+
+        _this.$('#delete-smb-modal').modal();
+        return false;
+        
     },
+    
+    confirmSmbDelete: function(event) {
+        var _this = this;
+        var button = $(event.currentTarget);
+        if (buttonDisabled(button)) return false;
+        disableButton(button);
+
+        var url = '/api/samba/' + id;
+        if($('#force-delete').prop('checked')){
+            url += '/force';
+        }
+        $.ajax({
+            url: url,
+            type: 'DELETE',
+            dataType: 'json',
+
+            
+            success: function() {
+                _this.render();
+            //    _this.collection.fetch({reset: true});
+            //    enableButton(button);
+            //    _this.$('#delete-smb-modal').modal('hide');
+                $('.modal-backdrop').remove();
+            //    app_router.navigate('smb', {trigger: true});
+            },
+            error: function(xhr, status, error) {
+                enableButton(button);
+            }
+        });
+    },
+    cancel: function(event) {
+        if (event) event.preventDefault();
+        app_router.navigate('smb', {trigger: true});
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     startService: function() {
         var _this = this;

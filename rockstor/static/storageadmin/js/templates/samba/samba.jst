@@ -4,7 +4,7 @@
     <div id="details-header">
       <table>
         <tr>
-          <td><span class="h3">Samba Service&nbsp;&nbsp;&nbsp;</span></td>
+          <td><span class="h3">Samba 服务&nbsp;&nbsp;&nbsp;</span></td>
           <td>
           <input type="checkbox" name="samba-export-checkbox" data-size="mini">
           </td>
@@ -12,7 +12,7 @@
       </table>
     </div>
     <div id="samba-warning" class="alert alert-warning" style="display:none">
-    	<strong>Warning! Samba Service is not running</strong>. Clients won't be able to mount unless Samba is running.
+    	<strong>警告！Samba服务未运行</strong>. 除非Samba正在运行，否则客户端将无法挂载.
     </div>
     <br>
     <div class="messages"></div>
@@ -21,19 +21,19 @@
       <table id="samba-exports-table" class="table table-bordered table-striped share-table data-table" width="100%" summary="List of samba exports">
         <thead>
           <tr>
-            <th scope="col" abbr="Share name">Share</th>
-            <th scope="col" abbr="Browseable">Browseable</th>
+            <th scope="col" abbr="Share name">文件系统</th>
+            <th scope="col" abbr="Browseable">可见性</th>
             <th scope="col" abbr="Guest ok">Guest ok</th>
-            <th scope="col" abbr="Read only">Read only</th>
+            <th scope="col" abbr="Read only">只读</th>
             <th scope="col" abbr="Admin Users">Admin Users</th>
             <th scope="col" abbr="Comments">Comment</th>
-            <th scope="col" abbr="Actions">Actions</th>
+            <th scope="col" abbr="Actions">操作</th>
           </tr>
         </thead>
         <tbody>
           {{#each samba}}
             <tr>
-                <td><a href="#shares/{{this.share_id}}">{{this.share}}</a></td>
+                <td>{{this.share}}</td>
                 <td>{{this.browsable}}</td>
                 <td>{{this.guest_ok}}</td>
                 <td>{{this.read_only}}</td>
@@ -52,17 +52,36 @@
         <tbody>
           <tr>
             <td colspan="5">
-              <h4>No samba exports have been created</h4>
+              <h4>尚未创建Samba导出</h4>
             </td>
           </tr>
         </tbody>
       </table>
     {{/if}}
     {{#if sharesNotEmpty}}
-      <a href="#add-samba-export" id="add-samba-export" class="btn btn-primary"><i class="glyphicon glyphicon-edit "></i> Add Samba Export</a>
+      <a href="#add-samba-export" id="add-samba-export" class="btn btn-primary"><i class="glyphicon glyphicon-edit "></i> 添加Samba导出</a>
     {{else}}
-      <a  id="add-samba-export" class="btn btn-primary disabled" title="No shares available to export through Samba"><i class="glyphicon glyphicon-edit "></i> Add Samba Export</a>
+      <a  id="add-samba-export" class="btn btn-primary disabled" title="No shares available to export through Samba"><i class="glyphicon glyphicon-edit "></i> 添加Samba导出</a>
     {{/if}}
   </div>
 </div>
-
+<div id="delete-smb-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal-header-danger">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 class="modal-title">删除 <span class="pass-share-name"></span> ?</h3>
+      </div>
+      <div class="modal-body">
+        <div class="messages"></div>
+        <p>将删除此共享，确定?</p>
+	<!--<label><input type="checkbox" id="force-delete" name="force-delete"> 强制删除 &nbsp;<i class="fa fa-info-circle fa-lg" 
+	title="Forces the deletion of undetected Snapshots and then deletes the Share. Useful to forcefully delete the Rock-on root share, for example." rel="tooltip"></i></label>-->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">No</button>
+        <button id="js-confirm-smb-delete" class="btn btn-primary">Yes</button>
+      </div><!--end modal-fooetr-->
+    </div><!--end modal-content-->
+  </div><!--end modal-dialog-->
+</div>
