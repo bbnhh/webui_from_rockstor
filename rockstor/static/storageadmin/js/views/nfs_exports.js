@@ -27,7 +27,9 @@
 NFSExportsView = RockstorLayoutView.extend({
     events: {
         'click .delete-nfs-export': 'deleteNfsExport',
-        'switchChange.bootstrapSwitch': 'switchStatus',
+        //'switchChange.bootstrapSwitch': 'switchStatus',
+        'click #js-cancel': 'cancel',
+        'click #js-confirm-nfs-delete': 'confirmNfsDelete'
     },
 
     initialize: function() {
@@ -91,7 +93,7 @@ NFSExportsView = RockstorLayoutView.extend({
         }
     },
 
-    deleteNfsExport: function(event) {
+    /*deleteNfsExport: function(event) {
         var _this = this;
         if (event) event.preventDefault();
         var button = $(event.currentTarget);
@@ -112,7 +114,59 @@ NFSExportsView = RockstorLayoutView.extend({
                 }
             });
         }
+    },*/
+    deleteNfsExport: function(event) {
+        var _this = this;
+        if (event) event.preventDefault();
+        var button = $(event.currentTarget);
+        if (buttonDisabled(button)) return false;
+        id = button.attr('data-id');
+
+        _this.$('#delete-nfs-modal').modal();
+        return false;
+        
+    },    
+    confirmNfsDelete: function(event) {
+        var _this = this;
+        var button = $(event.currentTarget);
+        if (buttonDisabled(button)) return false;
+        disableButton(button);
+
+        var url = '/api/nfs-exports/' + id;
+        if($('#force-delete').prop('checked')){
+            url += '/force';
+        }
+        $.ajax({
+            url: url,
+            type: 'DELETE',
+            dataType: 'json',
+
+            
+            success: function() {
+                _this.render();
+            //    _this.collection.fetch({reset: true});
+            //    enableButton(button);
+            //    _this.$('#delete-smb-modal').modal('hide');
+                $('.modal-backdrop').remove();
+            //    app_router.navigate('smb', {trigger: true});
+            },
+            error: function(xhr, status, error) {
+                enableButton(button);
+            }
+        });
     },
+    cancel: function(event) {
+        if (event) event.preventDefault();
+        app_router.navigate('nfs-exports', {trigger: true});
+    },    
+    
+    
+    
+    
+    
+    
+    
+    
 
     startService: function() {
         var _this = this;

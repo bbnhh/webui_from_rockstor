@@ -88,4 +88,33 @@
 <br>
 <a href="##nfs-exports/edit/-1" id="add-nfs-export" class="btn btn-primary"><i class="glyphicon glyphicon-edit "></i> Add NFS Export</a>
 <a href="#nfs-advanced-edit" id="nfs-advanced-edit" title="Edit /etc/exports file directly" class="btn btn-primary"><i class="glyphicon glyphicon-edit "></i> Advanced Edit</a>
+
+<div id="delete-nfs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal-header-danger">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 class="modal-title">删除?</h3>
+      </div>
+      <div class="modal-body">
+        <div class="messages"></div>
+        <p>将删除此共享，确定?</p>
+	<!--<label><input type="checkbox" id="force-delete" name="force-delete"> 强制删除 &nbsp;<i class="fa fa-info-circle fa-lg" 
+	title="Forces the deletion of undetected Snapshots and then deletes the Share. Useful to forcefully delete the Rock-on root share, for example." rel="tooltip"></i></label>-->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">No</button>
+        <button id="js-confirm-nfs-delete" class="btn btn-primary">Yes</button>
+      </div><!--end modal-fooetr-->
+    </div><!--end modal-content-->
+  </div><!--end modal-dialog-->
+</div>
+
+
+
+
+
+
+
+
 <!-- end module body -->
