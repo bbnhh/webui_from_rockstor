@@ -52,10 +52,10 @@ class Disk(models.Model):
     and such that may not be part of any pool but need to be in the model"""
     parted = models.BooleanField()
     """previously created btrfs filesystem on the disk"""
-    btrfs_uuid = models.CharField(max_length=1024, null=True)
-    model = models.CharField(max_length=1024, null=True)
-    serial = models.CharField(max_length=1024, null=True)
-    transport = models.CharField(max_length=1024, null=True)
+    btrfs_uuid = models.CharField(max_length=1024, blank=True, null=True)
+    model = models.CharField(max_length=1024, blank=True, null=True)
+    serial = models.CharField(max_length=1024, blank=True, null=True)
+    transport = models.CharField(max_length=1024, blank=True, null=True)
     vendor = models.CharField(max_length=1024, null=True)
     smart_available = models.BooleanField(default=False)
     smart_enabled = models.BooleanField(default=False)
@@ -69,7 +69,7 @@ class Disk(models.Model):
     {"mdraid": "linux_raid_member"}.
     role can be Null if no flags are in use.
     """
-    role = models.CharField(max_length=1024, null=True)
+    role = models.CharField(max_length=1024, blank=True, null=True)
 
     # The default manager is the first defined.
     attached = AttachedManager()  # Only return attached Disk objects.
