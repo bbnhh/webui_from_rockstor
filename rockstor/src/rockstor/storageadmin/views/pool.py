@@ -29,7 +29,7 @@ from storageadmin.models import (Disk, Pool, Share, PoolBalance)
 from fs.btrfs import (del_pool, add_pool, pool_usage, resize_pool, umount_root,
                       btrfs_uuid, mount_root, start_balance, usage_bound,
                       remove_share, enable_quota, disable_quota, rescan_quotas)
-from system.osi import remount, trigger_udev_update
+from system.osi import (remount, trigger_udev_update, set_disk_spindown, enter_standby, get_dev_byid_name, wipe_disk, blink_disk, scan_disks, get_whole_dev_uuid, get_byid_name_map, trigger_systemd_update, systemd_name_escape)
 from storageadmin.util import handle_exception
 from django.conf import settings
 import rest_framework_custom as rfc
@@ -310,6 +310,8 @@ class PoolListView(PoolMixin, rfc.GenericView):
         with self._handle_exception(request):
             disks = [self._validate_disk(d, request) for d in
                      request.data.get('disks')]
+            logger.debug("DISSSSSSSSS")
+            logger.debug(disks)
             pname = request.data['pname']
             if (re.match('%s$' % settings.POOL_REGEX, pname) is None):
                 e_msg = ('Invalid characters in pool name. Following '
@@ -560,7 +562,8 @@ class PoolDetailView(PoolMixin, rfc.GenericView):
                              'minimum of 3 disks.')
                     handle_exception(Exception(e_msg), request)
 
-                usage = pool_usage('/%s/%s' % (settings.MNT_PT, pool.name))
+                #usage = pool_usage('/%s/%s' % (settings.MNT_PT, pool.name))
+                usage = pool_usage('%s%s' % (settings.MNT_PT, pool.name))
                 size_cut = 0
                 for d in disks:
                     size_cut += d.size
@@ -593,6 +596,11 @@ class PoolDetailView(PoolMixin, rfc.GenericView):
             pool.size = pool.usage_bound()
             pool.save()
             return Response(PoolInfoSerializer(pool).data)
+
+
+    #@transaction.atomic
+    #def _update_disk_state()
+
 
     @transaction.atomic
     def delete(self, request, pid, command=''):
@@ -627,13 +635,13 @@ class PoolDetailView(PoolMixin, rfc.GenericView):
             '''
             del_pool(pool.name)
             pool.delete()
-            try:
-                # TODO: this call fails as the inheritance of disks was removed
-                # We need another method to invoke this as self no good now.
-                self._update_disk_state()
-            except Exception as e:
-                logger.error(('Exception while updating disk state: '
-                             '({}).').format(e.__str__()))
+            #try:
+            #    # TODO: this call fails as the inheritance of disks was removed
+            #    # We need another method to invoke this as self no good now.
+            #self._update_disk_state()
+            #except Exception as e:
+            #    logger.error(('Exception while updating disk state: '
+            #                 '({}).').format(e.__str__()))
             return Response()
 
 
