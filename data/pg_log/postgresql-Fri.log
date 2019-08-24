@@ -1,6 +1,31 @@
-LOG:  database system was interrupted; last known up at 2019-08-07 23:20:00 PDT
-LOG:  database system was not properly shut down; automatic recovery in progress
-LOG:  record with zero length at 0/1C91068
-LOG:  redo is not required
+LOG:  database system was shut down at 2019-08-23 17:10:00 CST
 LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2019-08-23 02:10:02 PDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  column "poolname" of relation "storageadmin_share" already exists
+STATEMENT:  ALTER TABLE "storageadmin_share" ADD COLUMN "poolname" varchar(4096) NULL
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2019-08-23 02:16:12 PDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2019-08-23 02:19:52 PDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  column "poolname" of relation "storageadmin_share" already exists
+STATEMENT:  ALTER TABLE "storageadmin_share" ADD COLUMN "poolname" varchar(4096) NULL
