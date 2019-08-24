@@ -274,13 +274,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 #MNT_PT = '/mnt2/'
-#NFS_EXPORT_ROOT = '/export/'
-#SFTP_MNT_ROOT = '/mnt3/'
-
 MNT_PT = '/'
+#NFS_EXPORT_ROOT = '/export/'
 NFS_EXPORT_ROOT = '/'
-SFTP_MNT_ROOT = '/'
-
+SFTP_MNT_ROOT = '/mnt3/'
 
 # System volume label when no btrfs volume label is set as per default openSUSE
 # install: ie 'btrfs fi show' gives 'Label: none'

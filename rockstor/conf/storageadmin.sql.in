@@ -1963,7 +1963,7 @@ ALTER SEQUENCE storageadmin_sftp_id_seq OWNED BY storageadmin_sftp.id;
 CREATE TABLE storageadmin_share (
     id integer NOT NULL,
     pool_id integer NOT NULL,
-    poolname character varying(4096)
+    poolname character varying(4096),
     qgroup character varying(100) NOT NULL,
     name character varying(4096) NOT NULL,
     uuid character varying(100),
