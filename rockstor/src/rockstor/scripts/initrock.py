@@ -335,11 +335,13 @@ def main():
         bootstrap_sshd_config(logging)
     except Exception as e:
         logging.error('Exception while updating sshd_config: %s' % e.__str__())
-
+    print STAMP
+    print os.path.isfile(STAMP)
     if (not os.path.isfile(STAMP)):
         logging.info('Please be patient. This script could take a few minutes')
-        shutil.copyfile('%s/conf/django-hack' % BASE_DIR,
-                        '%s/django' % BASE_BIN)
+        print BASE_DIR
+        #shutil.copyfile('%s/conf/django-hack' % BASE_DIR,
+        #                '%s/django' % BASE_BIN)
         run_command([SYSCTL, 'enable', 'postgresql'])
         logging.debug('Progresql enabled')
         pg_data = '/var/lib/pgsql/data'

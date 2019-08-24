@@ -158,7 +158,8 @@ def scan_disks(min_size, test_mode=False):
         # setup our line / dev name dependant variables
         # easy read categorization flags, all False until found otherwise.
         is_root_disk = False  # base dev that / is mounted on ie system disk
-        is_partition = is_btrfs = False
+        #is_partition = is_btrfs = False
+        is_partition = is_zfs_member = False
         dmap = {}  # to hold line info from lsblk output eg NAME: sda
         # line parser variables
         cur_name = ''
@@ -259,8 +260,8 @@ def scan_disks(min_size, test_mode=False):
         if (dmap['TYPE'] == 'part' or dmap['TYPE'] == 'md'):
             is_partition = True
         # - is filesystem of type btrfs
-        if (dmap['FSTYPE'] == 'btrfs'):
-            is_btrfs = True
+        if (dmap['FSTYPE'] == 'zfs_member'):
+            is_zfs_member = True
         # End readability variables assignment
 
         if is_partition:
@@ -332,7 +333,7 @@ def scan_disks(min_size, test_mode=False):
                     # fstype, label (for pool updates) uuid, and size.
                     # N.B. The base device info will end up pertaining to the
                     # highest partition numbers details. Design limitation.
-                    if is_btrfs and dnames[dname][8] is None:
+                    if is_zfs_member and dnames[dname][8] is None:
                         # We are a btrfs partition where the base device has no
                         # fstype entry: backport: fstype, label, uuid & size.
                         # fstype backport
@@ -365,18 +366,19 @@ def scan_disks(min_size, test_mode=False):
             # This dict will be populated when we find our partitions and back
             # port their names and fstype (as values).
         if ((not is_root_disk and not is_partition) or
-                is_btrfs):
+                is_zfs_member):
             # We have a non system disk that is not a partition
             # or
             # We have a device that is btrfs formatted
             # Or we may just be a non system disk without partitions.
             dmap['root'] = is_root_disk
-            if is_btrfs:
+            if is_zfs_member:
                 # a btrfs file system
                 # Regex to identify a partition on the base_root_disk.
                 # Root on 'sda3' gives base_root_disk 'sda'.
                 if re.match('sd|vd', dmap['NAME']) is not None:
                     # eg 'sda' or 'vda' with >= one additional digit,
+                    logger.debug('AAAAAAAAAAAAAAAAAA: %s' %base_root_disk)
                     part_regex = base_root_disk + '\d+'
                 else:
                     # md126 or nvme0n1 with 'p' + >= one additional digit eg:
@@ -909,7 +911,7 @@ def root_disk():
     with open('/proc/mounts') as fo:
         for line in fo.readlines():
             fields = line.split()
-            if (fields[1] == '/' and fields[2] == 'btrfs'):
+            if (fields[1] == '/' and fields[2] == 'xfs'):
                 # We have found our '/' and it's of fs type btrfs
                 if (re.match('/dev/mapper/luks-', fields[0]) is not None):
                     # Our root is on a mapped open LUKS container so we need
@@ -956,7 +958,7 @@ def root_disk():
     msg = ('root filesystem is not BTRFS. During Rockstor installation, '
            'you must select BTRFS instead of LVM and other options for '
            'root filesystem. Please re-install Rockstor properly.')
-    #raise NonBTRFSRootException(msg)
+    raise NonBTRFSRootException(msg)
 
 
 def get_md_members(device_name, test=None):
