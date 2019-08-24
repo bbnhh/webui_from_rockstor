@@ -4576,41 +4576,481 @@ AttributeError: 'NoneType' object has no attribute 'add_extra_file'
 [2019-08-17 19:05:14 +0000] [14746] [INFO] Worker exiting (pid: 14746)
 [2019-08-17 19:05:14 +0000] [14747] [INFO] Worker exiting (pid: 14747)
 [2019-08-17 19:05:14 +0000] [14721] [INFO] Shutting down: Master
-[2019-08-18 03:45:27 +0000] [25553] [INFO] Starting gunicorn 19.7.1
-[2019-08-18 03:45:27 +0000] [25553] [INFO] Listening at: http://127.0.0.1:8000 (25553)
-[2019-08-18 03:45:27 +0000] [25553] [INFO] Using worker: sync
-[2019-08-18 03:45:27 +0000] [25578] [INFO] Booting worker with pid: 25578
-[2019-08-18 03:45:27 +0000] [25579] [INFO] Booting worker with pid: 25579
-[2019-08-18 03:45:49 +0000] [25553] [INFO] Handling signal: term
-[2019-08-18 03:45:49 +0000] [25579] [INFO] Worker exiting (pid: 25579)
-[2019-08-18 03:45:49 +0000] [25578] [INFO] Worker exiting (pid: 25578)
-[2019-08-18 03:45:50 +0000] [25553] [INFO] Shutting down: Master
-[2019-08-17 17:00:58 +0000] [11450] [INFO] Booting worker with pid: 11450
-[2019-08-17 17:00:58 +0000] [11458] [INFO] Booting worker with pid: 11458
-[2019-08-17 17:58:57 +0000] [8043] [INFO] Handling signal: term
-[2019-08-18 05:58:57 +0000] [11450] [INFO] Worker exiting (pid: 11450)
-[2019-08-18 05:58:57 +0000] [11458] [INFO] Worker exiting (pid: 11458)
-[2019-08-17 17:58:57 +0000] [8043] [INFO] Shutting down: Master
-[2019-08-17 18:00:02 +0000] [8017] [INFO] Starting gunicorn 19.7.1
-[2019-08-17 18:00:02 +0000] [8017] [INFO] Listening at: http://127.0.0.1:8000 (8017)
-[2019-08-17 18:00:02 +0000] [8017] [INFO] Using worker: sync
-[2019-08-17 18:00:02 +0000] [8046] [INFO] Booting worker with pid: 8046
-[2019-08-17 18:00:02 +0000] [8047] [INFO] Booting worker with pid: 8047
-[2019-08-17 18:23:43 +0000] [8017] [CRITICAL] WORKER TIMEOUT (pid:8046)
-[2019-08-17 18:23:43 +0000] [8017] [CRITICAL] WORKER TIMEOUT (pid:8047)
-[2019-08-17 18:23:43 +0000] [8046] [INFO] Worker exiting (pid: 8046)
-[2019-08-17 18:23:43 +0000] [8047] [INFO] Worker exiting (pid: 8047)
-[2019-08-17 18:23:43 +0000] [10390] [INFO] Booting worker with pid: 10390
-[2019-08-17 18:23:43 +0000] [10394] [INFO] Booting worker with pid: 10394
-[2019-08-17 18:38:23 +0000] [8017] [CRITICAL] WORKER TIMEOUT (pid:10394)
-[2019-08-17 18:38:23 +0000] [8017] [CRITICAL] WORKER TIMEOUT (pid:10390)
-[2019-08-17 18:38:23 +0000] [10394] [INFO] Worker exiting (pid: 10394)
-[2019-08-17 18:38:23 +0000] [10390] [INFO] Worker exiting (pid: 10390)
-[2019-08-17 18:38:23 +0000] [12177] [INFO] Booting worker with pid: 12177
-[2019-08-17 18:38:23 +0000] [12178] [INFO] Booting worker with pid: 12178
-[2019-08-18 21:39:02 +0000] [8017] [CRITICAL] WORKER TIMEOUT (pid:12177)
-[2019-08-18 21:39:02 +0000] [8017] [CRITICAL] WORKER TIMEOUT (pid:12178)
-[2019-08-18 21:39:02 +0000] [12177] [INFO] Worker exiting (pid: 12177)
-[2019-08-18 21:39:02 +0000] [12178] [INFO] Worker exiting (pid: 12178)
-[2019-08-18 21:39:02 +0000] [17113] [INFO] Booting worker with pid: 17113
-[2019-08-18 21:39:02 +0000] [17114] [INFO] Booting worker with pid: 17114
+[2019-08-23 13:47:05 +0000] [47764] [INFO] Starting gunicorn 19.7.1
+[2019-08-23 13:47:05 +0000] [47764] [INFO] Listening at: http://127.0.0.1:8000 (47764)
+[2019-08-23 13:47:05 +0000] [47764] [INFO] Using worker: sync
+[2019-08-23 13:47:05 +0000] [47789] [INFO] Booting worker with pid: 47789
+[2019-08-23 13:47:05 +0000] [47790] [INFO] Booting worker with pid: 47790
+[2019-08-23 14:00:56 +0000] [47764] [INFO] Handling signal: term
+[2019-08-23 14:00:56 +0000] [47789] [INFO] Worker exiting (pid: 47789)
+[2019-08-23 14:00:56 +0000] [47790] [INFO] Worker exiting (pid: 47790)
+[2019-08-23 14:00:56 +0000] [47764] [INFO] Shutting down: Master
+[2019-08-23 14:00:59 +0000] [49715] [INFO] Starting gunicorn 19.7.1
+[2019-08-23 14:00:59 +0000] [49715] [INFO] Listening at: http://127.0.0.1:8000 (49715)
+[2019-08-23 14:00:59 +0000] [49715] [INFO] Using worker: sync
+[2019-08-23 14:00:59 +0000] [49740] [INFO] Booting worker with pid: 49740
+[2019-08-23 14:00:59 +0000] [49750] [INFO] Booting worker with pid: 49750
+[2019-08-23 14:29:14 +0000] [49715] [INFO] Handling signal: term
+[2019-08-23 14:29:14 +0000] [49750] [INFO] Worker exiting (pid: 49750)
+[2019-08-23 14:29:14 +0000] [49740] [INFO] Worker exiting (pid: 49740)
+[2019-08-23 14:29:14 +0000] [49715] [INFO] Shutting down: Master
+[2019-08-23 14:29:17 +0000] [53056] [INFO] Starting gunicorn 19.7.1
+[2019-08-23 14:29:17 +0000] [53056] [INFO] Listening at: http://127.0.0.1:8000 (53056)
+[2019-08-23 14:29:17 +0000] [53056] [INFO] Using worker: sync
+[2019-08-23 14:29:17 +0000] [53081] [INFO] Booting worker with pid: 53081
+[2019-08-23 14:29:17 +0000] [53082] [INFO] Booting worker with pid: 53082
+[2019-08-23 15:30:23 +0000] [53056] [INFO] Handling signal: term
+[2019-08-23 15:30:23 +0000] [53082] [INFO] Worker exiting (pid: 53082)
+[2019-08-23 15:30:23 +0000] [53081] [INFO] Worker exiting (pid: 53081)
+[2019-08-23 15:30:23 +0000] [53056] [INFO] Shutting down: Master
+[2019-08-23 15:30:27 +0000] [60566] [INFO] Starting gunicorn 19.7.1
+[2019-08-23 15:30:27 +0000] [60566] [INFO] Listening at: http://127.0.0.1:8000 (60566)
+[2019-08-23 15:30:27 +0000] [60566] [INFO] Using worker: sync
+[2019-08-23 15:30:27 +0000] [60591] [INFO] Booting worker with pid: 60591
+[2019-08-23 15:30:27 +0000] [60592] [INFO] Booting worker with pid: 60592
+[2019-08-23 15:38:28 +0000] [60566] [INFO] Handling signal: term
+[2019-08-23 15:38:28 +0000] [60591] [INFO] Worker exiting (pid: 60591)
+[2019-08-23 15:38:28 +0000] [60592] [INFO] Worker exiting (pid: 60592)
+[2019-08-23 15:38:28 +0000] [60566] [INFO] Shutting down: Master
+[2019-08-23 17:22:00 +0000] [71671] [INFO] Starting gunicorn 19.7.1
+[2019-08-23 17:22:00 +0000] [71671] [INFO] Listening at: http://127.0.0.1:8000 (71671)
+[2019-08-23 17:22:00 +0000] [71671] [INFO] Using worker: sync
+[2019-08-23 17:22:00 +0000] [71704] [INFO] Booting worker with pid: 71704
+[2019-08-23 17:22:00 +0000] [71709] [INFO] Booting worker with pid: 71709
+[2019-08-23 17:24:00 +0000] [71671] [INFO] Handling signal: term
+[2019-08-23 17:24:00 +0000] [71704] [INFO] Worker exiting (pid: 71704)
+[2019-08-23 17:24:00 +0000] [71709] [INFO] Worker exiting (pid: 71709)
+[2019-08-23 17:24:00 +0000] [71671] [INFO] Shutting down: Master
+[2019-08-23 17:24:02 +0000] [72318] [INFO] Starting gunicorn 19.7.1
+[2019-08-23 17:24:02 +0000] [72318] [INFO] Listening at: http://127.0.0.1:8000 (72318)
+[2019-08-23 17:24:02 +0000] [72318] [INFO] Using worker: sync
+[2019-08-23 17:24:02 +0000] [72343] [INFO] Booting worker with pid: 72343
+[2019-08-23 17:24:02 +0000] [72355] [INFO] Booting worker with pid: 72355
+[2019-08-23 17:40:16 +0000] [72318] [INFO] Handling signal: term
+[2019-08-23 17:40:16 +0000] [72343] [INFO] Worker exiting (pid: 72343)
+[2019-08-23 17:40:16 +0000] [72355] [INFO] Worker exiting (pid: 72355)
+[2019-08-23 17:40:16 +0000] [72318] [INFO] Shutting down: Master
+[2019-08-23 06:20:38 +0000] [17582] [INFO] Starting gunicorn 19.7.1
+[2019-08-23 06:20:38 +0000] [17582] [INFO] Listening at: http://127.0.0.1:8000 (17582)
+[2019-08-23 06:20:38 +0000] [17582] [INFO] Using worker: sync
+[2019-08-23 06:20:38 +0000] [17611] [INFO] Booting worker with pid: 17611
+[2019-08-23 06:20:38 +0000] [17612] [INFO] Booting worker with pid: 17612
+[2019-08-23 06:35:20 +0000] [17582] [INFO] Handling signal: term
+[2019-08-23 06:35:20 +0000] [17611] [INFO] Worker exiting (pid: 17611)
+[2019-08-23 06:35:20 +0000] [17612] [INFO] Worker exiting (pid: 17612)
+[2019-08-23 06:35:20 +0000] [17582] [INFO] Shutting down: Master
+[2019-08-23 06:35:23 +0000] [20144] [INFO] Starting gunicorn 19.7.1
+[2019-08-23 06:35:23 +0000] [20144] [INFO] Listening at: http://127.0.0.1:8000 (20144)
+[2019-08-23 06:35:23 +0000] [20144] [INFO] Using worker: sync
+[2019-08-23 06:35:23 +0000] [20169] [INFO] Booting worker with pid: 20169
+[2019-08-23 06:35:23 +0000] [20178] [INFO] Booting worker with pid: 20178
+[2019-08-23 06:48:25 +0000] [20144] [INFO] Handling signal: term
+[2019-08-23 06:48:25 +0000] [20169] [INFO] Worker exiting (pid: 20169)
+[2019-08-23 06:48:25 +0000] [20178] [INFO] Worker exiting (pid: 20178)
+[2019-08-23 06:48:25 +0000] [20144] [INFO] Shutting down: Master
+[2019-08-23 06:48:27 +0000] [25166] [INFO] Starting gunicorn 19.7.1
+[2019-08-23 06:48:27 +0000] [25166] [INFO] Listening at: http://127.0.0.1:8000 (25166)
+[2019-08-23 06:48:27 +0000] [25166] [INFO] Using worker: sync
+[2019-08-23 06:48:27 +0000] [25187] [INFO] Booting worker with pid: 25187
+[2019-08-23 06:48:27 +0000] [25188] [INFO] Booting worker with pid: 25188
+[2019-08-23 06:48:27 +0000] [25187] [ERROR] invalid syntax (osi.py, line 381)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/opt/rockstor/src/rockstor/wsgi.py", line 24, in <module>
+    application = get_wsgi_application()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/wsgi.py", line 14, in get_wsgi_application
+    django.setup()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/__init__.py", line 18, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/registry.py", line 108, in populate
+    app_config.import_models(all_models)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/config.py", line 198, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/__init__.py", line 19, in <module>
+    from pool import Pool  # noqa E501
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 21, in <module>
+    from fs.btrfs import pool_usage, usage_bound, \
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 22, in <module>
+    from system.osi import run_command, create_tmp_dir, is_share_mounted, \
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 381
+    logger.debug('AAAAAAAAAAAAAAAAAA: %s' base_root_disk)
+                                                       ^
+SyntaxError: invalid syntax
+[2019-08-23 06:48:27 +0000] [25187] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 148, in load_wsgi
+    self.reloader.add_extra_file(exc_val.filename)
+AttributeError: 'NoneType' object has no attribute 'add_extra_file'
+[2019-08-23 06:48:27 +0000] [25187] [INFO] Worker exiting (pid: 25187)
+[2019-08-23 06:48:27 +0000] [25188] [ERROR] invalid syntax (osi.py, line 381)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/opt/rockstor/src/rockstor/wsgi.py", line 24, in <module>
+    application = get_wsgi_application()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/wsgi.py", line 14, in get_wsgi_application
+    django.setup()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/__init__.py", line 18, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/registry.py", line 108, in populate
+    app_config.import_models(all_models)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/config.py", line 198, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/__init__.py", line 19, in <module>
+    from pool import Pool  # noqa E501
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 21, in <module>
+    from fs.btrfs import pool_usage, usage_bound, \
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 22, in <module>
+    from system.osi import run_command, create_tmp_dir, is_share_mounted, \
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 381
+    logger.debug('AAAAAAAAAAAAAAAAAA: %s' base_root_disk)
+                                                       ^
+SyntaxError: invalid syntax
+[2019-08-23 06:48:27 +0000] [25188] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 148, in load_wsgi
+    self.reloader.add_extra_file(exc_val.filename)
+AttributeError: 'NoneType' object has no attribute 'add_extra_file'
+[2019-08-23 06:48:27 +0000] [25188] [INFO] Worker exiting (pid: 25188)
+[2019-08-23 06:48:28 +0000] [25166] [INFO] Shutting down: Master
+[2019-08-23 06:48:28 +0000] [25166] [INFO] Reason: Worker failed to boot.
+[2019-08-23 06:48:29 +0000] [25214] [INFO] Starting gunicorn 19.7.1
+[2019-08-23 06:48:29 +0000] [25214] [INFO] Listening at: http://127.0.0.1:8000 (25214)
+[2019-08-23 06:48:29 +0000] [25214] [INFO] Using worker: sync
+[2019-08-23 06:48:29 +0000] [25233] [INFO] Booting worker with pid: 25233
+[2019-08-23 06:48:29 +0000] [25242] [INFO] Booting worker with pid: 25242
+[2019-08-23 06:48:29 +0000] [25233] [ERROR] invalid syntax (osi.py, line 381)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/opt/rockstor/src/rockstor/wsgi.py", line 24, in <module>
+    application = get_wsgi_application()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/wsgi.py", line 14, in get_wsgi_application
+    django.setup()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/__init__.py", line 18, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/registry.py", line 108, in populate
+    app_config.import_models(all_models)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/config.py", line 198, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/__init__.py", line 19, in <module>
+    from pool import Pool  # noqa E501
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 21, in <module>
+    from fs.btrfs import pool_usage, usage_bound, \
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 22, in <module>
+    from system.osi import run_command, create_tmp_dir, is_share_mounted, \
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 381
+    logger.debug('AAAAAAAAAAAAAAAAAA: %s' base_root_disk)
+                                                       ^
+SyntaxError: invalid syntax
+[2019-08-23 06:48:29 +0000] [25233] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 148, in load_wsgi
+    self.reloader.add_extra_file(exc_val.filename)
+AttributeError: 'NoneType' object has no attribute 'add_extra_file'
+[2019-08-23 06:48:29 +0000] [25233] [INFO] Worker exiting (pid: 25233)
+[2019-08-23 06:48:29 +0000] [25242] [ERROR] invalid syntax (osi.py, line 381)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/opt/rockstor/src/rockstor/wsgi.py", line 24, in <module>
+    application = get_wsgi_application()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/wsgi.py", line 14, in get_wsgi_application
+    django.setup()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/__init__.py", line 18, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/registry.py", line 108, in populate
+    app_config.import_models(all_models)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/config.py", line 198, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/__init__.py", line 19, in <module>
+    from pool import Pool  # noqa E501
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 21, in <module>
+    from fs.btrfs import pool_usage, usage_bound, \
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 22, in <module>
+    from system.osi import run_command, create_tmp_dir, is_share_mounted, \
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 381
+    logger.debug('AAAAAAAAAAAAAAAAAA: %s' base_root_disk)
+                                                       ^
+SyntaxError: invalid syntax
+[2019-08-23 06:48:29 +0000] [25242] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 148, in load_wsgi
+    self.reloader.add_extra_file(exc_val.filename)
+AttributeError: 'NoneType' object has no attribute 'add_extra_file'
+[2019-08-23 06:48:29 +0000] [25242] [INFO] Worker exiting (pid: 25242)
+[2019-08-23 06:48:31 +0000] [25268] [INFO] Starting gunicorn 19.7.1
+[2019-08-23 06:48:31 +0000] [25268] [INFO] Listening at: http://127.0.0.1:8000 (25268)
+[2019-08-23 06:48:31 +0000] [25268] [INFO] Using worker: sync
+[2019-08-23 06:48:31 +0000] [25287] [INFO] Booting worker with pid: 25287
+[2019-08-23 06:48:31 +0000] [25296] [INFO] Booting worker with pid: 25296
+[2019-08-23 06:48:32 +0000] [25287] [ERROR] invalid syntax (osi.py, line 381)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/opt/rockstor/src/rockstor/wsgi.py", line 24, in <module>
+    application = get_wsgi_application()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/wsgi.py", line 14, in get_wsgi_application
+    django.setup()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/__init__.py", line 18, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/registry.py", line 108, in populate
+    app_config.import_models(all_models)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/config.py", line 198, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/__init__.py", line 19, in <module>
+    from pool import Pool  # noqa E501
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 21, in <module>
+    from fs.btrfs import pool_usage, usage_bound, \
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 22, in <module>
+    from system.osi import run_command, create_tmp_dir, is_share_mounted, \
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 381
+    logger.debug('AAAAAAAAAAAAAAAAAA: %s' base_root_disk)
+                                                       ^
+SyntaxError: invalid syntax
+[2019-08-23 06:48:32 +0000] [25287] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 148, in load_wsgi
+    self.reloader.add_extra_file(exc_val.filename)
+AttributeError: 'NoneType' object has no attribute 'add_extra_file'
+[2019-08-23 06:48:32 +0000] [25287] [INFO] Worker exiting (pid: 25287)
+[2019-08-23 06:48:32 +0000] [25296] [ERROR] invalid syntax (osi.py, line 381)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/opt/rockstor/src/rockstor/wsgi.py", line 24, in <module>
+    application = get_wsgi_application()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/wsgi.py", line 14, in get_wsgi_application
+    django.setup()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/__init__.py", line 18, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/registry.py", line 108, in populate
+    app_config.import_models(all_models)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/config.py", line 198, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/__init__.py", line 19, in <module>
+    from pool import Pool  # noqa E501
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 21, in <module>
+    from fs.btrfs import pool_usage, usage_bound, \
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 22, in <module>
+    from system.osi import run_command, create_tmp_dir, is_share_mounted, \
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 381
+    logger.debug('AAAAAAAAAAAAAAAAAA: %s' base_root_disk)
+                                                       ^
+SyntaxError: invalid syntax
+[2019-08-23 06:48:32 +0000] [25296] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 148, in load_wsgi
+    self.reloader.add_extra_file(exc_val.filename)
+AttributeError: 'NoneType' object has no attribute 'add_extra_file'
+[2019-08-23 06:48:32 +0000] [25296] [INFO] Worker exiting (pid: 25296)
+[2019-08-23 06:48:35 +0000] [25322] [INFO] Starting gunicorn 19.7.1
+[2019-08-23 06:48:35 +0000] [25322] [INFO] Listening at: http://127.0.0.1:8000 (25322)
+[2019-08-23 06:48:35 +0000] [25322] [INFO] Using worker: sync
+[2019-08-23 06:48:35 +0000] [25341] [INFO] Booting worker with pid: 25341
+[2019-08-23 06:48:35 +0000] [25343] [INFO] Booting worker with pid: 25343
+[2019-08-23 06:48:35 +0000] [25341] [ERROR] invalid syntax (osi.py, line 381)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/opt/rockstor/src/rockstor/wsgi.py", line 24, in <module>
+    application = get_wsgi_application()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/wsgi.py", line 14, in get_wsgi_application
+    django.setup()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/__init__.py", line 18, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/registry.py", line 108, in populate
+    app_config.import_models(all_models)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/config.py", line 198, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/__init__.py", line 19, in <module>
+    from pool import Pool  # noqa E501
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 21, in <module>
+    from fs.btrfs import pool_usage, usage_bound, \
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 22, in <module>
+    from system.osi import run_command, create_tmp_dir, is_share_mounted, \
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 381
+    logger.debug('AAAAAAAAAAAAAAAAAA: %s' base_root_disk)
+                                                       ^
+SyntaxError: invalid syntax
+[2019-08-23 06:48:35 +0000] [25341] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 148, in load_wsgi
+    self.reloader.add_extra_file(exc_val.filename)
+AttributeError: 'NoneType' object has no attribute 'add_extra_file'
+[2019-08-23 06:48:35 +0000] [25341] [INFO] Worker exiting (pid: 25341)
+[2019-08-23 06:48:35 +0000] [25343] [ERROR] invalid syntax (osi.py, line 381)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/opt/rockstor/src/rockstor/wsgi.py", line 24, in <module>
+    application = get_wsgi_application()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/wsgi.py", line 14, in get_wsgi_application
+    django.setup()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/__init__.py", line 18, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/registry.py", line 108, in populate
+    app_config.import_models(all_models)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/config.py", line 198, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/__init__.py", line 19, in <module>
+    from pool import Pool  # noqa E501
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 21, in <module>
+    from fs.btrfs import pool_usage, usage_bound, \
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 22, in <module>
+    from system.osi import run_command, create_tmp_dir, is_share_mounted, \
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 381
+    logger.debug('AAAAAAAAAAAAAAAAAA: %s' base_root_disk)
+                                                       ^
+SyntaxError: invalid syntax
+[2019-08-23 06:48:35 +0000] [25343] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/opt/rockstor/eggs/gunicorn-19.7.1-py2.7.egg/gunicorn/workers/base.py", line 148, in load_wsgi
+    self.reloader.add_extra_file(exc_val.filename)
+AttributeError: 'NoneType' object has no attribute 'add_extra_file'
+[2019-08-23 06:48:35 +0000] [25343] [INFO] Worker exiting (pid: 25343)
+[2019-08-23 06:48:58 +0000] [25380] [INFO] Starting gunicorn 19.7.1
+[2019-08-23 06:48:58 +0000] [25380] [INFO] Listening at: http://127.0.0.1:8000 (25380)
+[2019-08-23 06:48:58 +0000] [25380] [INFO] Using worker: sync
+[2019-08-23 06:48:58 +0000] [25405] [INFO] Booting worker with pid: 25405
+[2019-08-23 06:48:58 +0000] [25414] [INFO] Booting worker with pid: 25414
+[2019-08-23 06:58:22 +0000] [25380] [INFO] Handling signal: term
+[2019-08-23 06:58:22 +0000] [25414] [INFO] Worker exiting (pid: 25414)
+[2019-08-23 06:58:22 +0000] [25405] [INFO] Worker exiting (pid: 25405)
+[2019-08-23 06:58:22 +0000] [25380] [INFO] Shutting down: Master
+[2019-08-23 06:58:24 +0000] [26902] [INFO] Starting gunicorn 19.7.1
+[2019-08-23 06:58:24 +0000] [26902] [INFO] Listening at: http://127.0.0.1:8000 (26902)
+[2019-08-23 06:58:24 +0000] [26902] [INFO] Using worker: sync
+[2019-08-23 06:58:24 +0000] [26928] [INFO] Booting worker with pid: 26928
+[2019-08-23 06:58:24 +0000] [26937] [INFO] Booting worker with pid: 26937
+[2019-08-23 07:31:45 +0000] [26902] [INFO] Handling signal: term
+[2019-08-23 07:31:45 +0000] [26937] [INFO] Worker exiting (pid: 26937)
+[2019-08-23 07:31:45 +0000] [26928] [INFO] Worker exiting (pid: 26928)
+[2019-08-23 07:31:45 +0000] [26902] [INFO] Shutting down: Master
+[2019-08-23 07:31:48 +0000] [69329] [INFO] Starting gunicorn 19.7.1
+[2019-08-23 07:31:48 +0000] [69329] [INFO] Listening at: http://127.0.0.1:8000 (69329)
+[2019-08-23 07:31:48 +0000] [69329] [INFO] Using worker: sync
+[2019-08-23 07:31:48 +0000] [69354] [INFO] Booting worker with pid: 69354
+[2019-08-23 07:31:48 +0000] [69363] [INFO] Booting worker with pid: 69363
+[2019-08-23 10:44:02 +0000] [69329] [INFO] Handling signal: term
+[2019-08-23 10:44:02 +0000] [69363] [INFO] Worker exiting (pid: 69363)
+[2019-08-23 10:44:02 +0000] [69354] [INFO] Worker exiting (pid: 69354)
+[2019-08-23 10:44:02 +0000] [69329] [INFO] Shutting down: Master
+[2019-08-23 10:54:51 +0000] [87510] [INFO] Starting gunicorn 19.7.1
+[2019-08-23 10:54:51 +0000] [87510] [INFO] Listening at: http://127.0.0.1:8000 (87510)
+[2019-08-23 10:54:51 +0000] [87510] [INFO] Using worker: sync
+[2019-08-23 10:54:51 +0000] [87535] [INFO] Booting worker with pid: 87535
+[2019-08-23 10:54:51 +0000] [87540] [INFO] Booting worker with pid: 87540

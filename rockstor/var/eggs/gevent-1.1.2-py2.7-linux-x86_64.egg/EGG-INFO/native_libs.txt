@@ -1,3 +1,0 @@
-gevent/corecext.so
-gevent/ares.so
-gevent/_semaphore.so

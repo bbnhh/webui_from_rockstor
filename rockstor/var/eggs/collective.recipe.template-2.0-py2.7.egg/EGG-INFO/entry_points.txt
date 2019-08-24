@@ -1,5 +1,0 @@
-
-    [zc.buildout]
-    default = collective.recipe.template:Recipe
-    genshi = collective.recipe.template.genshitemplate:Recipe
-    

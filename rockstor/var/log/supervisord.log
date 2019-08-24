@@ -3814,53 +3814,270 @@
 2019-08-17 19:05:14,533 INFO stopped: data-collector (terminated by SIGTERM)
 2019-08-17 19:05:14,592 INFO stopped: gunicorn (exit status 0)
 2019-08-17 19:05:14,603 INFO stopped: nginx (exit status 0)
-2019-08-18 03:45:25,947 CRIT Supervisor running as root (no user in config file)
-2019-08-18 03:45:25,954 INFO RPC interface 'supervisor' initialized
-2019-08-18 03:45:25,954 CRIT Server 'unix_http_server' running without any HTTP authentication checking
-2019-08-18 03:45:25,954 INFO supervisord started with pid 25549
-2019-08-18 03:45:26,957 INFO spawned: 'nginx' with pid 25552
-2019-08-18 03:45:26,960 INFO spawned: 'gunicorn' with pid 25553
-2019-08-18 03:45:26,961 INFO spawned: 'data-collector' with pid 25554
-2019-08-18 03:45:26,963 INFO spawned: 'ztask-daemon' with pid 25555
-2019-08-18 03:45:28,514 INFO exited: ztask-daemon (exit status 1; not expected)
-2019-08-18 03:45:29,516 INFO success: data-collector entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
-2019-08-18 03:45:29,517 INFO spawned: 'ztask-daemon' with pid 25612
-2019-08-18 03:45:30,086 INFO exited: ztask-daemon (exit status 1; not expected)
-2019-08-18 03:45:32,125 INFO success: nginx entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
-2019-08-18 03:45:32,125 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
-2019-08-18 03:45:32,126 INFO spawned: 'ztask-daemon' with pid 25628
-2019-08-18 03:45:32,755 INFO exited: ztask-daemon (exit status 1; not expected)
-2019-08-18 03:45:35,781 INFO spawned: 'ztask-daemon' with pid 25646
-2019-08-18 03:45:36,324 INFO exited: ztask-daemon (exit status 1; not expected)
-2019-08-18 03:45:37,325 INFO gave up: ztask-daemon entered FATAL state, too many start retries too quickly
-2019-08-18 03:45:49,644 WARN received SIGINT indicating exit request
-2019-08-18 03:45:49,644 INFO waiting for data-collector, nginx, gunicorn to die
-2019-08-18 03:45:49,820 WARN received SIGINT indicating exit request
-2019-08-18 03:45:49,967 WARN received SIGINT indicating exit request
-2019-08-18 03:45:49,971 INFO stopped: data-collector (terminated by SIGTERM)
-2019-08-18 03:45:50,019 INFO stopped: gunicorn (exit status 0)
-2019-08-18 03:45:50,029 INFO stopped: nginx (exit status 0)
-2019-08-17 17:00:58,908 INFO exited: ztask-daemon (terminated by SIGSEGV (core dumped); not expected)
-2019-08-17 17:00:58,934 INFO spawned: 'ztask-daemon' with pid 11456
-2019-08-17 17:00:58,934 INFO exited: data-collector (terminated by SIGSEGV (core dumped); not expected)
-2019-08-17 17:00:59,466 INFO spawned: 'data-collector' with pid 11482
-2019-08-17 17:01:00,980 INFO success: ztask-daemon entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
-2019-08-17 17:01:01,986 INFO success: data-collector entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
-2019-08-17 17:58:57,181 WARN received SIGTERM indicating exit request
-2019-08-17 17:58:57,181 INFO waiting for data-collector, nginx, gunicorn, ztask-daemon to die
-2019-08-17 17:58:57,234 INFO exited: nginx (exit status 0; expected)
-2019-08-17 17:58:57,235 INFO exited: ztask-daemon (terminated by SIGTERM; not expected)
-2019-08-17 17:58:57,235 INFO exited: data-collector (terminated by SIGTERM; not expected)
-2019-08-17 17:58:57,489 INFO exited: gunicorn (exit status 0; expected)
-2019-08-17 18:00:01,006 CRIT Supervisor running as root (no user in config file)
-2019-08-17 18:00:01,089 INFO RPC interface 'supervisor' initialized
-2019-08-17 18:00:01,089 CRIT Server 'unix_http_server' running without any HTTP authentication checking
-2019-08-17 18:00:01,089 INFO supervisord started with pid 7993
-2019-08-17 18:00:02,093 INFO spawned: 'nginx' with pid 8016
-2019-08-17 18:00:02,094 INFO spawned: 'gunicorn' with pid 8017
-2019-08-17 18:00:02,095 INFO spawned: 'data-collector' with pid 8018
-2019-08-17 18:00:02,096 INFO spawned: 'ztask-daemon' with pid 8019
-2019-08-17 18:00:04,391 INFO success: data-collector entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
-2019-08-17 18:00:04,391 INFO success: ztask-daemon entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
-2019-08-17 18:00:07,395 INFO success: nginx entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
-2019-08-17 18:00:07,395 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 13:47:04,489 CRIT Supervisor running as root (no user in config file)
+2019-08-23 13:47:04,498 INFO RPC interface 'supervisor' initialized
+2019-08-23 13:47:04,498 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2019-08-23 13:47:04,498 INFO supervisord started with pid 47759
+2019-08-23 13:47:05,501 INFO spawned: 'nginx' with pid 47763
+2019-08-23 13:47:05,505 INFO spawned: 'gunicorn' with pid 47764
+2019-08-23 13:47:05,508 INFO spawned: 'data-collector' with pid 47765
+2019-08-23 13:47:05,511 INFO spawned: 'ztask-daemon' with pid 47766
+2019-08-23 13:47:07,525 INFO success: data-collector entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 13:47:07,525 INFO success: ztask-daemon entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 13:47:10,530 INFO success: nginx entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 13:47:10,530 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 14:00:56,662 WARN received SIGINT indicating exit request
+2019-08-23 14:00:56,663 INFO waiting for data-collector, nginx, gunicorn, ztask-daemon to die
+2019-08-23 14:00:56,872 WARN received SIGINT indicating exit request
+2019-08-23 14:00:56,874 INFO stopped: ztask-daemon (terminated by SIGTERM)
+2019-08-23 14:00:56,877 INFO stopped: data-collector (terminated by SIGTERM)
+2019-08-23 14:00:56,976 INFO stopped: gunicorn (exit status 0)
+2019-08-23 14:00:56,984 INFO stopped: nginx (exit status 0)
+2019-08-23 14:00:57,990 CRIT Supervisor running as root (no user in config file)
+2019-08-23 14:00:57,996 INFO RPC interface 'supervisor' initialized
+2019-08-23 14:00:57,996 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2019-08-23 14:00:57,996 INFO supervisord started with pid 49709
+2019-08-23 14:00:58,999 INFO spawned: 'nginx' with pid 49714
+2019-08-23 14:00:59,000 INFO spawned: 'gunicorn' with pid 49715
+2019-08-23 14:00:59,001 INFO spawned: 'data-collector' with pid 49716
+2019-08-23 14:00:59,002 INFO spawned: 'ztask-daemon' with pid 49717
+2019-08-23 14:01:01,008 INFO success: data-collector entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 14:01:01,008 INFO success: ztask-daemon entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 14:01:04,839 INFO success: nginx entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 14:01:04,839 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 14:29:14,147 WARN received SIGINT indicating exit request
+2019-08-23 14:29:14,147 INFO waiting for data-collector, nginx, gunicorn, ztask-daemon to die
+2019-08-23 14:29:14,385 WARN received SIGINT indicating exit request
+2019-08-23 14:29:14,387 INFO stopped: ztask-daemon (terminated by SIGTERM)
+2019-08-23 14:29:14,391 INFO stopped: data-collector (terminated by SIGTERM)
+2019-08-23 14:29:14,453 INFO stopped: gunicorn (exit status 0)
+2019-08-23 14:29:14,461 INFO stopped: nginx (exit status 0)
+2019-08-23 14:29:15,826 CRIT Supervisor running as root (no user in config file)
+2019-08-23 14:29:15,834 INFO RPC interface 'supervisor' initialized
+2019-08-23 14:29:15,834 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2019-08-23 14:29:15,834 INFO supervisord started with pid 53051
+2019-08-23 14:29:16,838 INFO spawned: 'nginx' with pid 53055
+2019-08-23 14:29:16,842 INFO spawned: 'gunicorn' with pid 53056
+2019-08-23 14:29:16,846 INFO spawned: 'data-collector' with pid 53057
+2019-08-23 14:29:16,852 INFO spawned: 'ztask-daemon' with pid 53058
+2019-08-23 14:29:18,866 INFO success: data-collector entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 14:29:18,867 INFO success: ztask-daemon entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 14:29:21,883 INFO success: nginx entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 14:29:21,883 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 15:20:27,256 WARN killing 'nginx' (53055) with SIGKILL
+2019-08-23 15:20:27,256 INFO stopped: nginx (terminated by SIGKILL)
+2019-08-23 15:20:28,261 INFO spawned: 'nginx' with pid 59572
+2019-08-23 15:20:33,277 INFO success: nginx entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 15:30:22,966 WARN received SIGINT indicating exit request
+2019-08-23 15:30:22,966 INFO waiting for data-collector, nginx, gunicorn, ztask-daemon to die
+2019-08-23 15:30:23,153 WARN received SIGINT indicating exit request
+2019-08-23 15:30:23,155 INFO stopped: ztask-daemon (terminated by SIGTERM)
+2019-08-23 15:30:23,159 INFO stopped: data-collector (terminated by SIGTERM)
+2019-08-23 15:30:23,210 INFO stopped: gunicorn (exit status 0)
+2019-08-23 15:30:23,218 INFO stopped: nginx (exit status 0)
+2019-08-23 15:30:25,919 CRIT Supervisor running as root (no user in config file)
+2019-08-23 15:30:25,925 INFO RPC interface 'supervisor' initialized
+2019-08-23 15:30:25,925 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2019-08-23 15:30:25,925 INFO supervisord started with pid 60560
+2019-08-23 15:30:26,928 INFO spawned: 'nginx' with pid 60565
+2019-08-23 15:30:26,929 INFO spawned: 'gunicorn' with pid 60566
+2019-08-23 15:30:26,930 INFO spawned: 'data-collector' with pid 60567
+2019-08-23 15:30:26,931 INFO spawned: 'ztask-daemon' with pid 60568
+2019-08-23 15:30:28,938 INFO success: data-collector entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 15:30:28,938 INFO success: ztask-daemon entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 15:30:31,943 INFO success: nginx entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 15:30:31,943 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 15:38:28,599 WARN received SIGINT indicating exit request
+2019-08-23 15:38:28,599 INFO waiting for data-collector, nginx, gunicorn, ztask-daemon to die
+2019-08-23 15:38:28,776 WARN received SIGINT indicating exit request
+2019-08-23 15:38:28,781 INFO stopped: ztask-daemon (terminated by SIGTERM)
+2019-08-23 15:38:28,785 INFO stopped: data-collector (terminated by SIGTERM)
+2019-08-23 15:38:28,837 INFO stopped: gunicorn (exit status 0)
+2019-08-23 15:38:28,848 INFO stopped: nginx (exit status 0)
+2019-08-23 17:21:58,507 CRIT Supervisor running as root (no user in config file)
+2019-08-23 17:21:58,550 INFO RPC interface 'supervisor' initialized
+2019-08-23 17:21:58,550 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2019-08-23 17:21:58,551 INFO supervisord started with pid 71666
+2019-08-23 17:21:59,553 INFO spawned: 'nginx' with pid 71670
+2019-08-23 17:21:59,554 INFO spawned: 'gunicorn' with pid 71671
+2019-08-23 17:21:59,556 INFO spawned: 'data-collector' with pid 71672
+2019-08-23 17:21:59,557 INFO spawned: 'ztask-daemon' with pid 71673
+2019-08-23 17:22:01,578 INFO success: data-collector entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 17:22:01,578 INFO success: ztask-daemon entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 17:22:04,584 INFO success: nginx entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 17:22:04,584 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 17:23:59,929 WARN received SIGINT indicating exit request
+2019-08-23 17:23:59,929 INFO waiting for data-collector, nginx, gunicorn, ztask-daemon to die
+2019-08-23 17:24:00,162 WARN received SIGINT indicating exit request
+2019-08-23 17:24:00,170 INFO stopped: ztask-daemon (terminated by SIGTERM)
+2019-08-23 17:24:00,174 INFO stopped: data-collector (terminated by SIGTERM)
+2019-08-23 17:24:00,221 INFO stopped: gunicorn (exit status 0)
+2019-08-23 17:24:00,231 INFO stopped: nginx (exit status 0)
+2019-08-23 17:24:01,196 CRIT Supervisor running as root (no user in config file)
+2019-08-23 17:24:01,203 INFO RPC interface 'supervisor' initialized
+2019-08-23 17:24:01,203 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2019-08-23 17:24:01,203 INFO supervisord started with pid 72313
+2019-08-23 17:24:02,205 INFO spawned: 'nginx' with pid 72317
+2019-08-23 17:24:02,207 INFO spawned: 'gunicorn' with pid 72318
+2019-08-23 17:24:02,208 INFO spawned: 'data-collector' with pid 72319
+2019-08-23 17:24:02,209 INFO spawned: 'ztask-daemon' with pid 72320
+2019-08-23 17:24:04,759 INFO success: data-collector entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 17:24:04,760 INFO success: ztask-daemon entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 17:24:07,765 INFO success: nginx entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 17:24:07,765 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 17:40:16,082 WARN received SIGINT indicating exit request
+2019-08-23 17:40:16,082 INFO waiting for data-collector, nginx, gunicorn, ztask-daemon to die
+2019-08-23 17:40:16,282 WARN received SIGINT indicating exit request
+2019-08-23 17:40:16,285 INFO stopped: ztask-daemon (terminated by SIGTERM)
+2019-08-23 17:40:16,290 INFO stopped: data-collector (terminated by SIGTERM)
+2019-08-23 17:40:16,371 INFO stopped: gunicorn (exit status 0)
+2019-08-23 17:40:16,377 INFO stopped: nginx (exit status 0)
+2019-08-23 06:20:37,618 CRIT Supervisor running as root (no user in config file)
+2019-08-23 06:20:37,640 INFO RPC interface 'supervisor' initialized
+2019-08-23 06:20:37,641 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2019-08-23 06:20:37,641 INFO supervisord started with pid 17578
+2019-08-23 06:20:38,643 INFO spawned: 'nginx' with pid 17581
+2019-08-23 06:20:38,644 INFO spawned: 'gunicorn' with pid 17582
+2019-08-23 06:20:38,646 INFO spawned: 'data-collector' with pid 17583
+2019-08-23 06:20:38,647 INFO spawned: 'ztask-daemon' with pid 17584
+2019-08-23 06:20:41,159 INFO success: data-collector entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 06:20:41,159 INFO success: ztask-daemon entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 06:20:44,165 INFO success: nginx entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 06:20:44,165 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 06:35:20,350 WARN received SIGINT indicating exit request
+2019-08-23 06:35:20,350 INFO waiting for data-collector, nginx, gunicorn, ztask-daemon to die
+2019-08-23 06:35:20,514 WARN received SIGINT indicating exit request
+2019-08-23 06:35:20,521 INFO stopped: ztask-daemon (terminated by SIGTERM)
+2019-08-23 06:35:20,524 INFO stopped: data-collector (terminated by SIGTERM)
+2019-08-23 06:35:20,579 INFO stopped: gunicorn (exit status 0)
+2019-08-23 06:35:20,590 INFO stopped: nginx (exit status 0)
+2019-08-23 06:35:21,902 CRIT Supervisor running as root (no user in config file)
+2019-08-23 06:35:21,908 INFO RPC interface 'supervisor' initialized
+2019-08-23 06:35:21,908 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2019-08-23 06:35:21,908 INFO supervisord started with pid 20140
+2019-08-23 06:35:22,911 INFO spawned: 'nginx' with pid 20143
+2019-08-23 06:35:22,912 INFO spawned: 'gunicorn' with pid 20144
+2019-08-23 06:35:22,913 INFO spawned: 'data-collector' with pid 20145
+2019-08-23 06:35:22,914 INFO spawned: 'ztask-daemon' with pid 20146
+2019-08-23 06:35:25,311 INFO success: data-collector entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 06:35:25,311 INFO success: ztask-daemon entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 06:35:28,556 INFO success: nginx entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 06:35:28,556 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 06:48:25,173 WARN received SIGINT indicating exit request
+2019-08-23 06:48:25,173 INFO waiting for data-collector, nginx, gunicorn, ztask-daemon to die
+2019-08-23 06:48:25,357 WARN received SIGINT indicating exit request
+2019-08-23 06:48:25,360 INFO stopped: ztask-daemon (terminated by SIGTERM)
+2019-08-23 06:48:25,367 INFO stopped: data-collector (terminated by SIGTERM)
+2019-08-23 06:48:25,425 INFO stopped: gunicorn (exit status 0)
+2019-08-23 06:48:25,435 INFO stopped: nginx (exit status 0)
+2019-08-23 06:48:26,622 CRIT Supervisor running as root (no user in config file)
+2019-08-23 06:48:26,628 INFO RPC interface 'supervisor' initialized
+2019-08-23 06:48:26,628 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2019-08-23 06:48:26,628 INFO supervisord started with pid 25162
+2019-08-23 06:48:27,631 INFO spawned: 'nginx' with pid 25165
+2019-08-23 06:48:27,633 INFO spawned: 'gunicorn' with pid 25166
+2019-08-23 06:48:27,634 INFO spawned: 'data-collector' with pid 25167
+2019-08-23 06:48:27,635 INFO spawned: 'ztask-daemon' with pid 25168
+2019-08-23 06:48:27,776 INFO exited: data-collector (exit status 1; not expected)
+2019-08-23 06:48:28,012 INFO exited: gunicorn (exit status 3; not expected)
+2019-08-23 06:48:28,133 INFO exited: ztask-daemon (exit status 1; not expected)
+2019-08-23 06:48:29,136 INFO spawned: 'gunicorn' with pid 25214
+2019-08-23 06:48:29,137 INFO spawned: 'data-collector' with pid 25215
+2019-08-23 06:48:29,138 INFO spawned: 'ztask-daemon' with pid 25216
+2019-08-23 06:48:29,275 INFO exited: data-collector (exit status 1; not expected)
+2019-08-23 06:48:29,620 INFO exited: ztask-daemon (exit status 1; not expected)
+2019-08-23 06:48:29,674 INFO exited: gunicorn (exit status 1; not expected)
+2019-08-23 06:48:31,679 INFO spawned: 'gunicorn' with pid 25268
+2019-08-23 06:48:31,681 INFO spawned: 'data-collector' with pid 25269
+2019-08-23 06:48:31,682 INFO spawned: 'ztask-daemon' with pid 25270
+2019-08-23 06:48:31,826 INFO exited: data-collector (exit status 1; not expected)
+2019-08-23 06:48:32,174 INFO exited: ztask-daemon (exit status 1; not expected)
+2019-08-23 06:48:32,204 INFO exited: gunicorn (exit status 1; not expected)
+2019-08-23 06:48:33,206 INFO success: nginx entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 06:48:35,211 INFO spawned: 'gunicorn' with pid 25322
+2019-08-23 06:48:35,212 INFO spawned: 'data-collector' with pid 25323
+2019-08-23 06:48:35,213 INFO spawned: 'ztask-daemon' with pid 25324
+2019-08-23 06:48:35,426 INFO exited: data-collector (exit status 1; not expected)
+2019-08-23 06:48:35,649 INFO gave up: data-collector entered FATAL state, too many start retries too quickly
+2019-08-23 06:48:35,888 INFO exited: ztask-daemon (exit status 1; not expected)
+2019-08-23 06:48:35,906 INFO gave up: ztask-daemon entered FATAL state, too many start retries too quickly
+2019-08-23 06:48:35,920 INFO exited: gunicorn (exit status 1; not expected)
+2019-08-23 06:48:36,922 INFO gave up: gunicorn entered FATAL state, too many start retries too quickly
+2019-08-23 06:48:55,117 WARN received SIGINT indicating exit request
+2019-08-23 06:48:55,117 INFO waiting for nginx to die
+2019-08-23 06:48:55,319 WARN received SIGINT indicating exit request
+2019-08-23 06:48:55,462 WARN received SIGINT indicating exit request
+2019-08-23 06:48:55,589 WARN received SIGINT indicating exit request
+2019-08-23 06:48:55,757 WARN received SIGINT indicating exit request
+2019-08-23 06:48:55,763 INFO stopped: nginx (exit status 0)
+2019-08-23 06:48:56,885 CRIT Supervisor running as root (no user in config file)
+2019-08-23 06:48:56,891 INFO RPC interface 'supervisor' initialized
+2019-08-23 06:48:56,891 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2019-08-23 06:48:56,891 INFO supervisord started with pid 25376
+2019-08-23 06:48:57,893 INFO spawned: 'nginx' with pid 25379
+2019-08-23 06:48:57,895 INFO spawned: 'gunicorn' with pid 25380
+2019-08-23 06:48:57,896 INFO spawned: 'data-collector' with pid 25381
+2019-08-23 06:48:57,897 INFO spawned: 'ztask-daemon' with pid 25382
+2019-08-23 06:49:00,834 INFO success: data-collector entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 06:49:00,834 INFO success: ztask-daemon entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 06:49:03,027 INFO success: nginx entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 06:49:03,027 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 06:58:21,839 WARN received SIGINT indicating exit request
+2019-08-23 06:58:21,839 INFO waiting for data-collector, nginx, gunicorn, ztask-daemon to die
+2019-08-23 06:58:22,010 WARN received SIGINT indicating exit request
+2019-08-23 06:58:22,013 INFO stopped: ztask-daemon (terminated by SIGTERM)
+2019-08-23 06:58:22,018 INFO stopped: data-collector (terminated by SIGTERM)
+2019-08-23 06:58:22,073 INFO stopped: gunicorn (exit status 0)
+2019-08-23 06:58:22,080 INFO stopped: nginx (exit status 0)
+2019-08-23 06:58:23,204 CRIT Supervisor running as root (no user in config file)
+2019-08-23 06:58:23,210 INFO RPC interface 'supervisor' initialized
+2019-08-23 06:58:23,210 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2019-08-23 06:58:23,210 INFO supervisord started with pid 26898
+2019-08-23 06:58:24,212 INFO spawned: 'nginx' with pid 26901
+2019-08-23 06:58:24,214 INFO spawned: 'gunicorn' with pid 26902
+2019-08-23 06:58:24,215 INFO spawned: 'data-collector' with pid 26903
+2019-08-23 06:58:24,216 INFO spawned: 'ztask-daemon' with pid 26904
+2019-08-23 06:58:26,652 INFO success: data-collector entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 06:58:26,652 INFO success: ztask-daemon entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 06:58:29,487 INFO success: nginx entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 06:58:29,487 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 07:31:45,532 WARN received SIGINT indicating exit request
+2019-08-23 07:31:45,532 INFO waiting for data-collector, nginx, gunicorn, ztask-daemon to die
+2019-08-23 07:31:45,729 WARN received SIGINT indicating exit request
+2019-08-23 07:31:45,733 INFO stopped: ztask-daemon (terminated by SIGTERM)
+2019-08-23 07:31:45,879 INFO stopped: data-collector (terminated by SIGTERM)
+2019-08-23 07:31:45,881 WARN received SIGINT indicating exit request
+2019-08-23 07:31:45,937 INFO stopped: gunicorn (exit status 0)
+2019-08-23 07:31:45,949 INFO stopped: nginx (exit status 0)
+2019-08-23 07:31:47,348 CRIT Supervisor running as root (no user in config file)
+2019-08-23 07:31:47,355 INFO RPC interface 'supervisor' initialized
+2019-08-23 07:31:47,355 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2019-08-23 07:31:47,355 INFO supervisord started with pid 69325
+2019-08-23 07:31:48,358 INFO spawned: 'nginx' with pid 69328
+2019-08-23 07:31:48,359 INFO spawned: 'gunicorn' with pid 69329
+2019-08-23 07:31:48,361 INFO spawned: 'data-collector' with pid 69330
+2019-08-23 07:31:48,362 INFO spawned: 'ztask-daemon' with pid 69331
+2019-08-23 07:31:50,540 INFO success: data-collector entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 07:31:50,540 INFO success: ztask-daemon entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 07:31:53,961 INFO success: nginx entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 07:31:53,961 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 10:44:02,524 WARN received SIGINT indicating exit request
+2019-08-23 10:44:02,525 INFO waiting for data-collector, nginx, gunicorn, ztask-daemon to die
+2019-08-23 10:44:02,699 WARN received SIGINT indicating exit request
+2019-08-23 10:44:02,845 INFO stopped: ztask-daemon (terminated by SIGTERM)
+2019-08-23 10:44:02,850 INFO stopped: data-collector (terminated by SIGTERM)
+2019-08-23 10:44:02,850 WARN received SIGINT indicating exit request
+2019-08-23 10:44:02,945 INFO stopped: gunicorn (exit status 0)
+2019-08-23 10:44:02,952 INFO stopped: nginx (exit status 0)
+2019-08-23 10:54:50,510 CRIT Supervisor running as root (no user in config file)
+2019-08-23 10:54:50,518 INFO RPC interface 'supervisor' initialized
+2019-08-23 10:54:50,518 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2019-08-23 10:54:50,518 INFO supervisord started with pid 87506
+2019-08-23 10:54:51,521 INFO spawned: 'nginx' with pid 87509
+2019-08-23 10:54:51,525 INFO spawned: 'gunicorn' with pid 87510
+2019-08-23 10:54:51,527 INFO spawned: 'data-collector' with pid 87511
+2019-08-23 10:54:51,529 INFO spawned: 'ztask-daemon' with pid 87512
+2019-08-23 10:54:53,935 INFO success: data-collector entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 10:54:53,935 INFO success: ztask-daemon entered RUNNING state, process has stayed up for > than 2 seconds (startsecs)
+2019-08-23 10:54:56,940 INFO success: nginx entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)
+2019-08-23 10:54:56,940 INFO success: gunicorn entered RUNNING state, process has stayed up for > than 5 seconds (startsecs)

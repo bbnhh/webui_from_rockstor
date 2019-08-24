@@ -7896,7 +7896,290 @@ Traceback (most recent call last):
 CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
 <Greenlet at 0x7f3ea7b5c370: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f3ead7090d0>>> failed with CommandException
 
-/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
+    self.error('unsupported_kernel', str(e))
+AttributeError: 'SysinfoNamespace' object has no attribute 'error'
+<Greenlet at 0x7fadd71667d0: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7fadd712b0d0>>> failed with AttributeError
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7fadd71665f0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fadd712b0d0>>> failed with CommandException
+
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
+    self.error('unsupported_kernel', str(e))
+AttributeError: 'SysinfoNamespace' object has no attribute 'error'
+<Greenlet at 0x7f216ffca870: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f216ff8f0d0>>> failed with AttributeError
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f216ffca690: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f216ff8f0d0>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 1064, in pool_dev_stats
+    for p in Pool.objects.all():
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/query.py", line 162, in __iter__
+    self._fetch_all()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/query.py", line 965, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/query.py", line 238, in iterator
+    results = compiler.execute_sql()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/sql/compiler.py", line 840, in execute_sql
+    cursor.execute(sql, params)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/utils.py", line 98, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+<Greenlet at 0x7f216ffcacd0: <bound method SysinfoNamespace.pool_dev_stats of <smart_manager.data_collector.SysinfoNamespace object at 0x7f216ff8f0d0>>> failed with OperationalError
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
+    self.error('unsupported_kernel', str(e))
+AttributeError: 'SysinfoNamespace' object has no attribute 'error'
+<Greenlet at 0x7f216ffcaaf0: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f216ff8f0d0>>> failed with AttributeError
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f216ffca910: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f216ff8f0d0>>> failed with CommandException
+
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
+    self.error('unsupported_kernel', str(e))
+AttributeError: 'SysinfoNamespace' object has no attribute 'error'
+<Greenlet at 0x7f68cda7f690: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f68cda440d0>>> failed with AttributeError
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f68cda7f4b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f68cda440d0>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
+    self.error('unsupported_kernel', str(e))
+AttributeError: 'SysinfoNamespace' object has no attribute 'error'
+<Greenlet at 0x7f68cda7feb0: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f68cda440d0>>> failed with AttributeError
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f68cda7fa50: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f68cda440d0>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
+    self.error('unsupported_kernel', str(e))
+AttributeError: 'SysinfoNamespace' object has no attribute 'error'
+<Greenlet at 0x7f68cda7f410: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f68cda440d0>>> failed with AttributeError
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f68cda7fd70: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f68cda440d0>>> failed with CommandException
+
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
+    self.error('unsupported_kernel', str(e))
+AttributeError: 'SysinfoNamespace' object has no attribute 'error'
+<Greenlet at 0x7f6ca60ef690: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6ca60b40d0>>> failed with AttributeError
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6ca60ef4b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6ca60b40d0>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 996, in prune_logs
+    save_error=False)
+  File "/opt/rockstor/src/rockstor/cli/api_wrapper.py", line 75, in api_call
+    self.set_token()
+  File "/opt/rockstor/src/rockstor/cli/api_wrapper.py", line 44, in set_token
+    app = OauthApp.objects.get(name=settings.OAUTH_INTERNAL_APP)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: OauthApp matching query does not exist.
+<Greenlet at 0x7f752b4fd410: <bound method SysinfoNamespace.prune_logs of <smart_manager.data_collector.SysinfoNamespace object at 0x7f752b51ff90>>> failed with DoesNotExist
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
+    self.error('unsupported_kernel', str(e))
+AttributeError: 'SysinfoNamespace' object has no attribute 'error'
+<Greenlet at 0x7f752b4fd370: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f752b51ff90>>> failed with AttributeError
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f752b4fd190: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f752b51ff90>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 996, in prune_logs
+    save_error=False)
+  File "/opt/rockstor/src/rockstor/cli/api_wrapper.py", line 75, in api_call
+    self.set_token()
+  File "/opt/rockstor/src/rockstor/cli/api_wrapper.py", line 44, in set_token
+    app = OauthApp.objects.get(name=settings.OAUTH_INTERNAL_APP)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: OauthApp matching query does not exist.
+<Greenlet at 0x7f627bd5d410: <bound method SysinfoNamespace.prune_logs of <smart_manager.data_collector.SysinfoNamespace object at 0x7f627bd7ff90>>> failed with DoesNotExist
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
+    self.error('unsupported_kernel', str(e))
+AttributeError: 'SysinfoNamespace' object has no attribute 'error'
+<Greenlet at 0x7f627bd5d370: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f627bd7ff90>>> failed with AttributeError
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f627bd5d190: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f627bd7ff90>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 996, in prune_logs
+    save_error=False)
+  File "/opt/rockstor/src/rockstor/cli/api_wrapper.py", line 75, in api_call
+    self.set_token()
+  File "/opt/rockstor/src/rockstor/cli/api_wrapper.py", line 44, in set_token
+    app = OauthApp.objects.get(name=settings.OAUTH_INTERNAL_APP)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: OauthApp matching query does not exist.
+<Greenlet at 0x7f627bd5d410: <bound method SysinfoNamespace.prune_logs of <smart_manager.data_collector.SysinfoNamespace object at 0x7f627bd7ff90>>> failed with DoesNotExist
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
+    self.error('unsupported_kernel', str(e))
+AttributeError: 'SysinfoNamespace' object has no attribute 'error'
+<Greenlet at 0x7f627bd5d370: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f627bd7ff90>>> failed with AttributeError
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f627bd5de10: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f627bd7ff90>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
+    self.error('unsupported_kernel', str(e))
+AttributeError: 'SysinfoNamespace' object has no attribute 'error'
+<Greenlet at 0x7f627bd5deb0: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f627bd7ff90>>> failed with AttributeError
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f627bd5d2d0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f627bd7ff90>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
   """)
 No handlers could be found for logger "smart_manager.data_collector"
 Traceback (most recent call last):
@@ -7905,7 +8188,7 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
     self.error('unsupported_kernel', str(e))
 AttributeError: 'SysinfoNamespace' object has no attribute 'error'
-<Greenlet at 0x7f334173d730: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f3341720f10>>> failed with AttributeError
+<Greenlet at 0x7f923b28c410: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f923b277550>>> failed with AttributeError
 
 Traceback (most recent call last):
   File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
@@ -7915,7 +8198,7 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
     raise e
 CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
-<Greenlet at 0x7f334173d190: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f3341720f10>>> failed with CommandException
+<Greenlet at 0x7f923b28c050: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f923b277550>>> failed with CommandException
 
 Traceback (most recent call last):
   File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
@@ -7923,7 +8206,7 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
     self.error('unsupported_kernel', str(e))
 AttributeError: 'SysinfoNamespace' object has no attribute 'error'
-<Greenlet at 0x7f334173d4b0: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f3341720f10>>> failed with AttributeError
+<Greenlet at 0x7f923b28c690: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f923b277550>>> failed with AttributeError
 
 Traceback (most recent call last):
   File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
@@ -7933,63 +8216,9 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
     raise e
 CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
-<Greenlet at 0x7f334173d2d0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f3341720f10>>> failed with CommandException
+<Greenlet at 0x7f923b28c230: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f923b277550>>> failed with CommandException
 
-Traceback (most recent call last):
-  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
-    result = self._run(*self.args, **self.kwargs)
-  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
-    self.error('unsupported_kernel', str(e))
-AttributeError: 'SysinfoNamespace' object has no attribute 'error'
-<Greenlet at 0x7f334173d0f0: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f3341720f10>>> failed with AttributeError
-
-Traceback (most recent call last):
-  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
-    result = self._run(*self.args, **self.kwargs)
-  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
-    uinfo = update_check()
-  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
-    raise e
-CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
-<Greenlet at 0x7f334173dcd0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f3341720f10>>> failed with CommandException
-
-Traceback (most recent call last):
-  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
-    result = self._run(*self.args, **self.kwargs)
-  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
-    self.error('unsupported_kernel', str(e))
-AttributeError: 'SysinfoNamespace' object has no attribute 'error'
-<Greenlet at 0x7f334173d190: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f3341720f10>>> failed with AttributeError
-
-Traceback (most recent call last):
-  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
-    result = self._run(*self.args, **self.kwargs)
-  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
-    uinfo = update_check()
-  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
-    raise e
-CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
-<Greenlet at 0x7f334173dc30: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f3341720f10>>> failed with CommandException
-
-Traceback (most recent call last):
-  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
-    result = self._run(*self.args, **self.kwargs)
-  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
-    self.error('unsupported_kernel', str(e))
-AttributeError: 'SysinfoNamespace' object has no attribute 'error'
-<Greenlet at 0x7f334173d730: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f3341720f10>>> failed with AttributeError
-
-Traceback (most recent call last):
-  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
-    result = self._run(*self.args, **self.kwargs)
-  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
-    uinfo = update_check()
-  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
-    raise e
-CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
-<Greenlet at 0x7f334173d370: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f3341720f10>>> failed with CommandException
-
-/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
   """)
 No handlers could be found for logger "smart_manager.data_collector"
 Traceback (most recent call last):
@@ -7998,7 +8227,7 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
     self.error('unsupported_kernel', str(e))
 AttributeError: 'SysinfoNamespace' object has no attribute 'error'
-<Greenlet at 0x7f2e56e9e550: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2e56ec3cd0>>> failed with AttributeError
+<Greenlet at 0x7f4f738d1690: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f4f738f4b10>>> failed with AttributeError
 
 Traceback (most recent call last):
   File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
@@ -8008,7 +8237,7 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
     raise e
 CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
-<Greenlet at 0x7f2e56e9e370: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2e56ec3cd0>>> failed with CommandException
+<Greenlet at 0x7f4f738d14b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f4f738f4b10>>> failed with CommandException
 
 Traceback (most recent call last):
   File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
@@ -8016,7 +8245,7 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
     self.error('unsupported_kernel', str(e))
 AttributeError: 'SysinfoNamespace' object has no attribute 'error'
-<Greenlet at 0x7f2e55587eb0: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2e56ec3cd0>>> failed with AttributeError
+<Greenlet at 0x7f4f738d17d0: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f4f738f4b10>>> failed with AttributeError
 
 Traceback (most recent call last):
   File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
@@ -8026,7 +8255,144 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
     raise e
 CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
-<Greenlet at 0x7f2e55587050: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2e56ec3cd0>>> failed with CommandException
+<Greenlet at 0x7f4f738d15f0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f4f738f4b10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
+    self.error('unsupported_kernel', str(e))
+AttributeError: 'SysinfoNamespace' object has no attribute 'error'
+<Greenlet at 0x7f4f738d1a50: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f4f738f4b10>>> failed with AttributeError
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f4f738d1870: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f4f738f4b10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
+    self.error('unsupported_kernel', str(e))
+AttributeError: 'SysinfoNamespace' object has no attribute 'error'
+<Greenlet at 0x7f4f738d1eb0: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f4f738f4b10>>> failed with AttributeError
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f4f738d1050: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f4f738f4b10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
+    self.error('unsupported_kernel', str(e))
+AttributeError: 'SysinfoNamespace' object has no attribute 'error'
+<Greenlet at 0x7f4f738d1e10: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f4f738f4b10>>> failed with AttributeError
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f4f738d1550: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f4f738f4b10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
+    self.error('unsupported_kernel', str(e))
+AttributeError: 'SysinfoNamespace' object has no attribute 'error'
+<Greenlet at 0x7f4f738d17d0: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f4f738f4b10>>> failed with AttributeError
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f4f738d1870: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f4f738f4b10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/bin/data-collector", line 37, in <module>
+    import smart_manager.data_collector
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 23, in <module>
+    from fs.btrfs import degraded_pools_found
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 22, in <module>
+    from system.osi import run_command, create_tmp_dir, is_share_mounted, \
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 381
+    logger.debug('AAAAAAAAAAAAAAAAAA: %s' base_root_disk)
+                                                       ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "/opt/rockstor/bin/data-collector", line 37, in <module>
+    import smart_manager.data_collector
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 23, in <module>
+    from fs.btrfs import degraded_pools_found
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 22, in <module>
+    from system.osi import run_command, create_tmp_dir, is_share_mounted, \
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 381
+    logger.debug('AAAAAAAAAAAAAAAAAA: %s' base_root_disk)
+                                                       ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "/opt/rockstor/bin/data-collector", line 37, in <module>
+    import smart_manager.data_collector
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 23, in <module>
+    from fs.btrfs import degraded_pools_found
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 22, in <module>
+    from system.osi import run_command, create_tmp_dir, is_share_mounted, \
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 381
+    logger.debug('AAAAAAAAAAAAAAAAAA: %s' base_root_disk)
+                                                       ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "/opt/rockstor/bin/data-collector", line 37, in <module>
+    import smart_manager.data_collector
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 23, in <module>
+    from fs.btrfs import degraded_pools_found
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 22, in <module>
+    from system.osi import run_command, create_tmp_dir, is_share_mounted, \
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 381
+    logger.debug('AAAAAAAAAAAAAAAAAA: %s' base_root_disk)
+                                                       ^
+SyntaxError: invalid syntax
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
+    self.error('unsupported_kernel', str(e))
+AttributeError: 'SysinfoNamespace' object has no attribute 'error'
+<Greenlet at 0x7fbb43789690: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7fbb437acb50>>> failed with AttributeError
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7fbb437894b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fbb437acb50>>> failed with CommandException
 
 disconnect handler error
 Traceback (most recent call last):
@@ -8057,7 +8423,7 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
     self.error('unsupported_kernel', str(e))
 AttributeError: 'SysinfoNamespace' object has no attribute 'error'
-<Greenlet at 0x7f2e555607d0: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2e56ec3cd0>>> failed with AttributeError
+<Greenlet at 0x7fbb41c34870: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7fbb437acb50>>> failed with AttributeError
 
 Traceback (most recent call last):
   File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
@@ -8067,7 +8433,7 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
     raise e
 CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
-<Greenlet at 0x7f2e55560410: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2e56ec3cd0>>> failed with CommandException
+<Greenlet at 0x7fbb41c34410: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fbb437acb50>>> failed with CommandException
 
 Traceback (most recent call last):
   File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
@@ -8075,7 +8441,7 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
     self.error('unsupported_kernel', str(e))
 AttributeError: 'SysinfoNamespace' object has no attribute 'error'
-<Greenlet at 0x7f2e55560d70: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2e56ec3cd0>>> failed with AttributeError
+<Greenlet at 0x7fbb41c34910: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7fbb437acb50>>> failed with AttributeError
 
 Traceback (most recent call last):
   File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
@@ -8085,7 +8451,28 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
     raise e
 CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
-<Greenlet at 0x7f2e55560870: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2e56ec3cd0>>> failed with CommandException
+<Greenlet at 0x7fbb41c344b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fbb437acb50>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
+    self.error('unsupported_kernel', str(e))
+AttributeError: 'SysinfoNamespace' object has no attribute 'error'
+<Greenlet at 0x7f10843e3690: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f1084407b50>>> failed with AttributeError
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f10843e34b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f1084407b50>>> failed with CommandException
 
 Traceback (most recent call last):
   File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
@@ -8093,7 +8480,7 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
     self.error('unsupported_kernel', str(e))
 AttributeError: 'SysinfoNamespace' object has no attribute 'error'
-<Greenlet at 0x7f2e55560e10: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2e56ec3cd0>>> failed with AttributeError
+<Greenlet at 0x7f10843e3a50: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f1084407b50>>> failed with AttributeError
 
 Traceback (most recent call last):
   File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
@@ -8103,7 +8490,7 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
     raise e
 CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
-<Greenlet at 0x7f2e555604b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2e56ec3cd0>>> failed with CommandException
+<Greenlet at 0x7f10843e3870: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f1084407b50>>> failed with CommandException
 
 Traceback (most recent call last):
   File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
@@ -8111,7 +8498,7 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
     self.error('unsupported_kernel', str(e))
 AttributeError: 'SysinfoNamespace' object has no attribute 'error'
-<Greenlet at 0x7f2e55560c30: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2e56ec3cd0>>> failed with AttributeError
+<Greenlet at 0x7f10843e3230: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f1084407b50>>> failed with AttributeError
 
 Traceback (most recent call last):
   File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
@@ -8121,7 +8508,28 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
     raise e
 CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
-<Greenlet at 0x7f2e555609b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2e56ec3cd0>>> failed with CommandException
+<Greenlet at 0x7f10843e3910: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f1084407b50>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
+    self.error('unsupported_kernel', str(e))
+AttributeError: 'SysinfoNamespace' object has no attribute 'error'
+<Greenlet at 0x7f5bfa2b54b0: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f5bfa562a10>>> failed with AttributeError
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f5bfa2b52d0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f5bfa562a10>>> failed with CommandException
 
 Traceback (most recent call last):
   File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
@@ -8129,7 +8537,7 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
     self.error('unsupported_kernel', str(e))
 AttributeError: 'SysinfoNamespace' object has no attribute 'error'
-<Greenlet at 0x7f2e565f7730: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2e56ec3cd0>>> failed with AttributeError
+<Greenlet at 0x7f5bfa2b5690: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f5bfa562a10>>> failed with AttributeError
 
 Traceback (most recent call last):
   File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
@@ -8139,7 +8547,7 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
     raise e
 CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
-<Greenlet at 0x7f2e565f7550: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2e56ec3cd0>>> failed with CommandException
+<Greenlet at 0x7f5bfa2b54b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f5bfa562a10>>> failed with CommandException
 
 Traceback (most recent call last):
   File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
@@ -8147,7 +8555,7 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
     self.error('unsupported_kernel', str(e))
 AttributeError: 'SysinfoNamespace' object has no attribute 'error'
-<Greenlet at 0x7f2e55560f50: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2e56ec3cd0>>> failed with AttributeError
+<Greenlet at 0x7f5bfa2b5190: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f5bfa562a10>>> failed with AttributeError
 
 Traceback (most recent call last):
   File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
@@ -8157,7 +8565,28 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
     raise e
 CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
-<Greenlet at 0x7f2e55560a50: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2e56ec3cd0>>> failed with CommandException
+<Greenlet at 0x7f5bfa2b5730: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f5bfa562a10>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
+    self.error('unsupported_kernel', str(e))
+AttributeError: 'SysinfoNamespace' object has no attribute 'error'
+<Greenlet at 0x7f8cb74b9730: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f8cb74dee50>>> failed with AttributeError
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f8cb74b9550: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f8cb74dee50>>> failed with CommandException
 
 Traceback (most recent call last):
   File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
@@ -8165,7 +8594,7 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
     self.error('unsupported_kernel', str(e))
 AttributeError: 'SysinfoNamespace' object has no attribute 'error'
-<Greenlet at 0x7f2e55560550: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2e56ec3cd0>>> failed with AttributeError
+<Greenlet at 0x7f8cb74b9a50: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f8cb74dee50>>> failed with AttributeError
 
 Traceback (most recent call last):
   File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
@@ -8175,7 +8604,7 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
     raise e
 CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
-<Greenlet at 0x7f2e55560cd0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2e56ec3cd0>>> failed with CommandException
+<Greenlet at 0x7f8cb74b9870: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f8cb74dee50>>> failed with CommandException
 
 Traceback (most recent call last):
   File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
@@ -8183,7 +8612,7 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 913, in send_kernel_info
     self.error('unsupported_kernel', str(e))
 AttributeError: 'SysinfoNamespace' object has no attribute 'error'
-<Greenlet at 0x7f2e55560730: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2e56ec3cd0>>> failed with AttributeError
+<Greenlet at 0x7f8cb48c3230: <bound method SysinfoNamespace.send_kernel_info of <smart_manager.data_collector.SysinfoNamespace object at 0x7f8cb74dee50>>> failed with AttributeError
 
 Traceback (most recent call last):
   File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
@@ -8193,5 +8622,5 @@ Traceback (most recent call last):
   File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
     raise e
 CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
-<Greenlet at 0x7f2e55560c30: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2e56ec3cd0>>> failed with CommandException
+<Greenlet at 0x7f8cb48c3af0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f8cb74dee50>>> failed with CommandException
 
