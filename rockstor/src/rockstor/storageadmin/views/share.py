@@ -226,41 +226,43 @@ class ShareDetailView(ShareMixin, rfc.GenericView):
 
     @transaction.atomic
     def put(self, request, sid):
-        logger.debug('LLLLLLPUT')
+        #logger.debug('LLLLLLPUT')
         with self._handle_exception(request):
             share = self._validate_share(request, sid)
             logger.error(request.data)
             if ('size' in request.data):
                 new_size = self._validate_share_size(request, share.pool)
                 qid = qgroup_id(share.pool, share.subvol_name)
-                cur_rusage, cur_eusage = volume_usage(share.pool, qid)
-                if (new_size < cur_rusage):
-                    e_msg = ('Unable to resize because requested new '
-                             'size {} KB is less than current usage {} KB '
-                             'of the share.').format(new_size, cur_rusage)
-                    handle_exception(Exception(e_msg), request)
+                #logger.debug('SIZEEEEE')
+                #cur_rusage, cur_eusage = volume_usage(share.pool, qid)
+                #if (new_size < cur_rusage):
+                #    e_msg = ('Unable to resize because requested new '
+                #             'size {} KB is less than current usage {} KB '
+                #             'of the share.').format(new_size, cur_rusage)
+                #    handle_exception(Exception(e_msg), request)
                 # quota maintenance
-                if share.pool.quotas_enabled:
-                    # Only try create / update quotas if they are enabled,
-                    # pqgroup of PQGROUP_DEFAULT (-1/-1) indicates no pqgroup,
-                    # ie quotas were disabled when update was requested.
-                    if share.pqgroup == PQGROUP_DEFAULT or \
-                            not share.pqgroup_exist:
-                        # if quotas were disabled or pqgroup non-existent.
-                        share.pqgroup = qgroup_create(share.pool)
-                        share.save()
-                    if share.pqgroup is not PQGROUP_DEFAULT:
-                        # Only update quota and assign if now non default as
-                        # default can also indicate Read-only fs at this point.
-                        update_quota(share.pool, share.pqgroup,
-                                     new_size * 1024)
-                        share_pqgroup_assign(share.pqgroup, share)
-                else:
-                    # Our pool's quotas are disabled so reset pqgroup to -1/-1.
-                    if share.pqgroup != PQGROUP_DEFAULT:
-                        # Only reset if necessary
-                        share.pqgroup = PQGROUP_DEFAULT
-                        share.save()
+                #if share.pool.quotas_enabled:
+                #    # Only try create / update quotas if they are enabled,
+                #    # pqgroup of PQGROUP_DEFAULT (-1/-1) indicates no pqgroup,
+                #    # ie quotas were disabled when update was requested.
+                #    if share.pqgroup == PQGROUP_DEFAULT or \
+                #            not share.pqgroup_exist:
+                #        # if quotas were disabled or pqgroup non-existent.
+                #        share.pqgroup = qgroup_create(share.pool)
+                #        share.save()
+                #    if share.pqgroup is not PQGROUP_DEFAULT:
+                #        # Only update quota and assign if now non default as
+                #        # default can also indicate Read-only fs at this point.
+                #        update_quota(share.pool, share.pqgroup,
+                #                     new_size * 1024)
+                #        share_pqgroup_assign(share.pqgroup, share)
+                #else:
+                #    # Our pool's quotas are disabled so reset pqgroup to -1/-1.
+                #    if share.pqgroup != PQGROUP_DEFAULT:
+                #        # Only reset if necessary
+                #        share.pqgroup = PQGROUP_DEFAULT
+                #        share.save()
+                update_quota(share.pool,share.name,new_size * 1024)
                 share.size = new_size
             if ('compression' in request.data):
                 new_compression = self._validate_compression(request)

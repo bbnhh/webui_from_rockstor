@@ -1262,23 +1262,35 @@ def qgroup_assign(qid, pqid, mnt_pt):
         raise e
 
 
-def update_quota(pool, qgroup, size_bytes):
+#def update_quota(pool, qgroup, size_bytes):
+def update_quota(pool, sharename ,size_bytes):
+    quota = 'quota=%s' %size_bytes
+    name = pool.name+'/'+sharename
+    cmd = [ZFS, 'set', quota, name]
+    #logger.debug('quoTAAAAAA')
+    #try:
+    out, err, rc = run_command(cmd, log=True)
+    #except CommandException as e:
+        # ro mount options will result in o= [''], rc = 1 and e[0] =
+    #    emsg = e
+
     # TODO: consider changing qgroup to pqgroup if we are only used this way.
-    root_pool_mnt = mount_root(pool)
+    #root_pool_mnt = mount_root(pool)
     # Until btrfs adds better support for qgroup limits. We'll not set limits.
     # It looks like we'll see the fixes in 4.2 and final ones by 4.3.
     # Update: Further quota improvements look to be landing in 4.15.
     # cmd = [BTRFS, 'qgroup', 'limit', str(size_bytes), qgroup, root_pool_mnt]
-    cmd = [BTRFS, 'qgroup', 'limit', 'none', qgroup, root_pool_mnt]
+    #cmd = [BTRFS, 'qgroup', 'limit', 'none', qgroup, root_pool_mnt]
     # Set defaults in case our run_command fails to assign them.
-    out = err = ['']
-    rc = 0
-    if qgroup == PQGROUP_DEFAULT:
-        # We have a 'quotas disabled' or 'Read-only' qgroup value flag,
-        # log and return blank.
-        logger.info('Pool: {} ignoring '
-                    'update_quota on {}'.format(pool.name, qgroup))
-        return out, err, rc
+    #out = err = ['']
+    #rc = 0
+    #if qgroup == PQGROUP_DEFAULT:
+    #    # We have a 'quotas disabled' or 'Read-only' qgroup value flag,
+    #    # log and return blank.
+    #    logger.info('Pool: {} ignoring '
+    #                'update_quota on {}'.format(pool.name, qgroup))
+    #    return out, err, rc
+    '''
     try:
         out, err, rc = run_command(cmd, log=True)
     except CommandException as e:
@@ -1312,6 +1324,7 @@ def update_quota(pool, qgroup, size_bytes):
         # raise an exception as usual otherwise
         raise
     return out, err, rc
+    '''
 
 def snap_usage(pool,name):
     return 0    
@@ -1333,14 +1346,21 @@ def volume_usage(pool, volume_id, pvolume_id=None):
     pertain to the qgroupid=volume_id the second 2, if present, are for the
     qgroupid=pvolume_id. I.e [rfer, excl, rfer, excl]
     """
+    #zfs list -H -o avail po
+    cmd = [ZFS, 'list', '-H', '-o', 'avail', pool.name]
     # Obtain path to share in pool, this preserved because
     # granting pool exists
-    root_pool_mnt = mount_root(pool)
-    cmd = [BTRFS, 'subvolume', 'list', root_pool_mnt]
+    #root_pool_mnt = mount_root(pool)
+    #cmd = [BTRFS, 'subvolume', 'list', root_pool_mnt]
     out, err, rc = run_command(cmd, log=True)
-    short_id = volume_id.split('/')[1]
-    volume_dir = ''
+    #short_id = volume_id.split('/')[1]
+    #volume_dir = ''
 
+    return out,out
+
+
+
+    '''
     for line in out:
         fields = line.split()
         if (len(fields) > 0 and short_id in fields[1]):
@@ -1353,6 +1373,7 @@ def volume_usage(pool, volume_id, pvolume_id=None):
                                                        settings.SYS_VOL_LABEL):
                 volume_dir = volume_dir.replace(root_pool_mnt, '', 1)
             break
+    '''
     """
     Rockstor volume/subvolume hierarchy is not standard
     and Snapshots actually not always under Share but on Pool,
@@ -1366,6 +1387,7 @@ def volume_usage(pool, volume_id, pvolume_id=None):
     Note: 2015/* rfer and excl sizes are always equal so to compute
     current real size we can indistinctly use one of them.
     """
+    '''
     cmd = [BTRFS, 'qgroup', 'show', volume_dir]
     out, err, rc = run_command(cmd, log=True, throw=False)
     volume_id_sizes = [0, 0]
@@ -1386,6 +1408,7 @@ def volume_usage(pool, volume_id, pvolume_id=None):
     if pvolume_id is None:
         return volume_id_sizes
     return volume_id_sizes + pvolume_id_sizes
+    '''
 
 
 def shares_usage(pool, share_map, snap_map):
@@ -1459,7 +1482,9 @@ def pool_usage(mnt_pt):
     """
 #    cmd = [BTRFS, 'fi', 'usage', '-b', mnt_pt]
     #"zpool list -H -o free po"
-    cmd = [ZPOOL, 'list', '-H', '-o', 'free', mnt_pt]
+    #cmd = [ZPOOL, 'list', '-H', '-o', 'free', mnt_pt]
+    cmd = [ZFS, 'list', '-H', '-o', 'available', mnt_pt]
+
     #cmd = "/usr/sbin/zpool list -H -o free %s" %mnt_pt
     #out, rc = shell_call_rc(cmd)
     #cmd = ZPOOL, 'list', '-H', '-o', 'free', mnt_pt
