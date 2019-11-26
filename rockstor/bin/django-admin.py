@@ -6,7 +6,7 @@ sys.path[0:0] = [
   '/opt/rockstor/src/rockstor',
   '/opt/rockstor/eggs/supervisor-3.0b1-py2.7.egg',
   '/opt/rockstor/eggs/meld3-1.0.2-py2.7.egg',
-  '/opt/rockstor/eggs/setuptools-41.0.1-py2.7.egg',
+  '/opt/rockstor/eggs/setuptools-42.0.0-py2.7.egg',
   '/opt/rockstor/eggs/distro-1.4.0-py2.7.egg',
   '/opt/rockstor/eggs/six-1.10.0-py2.7.egg',
   '/opt/rockstor/eggs/requests-1.1.0-py2.7.egg',

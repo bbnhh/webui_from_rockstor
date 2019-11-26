@@ -27,7 +27,7 @@ sys.path[0:0] = [
   '/opt/rockstor/eggs/coverage-4.5.3-py2.7-linux-x86_64.egg',
   '/opt/rockstor/eggs/chardet-2.3.0-py2.7.egg',
   '/opt/rockstor/eggs/URLObject-2.1.1-py2.7.egg',
-  '/opt/rockstor/eggs/setuptools-41.0.1-py2.7.egg',
+  '/opt/rockstor/eggs/setuptools-42.0.0-py2.7.egg',
   '/opt/rockstor/eggs/python_engineio-3.8.1-py2.7.egg',
   '/opt/rockstor/eggs/greenlet-0.4.15-py2.7-linux-x86_64.egg',
   '/opt/rockstor/eggs/futures-3.2.0-py2.7.egg',

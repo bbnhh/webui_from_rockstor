@@ -30,7 +30,7 @@ sys.path[0:0] = [
   '/opt/rockstor/eggs/futures-3.2.0-py2.7.egg',
   '/opt/rockstor/eggs/oauthlib-1.0.1-py2.7.egg',
   '/opt/rockstor/eggs/django_braces-1.13.0-py2.7.egg',
-  '/opt/rockstor/eggs/setuptools-41.0.1-py2.7.egg',
+  '/opt/rockstor/eggs/setuptools-42.0.0-py2.7.egg',
   ]
 
 import gunicorn.app.wsgiapp
