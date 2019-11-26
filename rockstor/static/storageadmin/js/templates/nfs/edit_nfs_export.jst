@@ -23,9 +23,9 @@
 <div class="col-md-8">
 <div class="panel panel-default">
 {{#if nfsExportNotEmpty}}
-<div class="panel panel-heading">Edit NFS export</div>
+<div class="panel panel-heading">编辑NFS导出</div>
 {{else}}
-<div class="panel panel-heading">Add NFS export</div>
+<div class="panel panel-heading">添加NFS导出</div>
 {{/if}}
 <div class="panel-body">
       <form class="form-horizontal" id="edit-nfs-export-form" name="aform" >
@@ -33,7 +33,7 @@
 
         <!-- Shares -->
         <div class="form-group">
-          <label class="col-sm-4 control-label" for="shares">Shares to export<span class="required"> *</span></label>
+          <label class="col-sm-4 control-label" for="shares">导出目录<span class="required"> *</span></label>
           <div class="col-sm-4">
             <select class="form-control" name="shares" id="shares" size="10" data-placeholder="Select shares to export" multiple="multiple">
               {{#each shares}} 
@@ -45,30 +45,25 @@
 
         <!-- host string -->
         <div class="form-group">
-          <label class="col-sm-4 control-label" for="host_str">NFS Clients<span class="required"> *</span></label>
+          <label class="col-sm-4 control-label" for="host_str">NFS 客户端<span class="required"> *</span></label>
           <div class="col-sm-4">
             <input class="form-control" type="text" name="host_str" id="host_str" data-html = "true"
-	    title="Hosts permitted to NFS mount. There are five broad categories of this input.<br><strong>anonymous:</strong> Just type a single * character and any host will be allowed.<br><strong>single host:</strong> Hostname or a IP address.<br><strong>IP networks:</strong> All hosts of a subnet given by <strong>address/netmask</strong>.<br><strong>wildcards:</strong> Names with wildcard(*, ?) characters for compact notation. for example, *.cs.foo.edu matches all hosts in the domain cs.food.edu.<br><strong>Netgroups:</strong> NIS netgroups given as @group.<br><br>For more details read the manpage for exports."
+	    title="允许挂载NFS的主机选项. 有5中类型可供选择.<br><strong>任意主机:</strong> 只需键入单个*字符，即可允许任何主机.<br><strong>单主机:</strong> 主机名或IP地址.<br><strong>IP地址:</strong>由 <strong>地址/掩码</strong>制定的所有主机.<br><strong>通配符:</strong> 带有通配符(*, ?) 等字符特征. 例如, *.cs.foo.edu匹配域cs.food.edu中的所有主机.<br><strong>网络组:</strong> NIS 网络组导出.<br><br>有关详细信息，请阅读导出手册页."
 	    value="{{nfsExportGrp.host_str}}">
           </div>
         </div>
 
 	<!-- admin host -->
 	<div class="form-group">
-	  <label class="col-sm-4 control-label" for="trusted_host">Admin
-	Host</span></label>
+	  <label class="col-sm-4 control-label" for="trusted_host">管理主机</span></label>
 	  <div class="col-sm-4">
-	    <input class="form-control" type="text" id="admin_host" name="admin_host" title="Hostname or IP of a host to be designated as the admin host. The
-		   export will be available for this host with rw and no_root_squash
-		   options so that root user can change ownership and permissions of
-		   various directories from this host. This is usually preferred in
-		   conjunction with NIS." value="{{nfsExportGrp.admin_host}}">
+	    <input class="form-control" type="text" id="admin_host" name="admin_host" title="要指定为管理主机的主机名或IP。导出将可用于具有rw和no_root_squash选项的此主机，以便root用户可以更改此主机中各种目录的所有权和权限。这通常与nis一起使用." value="{{nfsExportGrp.admin_host}}">
 	  </div>
 	</div>
 
         <!-- writable -->
         <div class="form-group">
-          <label class="col-sm-4 control-label" for="mod_choice">Access type</label>
+          <label class="col-sm-4 control-label" for="mod_choice">访问类型</label>
           <div class="col-sm-4">
             {{#each modify_choices}}
                 <label class="radio-inline">
@@ -84,7 +79,7 @@
 
         <!-- sync -->
         <div class="form-group">
-          <label class="col-sm-4 control-label" for="sync_choice">Response type</label>
+          <label class="col-sm-4 control-label" for="sync_choice">响应类型</label>
           <div class="col-sm-4">
           {{#each sync_choices}}
                 <label class="radio-inline">
@@ -101,7 +96,7 @@
         <!-- Submit -->
         <div class="form-group">
           <div class="col-xs-8 col-xs-offset-4">
-            <a id="cancel" class="btn btn-default">Cancel</a>
+            <a id="cancel" class="btn btn-default">取消</a>
             <input type="Submit" id="update-nfs-export" class="btn btn-primary" value="Submit"></input>
           </div>
         </div>

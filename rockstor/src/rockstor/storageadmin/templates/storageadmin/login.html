@@ -24,7 +24,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RockStor: Store Smartly {% block title %}{% endblock %}</title>
+    <title>ChengyeStor: Store Smartly {% block title %}{% endblock %}</title>
     <link href="/static/storageadmin/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/storageadmin/css/style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="/static/storageadmin/img/favicon.ico">
@@ -90,13 +90,13 @@
 
                                 <div class="input-field">
                                     <input class="mat-input" type="text" id="username" name="login">
-                                    <label for="username">Username</label>
+                                    <label for="username">用户名</label>
                                 </div>
 
 
                                 <div class="input-field">
                                     <input class="mat-input" type="password" id="password" name="password">
-                                    <label for="password">Password</label>
+                                    <label for="password">密码</label>
                                 </div>
 
                                 {% if messages %}
@@ -115,13 +115,13 @@
                             <div class="form-group">
                                 <div class="controls" style="padding-left: 42px;">
                                     <button style="width: 230px;" type="submit" id="sign_in" class="btn btn-primary">
-                                        Sign in
+                                        登录
                                     </button>
                                 </div>
                             </div>
 
                             <div class="form-group reset-password-login">
-                                <a href="#" id="forgot-pw">Reset password</a>
+                                <a href="#" id="forgot-pw">&nbsp;&nbsp;&nbsp;重置用户密码</a>
                             </div>
 
                         </form>
@@ -134,10 +134,13 @@
 </div>
 <div class="simple-overlay" id="forgot-pw-info">
     <div style="padding: 20px">
-        <h4>To reset your admin user's password, run the following command as
-            the root user in a console on your Rockstor appliance:<br/>
-            (The "root" user is the one created during the initial install
-            when a password was requested twice.)<br/><br/>
+        <h4>要重置管理员用户的密码，请联系系统管理员进入底层修改</h4>
+    </div>
+</div>
+<!--
+<div class="simple-overlay" id="forgot-pw-info">
+    <div style="padding: 20px">
+        <h4>要重置管理员用户的密码，请运行以下命令<br/><br/>
             /opt/rockstor/bin/pwreset<br/><br/>
             If you have forgotten the root user's password please see:
             <a href="http://rockstor.com/docs/reset-root-password.html"
@@ -147,7 +150,8 @@
             </h4>
     </div>
 </div>
-
+-->
+<!--
 <div class="simple-overlay" id="pincard-reset-form">
     <div style="padding: 20px">
         <h3>Welcome to Pincard Manager password reset</h3><br/>
@@ -165,6 +169,7 @@
 		</form>
     </div>
 </div>
+-->
 
 <script src="/static/js/lib/bootstrap.js"></script>
 <script src="/static/js/lib/bootstrap-datepicker.js"></script>

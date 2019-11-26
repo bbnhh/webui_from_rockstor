@@ -19,8 +19,8 @@
  */
 </script>
 
-<h4>Replication receive history for ( {{replicaShare.appliance}} : {{replicaShare.src_share}}
- to {{replicaShare.pool}} : {{replicaShare.share}} )</h4>
+<h4>( {{replicaShare.appliance}}的同步历史 : {{replicaShare.src_share}}
+ 到 {{replicaShare.pool}} : {{replicaShare.share}} )</h4>
  
 {{#if collectionNotEmpty}}
   <div class="row">
@@ -30,12 +30,12 @@
         <thead>
           <tr>
             <th scope="col" abbr="ID">ID</th>
-            <th scope="col" abbr="ID">Snapshot</th>
-            <th scope="col" abbr="Start Time">Start Time</th>
-            <th scope="col" abbr="Start Time">End Time</th>
-            <th scope="col" abbr="Start Time">Status</th>
-            <th scope="col" abbr="Start Time">Duration</th>
-            <th scope="col" abbr="Start Time">Data transferred at rate</th>
+            <th scope="col" abbr="ID">快照</th>
+            <th scope="col" abbr="Start Time">开始时间</th>
+            <th scope="col" abbr="Start Time">结束时间</th>
+            <th scope="col" abbr="Start Time">状态</th>
+            <th scope="col" abbr="Start Time">持续时间</th>
+            <th scope="col" abbr="Start Time">数据传输速率</th>
           </tr>
         </thead>
         <tbody>

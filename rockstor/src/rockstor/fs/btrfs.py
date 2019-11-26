@@ -26,6 +26,7 @@ from system.exceptions import (CommandException)
 from pool_scrub import PoolScrub
 from django_ztask.decorators import task
 from django.conf import settings
+from cmdutil import run_command2, shell_call, shell_check_call, tail, is_ha_env, my_spname, shell_call_rc
 import logging
 
 """
@@ -58,6 +59,12 @@ ROOT_SUBVOL_EXCLUDE = ['root', '@', '@/root', 'tmp', '@/tmp', 'var', '@/var',
                        '@/.snapshots']
 # Note in the above we have a non symmetrical exclusions entry of '@/.snapshots
 # this is to help distinguish our .snapshots from snapper's rollback subvol.
+def get_all_pool():
+    cmd = "zpool list" 
+    out, rc = shell_call_rc(cmd)
+    logger.debug('GETPOOL %s' % cmd)
+
+
 def del_pool(pool):
     cmd = [ZPOOL, "destroy", pool]
     out, err, rc = run_command(cmd, log=True)
@@ -93,10 +100,19 @@ def add_pool(pool, disks):
     if pool.raid == 'raid6':
         mraid = 'raidz2'
     #cmd = [MKFS_BTRFS, '-f', '-d', draid, '-m', mraid, '-L', pool.name]
+#    str_disk = ','.join(disks_fp)
     if mraid == '':
         cmd = [ZPOOL, "create", pool.name]
+ 
+#        cmd = "zpool create %s %s" % (pool.name,str_disk)
+        
     else:
         cmd = [ZPOOL, "create", pool.name, mraid]
+#        cmd = "zpool create %s %s %s" % (pool.name,mraid,str_disk)
+    out, rc = shell_call_rc(cmd)
+    logger.debug('Cmd %s' % cmd)
+#    if rc != 0:
+#        err = out
     cmd.extend(disks_fp)
     # Run the create pool command, any exceptions are logged and raised by
     # run_command as a CommandException.
@@ -809,6 +825,7 @@ def share_id(pool, share_name):
             subvol_id = line.split()[1]
             break
     if (subvol_id is not None):
+        logger.debug('Current IDDDDD: %s' % subvol_id)
         return subvol_id
     raise Exception('subvolume id for share: %s not found.' % share_name)
 

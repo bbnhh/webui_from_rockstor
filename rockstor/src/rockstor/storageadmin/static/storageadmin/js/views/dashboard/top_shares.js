@@ -164,7 +164,7 @@ TopSharesWidget = RockStorWidgetView.extend({
 
 RockStorWidgets.widgetDefs.push({
     name: 'top_shares',
-    displayName: 'Top Shares by Usage',
+    displayName: '文件系统使用情况',
     view: 'TopSharesWidget',
     description: 'Display top shares by usage',
     defaultWidget: true,

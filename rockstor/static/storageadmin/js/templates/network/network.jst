@@ -25,21 +25,21 @@
     <div class="col-md-12">
         <div class="messages"></div>
         <!-- Content -->
-        <h3>Network Connections</h3>
+        <h3>网络连接</h3>
         <table id="networks2-table"
                class="table table-condensed table-bordered table-hover table-striped share-table tablesorter"
                summary="List of network connections">
             <thead>
             <tr>
-                <th scope="col" abbr="Name">Name</th>
+                <th scope="col" abbr="Name">名称</th>
                 <th scope="col" abbr="UUID">UUID</th>
-                <th scope="col" abbr="Type">Type</th>
-                <th scope="col" abbr="State">State</th>
-                <th scope="col" abbr="Method">Connection method</th>
-                <th scope="col" abbr="Address">IP Address</th>
-                <th scope="col" abbr="Gateway">Gateway</th>
-                <th scope="col" abbr="DNS">DNS Servers</th>
-                <th scope="col" abbr="DNS Search">DNS Search Domains</th>
+                <th scope="col" abbr="Type">类别</th>
+                <th scope="col" abbr="State">状态</th>
+                <th scope="col" abbr="Method">模式</th>
+                <th scope="col" abbr="Address">IP 地址</th>
+                <th scope="col" abbr="Gateway">网关</th>
+                <th scope="col" abbr="DNS">DNS 服务</th>
+                <th scope="col" abbr="DNS Search">DNS 搜索域</th>
                 <th scope="col" abbr="MTU">MTU</th>
             </tr>
             </thead>
@@ -90,10 +90,10 @@
                         <p>member Connections</p>
                         <table class="table table-bordered">
                             <tr>
-                                <th>Name</th>
+                                <th>名称</th>
                                 <th>UUID</th>
-                                <th>Type</th>
-                                <th>Status Code</th>
+                                <th>类别</th>
+                                <th>状态码</th>
                             </tr>
                             {{#each ../child_connections}}
                             <tr>
@@ -105,15 +105,15 @@
                             {{/each}}
                         </table>
                         {{/hasChildren}}
-                        <p>member Devices</p>
+                        <p>成员设备</p>
                         <table class="table table-bordered">
                             <tr>
-                                <th>Name</th>
-                                <th>Type</th>
-                                <th>MAC Address</th>
+                                <th>名称</th>
+                                <th>类别</th>
+                                <th>MAC 地址</th>
                                 <th>MTU</th>
-                                <th>Status Code</th>
-                                <th>Member of</th>
+                                <th>状态码</th>
+                                <th>隶属于</th>
                             </tr>
                             {{#each ../devices}}
                             {{#if (belongsToConnection ../this.id
@@ -143,12 +143,12 @@
                summary="List of network devices/interfaces">
             <thead>
             <tr>
-                <th scope="col" abbr="Name">Name</th>
-                <th scope="col" abbr="Type">Type</th>
-                <th scope="col" abbr="Mac">MAC Address</th>
+                <th scope="col" abbr="Name">名称</th>
+                <th scope="col" abbr="Type">类别</th>
+                <th scope="col" abbr="Mac">MAC 地址</th>
                 <th scope="col" abbr="MTU">MTU</th>
-                <th scope="col" abbr="State">Status Code</th>
-                <th scope="col" abbr="Connection">Member of</th>
+                <th scope="col" abbr="State">状态码</th>
+                <th scope="col" abbr="Connection">隶属于</th>
             </tr>
             </thead>
             <tbody>

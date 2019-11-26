@@ -78,7 +78,7 @@ var HomeLayoutView = RockstorLayoutView.extend({
                                 show: false,
                                 backdrop: 'static'
                             });
-                            $('#update-version-modal').modal('show');
+                            //$('#update-version-modal').modal('show');
 
                         },
                         error: function(xhr, status, error) {
@@ -95,7 +95,7 @@ var HomeLayoutView = RockstorLayoutView.extend({
                                     show: false,
                                     backdrop: 'static'
                                 });
-                                $('#update-channel-modal').modal('show');
+                                //$('#update-channel-modal').modal('show');
                             }
 
                         }

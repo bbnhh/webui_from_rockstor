@@ -1,10 +1,10 @@
 <table id="disks-select-table" class="table table-condensed table-bordered share-table tablesorter" summary="List of disks">
   <thead>
     <tr>
-      <th>No.</th>
-      <th>Name</th>
-      <th>Capacity</th>
-      <th>Select All <input type="checkbox" id="checkAll"/></th>
+      <th>编号</th>
+      <th>名称</th>
+      <th>容量</th>
+      <th>全选 <input type="checkbox" id="checkAll"/></th>
     </tr>
   </thead>
   <tbody>
@@ -13,11 +13,11 @@
     <td>{{mathHelper @index}}</td>
     <td>{{this.name}}
       {{#if this.parted}}
-      <a href="#disks/role/{{this.id}}" class="user_role_part" data-disk-id="{{this.id}}" title="Partition (Redirect Role), click to review. Note: Capacity is for whole disk when adding so may be inaccurate." rel="tooltip">
+      <a href="#disks/role/{{this.id}}" class="user_role_part" data-disk-id="{{this.id}}" title="分区（重定向角色），单击查看。注：容量是整个磁盘的容量，因此可能不准确." rel="tooltip">
         <i class="glyphicon glyphicon-tags"></i></a>
       {{/if}}
       {{#if (isOpenLuks this.role)}}
-      <a href="#disks/luks/{{this.id}}" class="open_luks_drive" data-disk-id="{{this.id}}" title="Open LUKS Volume, click to review." rel="tooltip">
+      <a href="#disks/luks/{{this.id}}" class="open_luks_drive" data-disk-id="{{this.id}}" title="打开luks卷，单击查看." rel="tooltip">
         <i class="glyphicon glyphicon-eye-open"></i></a>
       {{/if}}
     </td>

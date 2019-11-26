@@ -23,25 +23,25 @@
 <!-- page heading -->
 
 <div class="pull-right">
- <a href="#add_share?poolName={{poolName}}" id="add_share" class="btn btn-primary"><i class="glyphicon glyphicon-edit "></i> Add Share</a>
+ <a href="#add_share?poolName={{poolName}}" id="add_share" class="btn btn-primary"><i class="glyphicon glyphicon-edit "></i> 添加目录</a>
  {{#if isPoolRoleRoot}}
  <!-- Don't display the delete button if rockstor_rockstor pool -->
  {{else}}
- <button id="delete-pool" class="btn btn-danger" type="button"><i class="glyphicon glyphicon-trash" data-name="{{pool.name}}" data-action="delete"></i> Delete</button>
+ <button id="delete-pool" class="btn btn-danger" type="button"><i class="glyphicon glyphicon-trash" data-name="{{pool.name}}" data-action="delete"></i> 删除</button>
  {{/if}}
 </div>
 <span class="h2">{{poolName}}</span>
 {{#if isPoolRoleRoot}}
    <br>
    <div class="alert alert-danger">
-     <h4>Warning! This Pool is created during install and contains the OS. You can create Shares in it like in any other pool on the system. However, operations like resize, compression and deletion are not allowed.</h4>
+     <h4>警告！此池是在安装期间创建的，包含操作系统.您可以像在系统上的任何其他池中一样在其中创建共享.但是，不允许像调整大小、压缩和删除这样的操作.</h4>
    </div>
    {{/if}}
 <br>
 <br>
 
   <ul class="nav nav-tabs">
-    <li class="active"><a href="#details" data-toggle="tab">Overview</a></li>
+    <li class="active"><a href="#details" data-toggle="tab">概述</a></li>
     <li><a href="#poolscrubs" data-toggle="tab">Scrubs</a></li>
     <li><a href="#poolrebalances" data-toggle="tab">Balances</a></li>
   </ul>
@@ -54,8 +54,8 @@
             <div id="ph-pool-info"></div>
         </div> <!-- col-md-6 -->
         <div class="col-md-6">
-            <h3>Compression / Extra mount options / Quotas</h3>
-            <div id="ph-compression-info"></div>
+            <!--<h3>压缩 / 额外挂载点 / 配额</h3>
+            <div id="ph-compression-info"></div>-->
         </div> <!-- col-md-6 -->
       </div>
       </div>
@@ -87,16 +87,16 @@
 
 <div class="simple-overlay" id="resize-pool-form">
   <div class="col-md-6 well">
-    <h4>Resize Pool({{poolName}})</h4>
+    <h4>调整池大小({{poolName}})</h4>
     <div id="alert-msg"></div></br>
-    Select new disk(s) to add to the pool or Unselect disk(s) to remove from the pool.<br>
-    You cannot add and remove disks simultaneously.<br>
-    If you do so, new disks will be added but no disks will be removed.<br>
-    After resizing a pool, it must be balanced manually. Auto balance is not supported yet.<br/>
+    选择要添加到池中的新磁盘或取消选择要从池中删除的磁盘.<br>
+    不能同时添加和删除磁盘.<br>
+    如果这样做，将添加新磁盘，但不会删除任何磁盘.<br>
+    调整池大小后，必须手动 balance 它。尚不支持自动 balance.<br/>
     <div id="disks-to-add"></div>
 
     <br/>
-    <button id="resize-pool" class="btn btn-primary">Submit</button>
+    <button id="resize-pool" class="btn btn-primary">确认</button>
   </div>
 </div>
 
@@ -115,11 +115,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="myModalLabel">Delete Pool ({{poolName}})</h3>
+        <h3 id="myModalLabel">删除池 ({{poolName}})</h3>
       </div>
       <div class="modal-body">
         <div class="messages"></div>
-        <h4>{{poolName}} will be deleted including it's Shares listed below and their Snapshots, NFS exports, Samba and SFTP config and Replicas. Are you sure?</h4>
+        <h4>{{poolName}} 将被删除，包括下面列出的它的目录及其快照、nfs导出、samba和sftp配置和副本.你确定吗?</h4>
         <ul>
         {{#each share}}
         <li>{{this.name}} ({{this.size_gb}} GB)</li>
@@ -128,7 +128,7 @@
       </div>
       <div class="modal-footer">
         <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Cancel</button>
-        <button id="js-confirm-pool-delete" class="btn btn-primary">Confirm</button>
+        <button id="js-confirm-pool-delete" class="btn btn-primary">确认</button>
       </div>
     </div>
   </div>

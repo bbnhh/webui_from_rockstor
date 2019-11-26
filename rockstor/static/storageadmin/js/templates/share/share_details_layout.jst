@@ -21,19 +21,16 @@
 <div class="messages"></div>
 <div class="pull-right">
   <span id="rollback-btn-ph"></span>
-    <a id="js-clone" class="btn btn-primary" href="#shares/{{shareId}}/create-clone"><i class="glyphicon glyphicon-book "></i> Clone</a>
+    <a id="js-clone" class="btn btn-primary" href="#shares/{{shareId}}/create-clone"><i class="glyphicon glyphicon-book "></i> 克隆</a>
 	{{#unless isSystemShare}}
-        <button id="js-delete" class="btn btn-danger" type="button" type="button"><i class="glyphicon glyphicon-trash "></i> Delete </button>
+        <button id="js-delete" class="btn btn-danger" type="button" type="button"><i class="glyphicon glyphicon-trash "></i> 删除 </button>
 	{{/unless}}
 </div>
 <span class="h2">{{shareName}}</span>
 <div class="alert alert-warning">
   <p>
-    Share size enforcement is temporarily disabled due to incomplete support in
-    BTRFS. Until this status changes, the effective size of a Share is equal to the
-    size of the Pool it belongs to.
 	{{#if isSystemShare}}
-	<br/><b>This is a System Share created at installation time on OS Pool and cannot be deleted.</b>
+	<br/><b>这是在操作系统池上安装时创建的系统目录，无法删除.</b>
 	{{/if}}
   </p>
 </div>
@@ -45,19 +42,19 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="myModalLabel">Delete {{shareName}} ?</h3>
+        <h3 id="myModalLabel">删除 {{shareName}} ?</h3>
       </div>
       <div class="modal-body">
         <div class="messages"></div>
 
-        <p>By deleting <strong><em>{{shareName}}</em></strong>, all it's data (<strong>{{shareUsage}}</strong>) will be lost. Are you sure?</p>
+        <p>删除 <strong><em>{{shareName}}</em></strong>, 全部数据 (<strong>{{shareUsage}}</strong>) 都会被删除. 确定吗?</p>
 
-      <label><input type="checkbox" id="force-delete" name="force-delete"> Force Delete &nbsp;<i class="fa fa-info-circle fa-lg"
-    title="Forces the deletion of undetected Snapshots and then deletes the Share. Useful to forcefully delete the Rock-on root share, for example." rel="tooltip"></i></label>
+      <label><input type="checkbox" id="force-delete" name="force-delete"> 强制删除 &nbsp;<i class="fa fa-info-circle fa-lg"
+    title="强制删除未检测到的快照，然后删除共享." rel="tooltip"></i></label>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">No</button>
-        <button id="js-confirm-share-delete" class="btn btn-primary">Yes</button>
+        <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">否</button>
+        <button id="js-confirm-share-delete" class="btn btn-primary">是</button>
       </div><!--end modal-footer-->
     </div><!--end modal-content-->
   </div><!--end modal-dialog-->
@@ -67,9 +64,9 @@
 
 
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#usage" data-toggle="tab">Usage</a></li>
-  <li><a href="#access-control" data-toggle="tab">Access control</a></li>
-  <li><a href="#snapshots" data-toggle="tab">Snapshots</a></li>
+  <li class="active"><a href="#usage" data-toggle="tab">使用空间</a></li>
+  <li><a href="#access-control" data-toggle="tab">访问控制</a></li>
+  <li><a href="#snapshots" data-toggle="tab">快照</a></li>
 </ul>
 
 <div class="css-panes">

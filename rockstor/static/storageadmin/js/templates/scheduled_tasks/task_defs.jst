@@ -24,13 +24,13 @@
       <table id="scheduled-tasks-table" class="table table-bordered table-striped share-table data-table" width="100%" summary="List of scheduled tasks">
         <thead>
           <tr>
-            <th scope="col" abbr="Task name">Task name</th>
-            <th scope="col" abbr="Task type">Type</th>
-            <th scope="col" abbr="Frequency">Frequency</th>
-            <th scope="col" abbr="Exec">Execution time window</th>
-            <th scope="col" abbr="Enabled">Enabled</th>
-            <th scope="col" abbr="Last">Last run</th>
-            <th scope="col" abbr="Actions">Actions</th>
+            <th scope="col" abbr="Task name">任务名称</th>
+            <th scope="col" abbr="Task type">类型</th>
+            <th scope="col" abbr="Frequency">频率</th>
+            <th scope="col" abbr="Exec">执行时间窗口</th>
+            <th scope="col" abbr="Enabled">可用性</th>
+            <th scope="col" abbr="Last">上一次运行</th>
+            <th scope="col" abbr="Actions">操作</th>
           </tr>
         </thead>
         <tbody>
@@ -40,6 +40,6 @@
     </div>
   </div>
   {{else}}
-  <h4>There are no tasks scheduled at this time.</h4>
+  <h4>此时没有计划的任务.</h4>
 {{/if}}
-<a href="#add-scheduled-task" class="btn btn-primary">Schedule a Task</a>
+<a href="#add-scheduled-task" class="btn btn-primary">计划任务</a>

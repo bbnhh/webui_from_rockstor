@@ -1,14 +1,14 @@
 <div class="row">
 <div class="col-md-8">
 <div class="panel panel-default">
-<div class="panel-heading">Add SFTP Share</div>
+<div class="panel-heading">添加</div>
 <div class="panel-body">
       <form id="add-sftp-share-form" name="aform" class="form-horizontal">
         <div class="messages"></div>
 
         <!-- Shares -->
         <div class="form-group">
-          <label class="col-sm-4 control-label" for="shares">Shares to export<span class="required">*</span></label>
+          <label class="col-sm-4 control-label" for="shares">共享<span class="required">*</span></label>
 	      <div class="col-sm-4">
               <select class="form-control" name="shares" id="shares" size="10" data-placeholder="Select shares" multiple="multiple">
         		{{#each shares}}
@@ -20,13 +20,13 @@
 
         <!-- Read only -->
         <div class="form-group">
-          <label class="col-sm-4 control-label" for="read_only">Access type</label>
+          <label class="col-sm-4 control-label" for="read_only">访问类型</label>
 	      <div class="col-sm-8">
               <label class="radio-inline">
-		<input type="radio" name="read_only" value="false" checked="checked"> Writable
+		<input type="radio" name="read_only" value="false" checked="checked"> 可写
               </label>
               <label class="radio-inline">
-		<input type="radio" name="read_only" value="true"> Read only
+		<input type="radio" name="read_only" value="true"> 只读
               </label>
           </div>
         </div>
@@ -35,7 +35,7 @@
         <div class="form-group">
           <div class="controls">
 	    <div class="col-sm-offset-4 col-sm-8">
-              <a id="cancel" class="btn btn-default">Cancel</a>
+              <a id="cancel" class="btn btn-default">取消</a>
               <input type="Submit" id="create-sftp-share" class="btn btn-primary" value="Submit"></input>
 	    </div>
           </div>

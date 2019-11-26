@@ -8624,3 +8624,1760 @@ Traceback (most recent call last):
 CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
 <Greenlet at 0x7f8cb48c3af0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f8cb74dee50>>> failed with CommandException
 
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7fbd8e4decd0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fbd8e3aefd0>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7fbd8e4dec30: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fbd8e3aefd0>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7fbd8e4deb90: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fbd8e3aefd0>>> failed with CommandException
+
+disconnect handler error
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/python_engineio-3.8.1-py2.7.egg/engineio/server.py", line 520, in _trigger_event
+    return self.handlers[event](*args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 504, in _handle_eio_disconnect
+    self._handle_disconnect(sid, '/')
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 413, in _handle_disconnect
+    self._trigger_event('disconnect', n, sid)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 467, in _trigger_event
+    event, *args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/namespace.py", line 30, in trigger_event
+    return getattr(self, handler_name)(*args)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 870, in on_disconnect
+    self.cleanup(sid)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 70, in cleanup
+    gevent.killall(self.threads[sid])
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 699, in killall
+    alive = waiter.get()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 878, in get
+    return self.hub.switch()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 609, in switch
+    return greenlet.switch(self)
+GreenletExit
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7fbd8e84b2d0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fbd8e3aefd0>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7fd13a57a730: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fd13aa4a810>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7fd13a57aaf0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fd13aa4a810>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f984b5ba550: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f984ba8cad0>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f984b5ba730: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f984ba8cad0>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/bin/data-collector", line 37, in <module>
+    import smart_manager.data_collector
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 23, in <module>
+    from fs.btrfs import degraded_pools_found
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 106
+    logger.debug('Cmd %s' % cmd))
+                                ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "/opt/rockstor/bin/data-collector", line 37, in <module>
+    import smart_manager.data_collector
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 23, in <module>
+    from fs.btrfs import degraded_pools_found
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 106
+    logger.debug('Cmd %s' % cmd))
+                                ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "/opt/rockstor/bin/data-collector", line 37, in <module>
+    import smart_manager.data_collector
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 23, in <module>
+    from fs.btrfs import degraded_pools_found
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 106
+    logger.debug('Cmd %s' % cmd))
+                                ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "/opt/rockstor/bin/data-collector", line 37, in <module>
+    import smart_manager.data_collector
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 23, in <module>
+    from fs.btrfs import degraded_pools_found
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 106
+    logger.debug('Cmd %s' % cmd))
+                                ^
+SyntaxError: invalid syntax
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7ff6fd6e0730: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7ff6fdbb2ad0>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f7e39c44730: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f7e3a116b10>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7eff01820730: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7eff01cf2b10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7eff0011da50: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7eff01cf2b10>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7fb3c8344370: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fb3ca309c50>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7fb3c82a29b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fb3ca309c50>>> failed with CommandException
+
+disconnect handler error
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/python_engineio-3.8.1-py2.7.egg/engineio/server.py", line 520, in _trigger_event
+    return self.handlers[event](*args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 504, in _handle_eio_disconnect
+    self._handle_disconnect(sid, '/')
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 413, in _handle_disconnect
+    self._trigger_event('disconnect', n, sid)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 467, in _trigger_event
+    event, *args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/namespace.py", line 30, in trigger_event
+    return getattr(self, handler_name)(*args)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 652, in on_disconnect
+    self.cleanup(sid)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 70, in cleanup
+    gevent.killall(self.threads[sid])
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 699, in killall
+    alive = waiter.get()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 878, in get
+    return self.hub.switch()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 609, in switch
+    return greenlet.switch(self)
+GreenletExit
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7fb3c9e37b90: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fb3ca309c50>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7fb4ee3f8550: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fb4ee8cab10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7fb4ec8c09b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fb4ee8cab10>>> failed with CommandException
+
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7fb4ec8c0b90: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fb4ee8cab10>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6557083730: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6557555ad0>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f655554aaf0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6557555ad0>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f655554aeb0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6557555ad0>>> failed with CommandException
+
+disconnect handler error
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/python_engineio-3.8.1-py2.7.egg/engineio/server.py", line 520, in _trigger_event
+    return self.handlers[event](*args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 504, in _handle_eio_disconnect
+    self._handle_disconnect(sid, '/')
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 413, in _handle_disconnect
+    self._trigger_event('disconnect', n, sid)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 467, in _trigger_event
+    event, *args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/namespace.py", line 30, in trigger_event
+    return getattr(self, handler_name)(*args)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 870, in on_disconnect
+    self.cleanup(sid)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 70, in cleanup
+    gevent.killall(self.threads[sid])
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 699, in killall
+    alive = waiter.get()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 878, in get
+    return self.hub.switch()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 609, in switch
+    return greenlet.switch(self)
+GreenletExit
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6554501690: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6557555ad0>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7fdde122e9b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fdde3202ad0>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7fdde2d30730: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fdde3202ad0>>> failed with CommandException
+
+No handlers could be found for logger "smart_manager.data_collector"
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f85ac14d7d0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f85ae155ad0>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f85adc83550: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f85ae155ad0>>> failed with CommandException
+
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f85ac14daf0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f85ae155ad0>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f2bc3f92730: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2bc4464ad0>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f2bc3f92cd0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2bc4464ad0>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f2bc3f92f50: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2bc4464ad0>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f2bc3f92b90: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2bc4464ad0>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f2bc3f92c30: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2bc4464ad0>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f2bc3f92cd0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f2bc4464ad0>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f29f9b8c730: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f29fbbccc50>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f29fb6fa690: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f29fbbccc50>>> failed with CommandException
+
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f29fb6facd0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f29fbbccc50>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f29f8a64eb0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f29fbbccc50>>> failed with CommandException
+
+disconnect handler error
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/python_engineio-3.8.1-py2.7.egg/engineio/server.py", line 520, in _trigger_event
+    return self.handlers[event](*args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 504, in _handle_eio_disconnect
+    self._handle_disconnect(sid, '/')
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 413, in _handle_disconnect
+    self._trigger_event('disconnect', n, sid)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 467, in _trigger_event
+    event, *args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/namespace.py", line 30, in trigger_event
+    return getattr(self, handler_name)(*args)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 870, in on_disconnect
+    self.cleanup(sid)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 70, in cleanup
+    gevent.killall(self.threads[sid])
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 699, in killall
+    alive = waiter.get()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 878, in get
+    return self.hub.switch()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 609, in switch
+    return greenlet.switch(self)
+GreenletExit
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f29f8911870: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f29fbbccc50>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f29f9b6ba50: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f29fbbccc50>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f29f9b6bf50: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f29fbbccc50>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7ff598691730: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7ff598b63c50>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7ff598691af0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7ff598b63c50>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7ff598691c30: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7ff598b63c50>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7ff598691d70: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7ff598b63c50>>> failed with CommandException
+
+disconnect handler error
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/python_engineio-3.8.1-py2.7.egg/engineio/server.py", line 520, in _trigger_event
+    return self.handlers[event](*args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 504, in _handle_eio_disconnect
+    self._handle_disconnect(sid, '/')
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 413, in _handle_disconnect
+    self._trigger_event('disconnect', n, sid)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 467, in _trigger_event
+    event, *args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/namespace.py", line 30, in trigger_event
+    return getattr(self, handler_name)(*args)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 561, in on_disconnect
+    self.cleanup(sid)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 70, in cleanup
+    gevent.killall(self.threads[sid])
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 699, in killall
+    alive = waiter.get()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 878, in get
+    return self.hub.switch()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 609, in switch
+    return greenlet.switch(self)
+GreenletExit
+disconnect handler error
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/python_engineio-3.8.1-py2.7.egg/engineio/server.py", line 520, in _trigger_event
+    return self.handlers[event](*args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 504, in _handle_eio_disconnect
+    self._handle_disconnect(sid, '/')
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 413, in _handle_disconnect
+    self._trigger_event('disconnect', n, sid)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 467, in _trigger_event
+    event, *args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/namespace.py", line 30, in trigger_event
+    return getattr(self, handler_name)(*args)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 652, in on_disconnect
+    self.cleanup(sid)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 70, in cleanup
+    gevent.killall(self.threads[sid])
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 699, in killall
+    alive = waiter.get()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 878, in get
+    return self.hub.switch()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 609, in switch
+    return greenlet.switch(self)
+GreenletExit
+disconnect handler error
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/python_engineio-3.8.1-py2.7.egg/engineio/server.py", line 520, in _trigger_event
+    return self.handlers[event](*args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 504, in _handle_eio_disconnect
+    self._handle_disconnect(sid, '/')
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 413, in _handle_disconnect
+    self._trigger_event('disconnect', n, sid)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 467, in _trigger_event
+    event, *args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/namespace.py", line 30, in trigger_event
+    return getattr(self, handler_name)(*args)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 753, in on_disconnect
+    self.cleanup(sid)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 70, in cleanup
+    gevent.killall(self.threads[sid])
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 699, in killall
+    alive = waiter.get()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 878, in get
+    return self.hub.switch()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 609, in switch
+    return greenlet.switch(self)
+GreenletExit
+disconnect handler error
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/python_engineio-3.8.1-py2.7.egg/engineio/server.py", line 520, in _trigger_event
+    return self.handlers[event](*args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 504, in _handle_eio_disconnect
+    self._handle_disconnect(sid, '/')
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 413, in _handle_disconnect
+    self._trigger_event('disconnect', n, sid)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 467, in _trigger_event
+    event, *args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/namespace.py", line 30, in trigger_event
+    return getattr(self, handler_name)(*args)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 686, in on_disconnect
+    self.cleanup(sid)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 70, in cleanup
+    gevent.killall(self.threads[sid])
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 699, in killall
+    alive = waiter.get()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 878, in get
+    return self.hub.switch()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 609, in switch
+    return greenlet.switch(self)
+GreenletExit
+disconnect handler error
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/python_engineio-3.8.1-py2.7.egg/engineio/server.py", line 520, in _trigger_event
+    return self.handlers[event](*args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 504, in _handle_eio_disconnect
+    self._handle_disconnect(sid, '/')
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 413, in _handle_disconnect
+    self._trigger_event('disconnect', n, sid)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 467, in _trigger_event
+    event, *args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/namespace.py", line 30, in trigger_event
+    return getattr(self, handler_name)(*args)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 870, in on_disconnect
+    self.cleanup(sid)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 70, in cleanup
+    gevent.killall(self.threads[sid])
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 699, in killall
+    alive = waiter.get()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 878, in get
+    return self.hub.switch()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 609, in switch
+    return greenlet.switch(self)
+GreenletExit
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7ff596b58050: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7ff598b63c50>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7ff595ab8190: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7ff598b63c50>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7ff598691f50: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7ff598b63c50>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7ff596b587d0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7ff598b63c50>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7fd10d625690: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fd10daf1990>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f21b908b690: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f21b9558950>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f74c917f550: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f74c9652c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f74c917f910: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f74c9652c10>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f257c939550: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f257ce0cc10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f257c939af0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f257ce0cc10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f257c9395f0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f257ce0cc10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f257c939870: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f257ce0cc10>>> failed with CommandException
+
+disconnect handler error
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/python_engineio-3.8.1-py2.7.egg/engineio/server.py", line 520, in _trigger_event
+    return self.handlers[event](*args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 504, in _handle_eio_disconnect
+    self._handle_disconnect(sid, '/')
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 413, in _handle_disconnect
+    self._trigger_event('disconnect', n, sid)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 467, in _trigger_event
+    event, *args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/namespace.py", line 30, in trigger_event
+    return getattr(self, handler_name)(*args)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 870, in on_disconnect
+    self.cleanup(sid)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 70, in cleanup
+    gevent.killall(self.threads[sid])
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 699, in killall
+    alive = waiter.get()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 878, in get
+    return self.hub.switch()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 609, in switch
+    return greenlet.switch(self)
+GreenletExit
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f257c0d5910: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f257ce0cc10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f257c0d5a50: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f257ce0cc10>>> failed with CommandException
+
+No handlers could be found for logger "smart_manager.data_collector"
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7fd944bb9730: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fd94508cc10>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7fcddcef7730: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fcddd3cac10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7fcddcef7af0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fcddd3cac10>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6645f36550: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6645f36910: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6645f36730: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6645f36a50: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6645f362d0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6645f364b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6645f367d0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6645f36190: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6645f36730: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6645f36af0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6645f36910: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6645f36870: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6645f367d0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6645f36b90: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6645f36230: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6645f36690: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6645f364b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6645f369b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6645f36230: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f66443fe730: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6645f36870: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f6645f364b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f6646409c10>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f50abed1af0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f50ac3a4c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f50abed1b90: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f50ac3a4c10>>> failed with CommandException
+
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f50aa3c4e10: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f50ac3a4c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f50aa3c4e10: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f50ac3a4c10>>> failed with CommandException
+
+disconnect handler error
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/python_engineio-3.8.1-py2.7.egg/engineio/server.py", line 520, in _trigger_event
+    return self.handlers[event](*args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 504, in _handle_eio_disconnect
+    self._handle_disconnect(sid, '/')
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 413, in _handle_disconnect
+    self._trigger_event('disconnect', n, sid)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 467, in _trigger_event
+    event, *args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/namespace.py", line 30, in trigger_event
+    return getattr(self, handler_name)(*args)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 870, in on_disconnect
+    self.cleanup(sid)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 70, in cleanup
+    gevent.killall(self.threads[sid])
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 699, in killall
+    alive = waiter.get()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 878, in get
+    return self.hub.switch()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 609, in switch
+    return greenlet.switch(self)
+GreenletExit
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f50aa3c4370: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f50ac3a4c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f50abed14b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f50ac3a4c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f50aa351b90: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f50ac3a4c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f50abed14b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f50ac3a4c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f50abed1b90: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f50ac3a4c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f50a92255f0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f50ac3a4c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f50abed1b90: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f50ac3a4c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f50a9225af0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f50ac3a4c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f50a9225550: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f50ac3a4c10>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f53eecef730: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f53ef1c2c10>>> failed with CommandException
+
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f53eecefaf0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f53ef1c2c10>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f02eea4f730: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f02eef20790>>> failed with CommandException
+
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f02eea4faf0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f02eef20790>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f0dc39f9730: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f0dc3ecc9d0>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f0dc39f9cd0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f0dc3ecc9d0>>> failed with CommandException
+
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f0dc39f97d0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f0dc3ecc9d0>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f0dc39f9c30: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f0dc3ecc9d0>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f0dc39f9190: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f0dc3ecc9d0>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77df93d550: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77df93d910: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+/usr/bin/tar: Removing leading `/' from member names
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77df93d190: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77df93d4b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77df93d870: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77df93d550: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77df93d9b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77df93d690: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77df93d4b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77df93d7d0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77df93daf0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77df93d730: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77df93d870: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77dde07e10: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77dcd78eb0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77dcd784b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77dcd78af0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77dcd78f50: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77dcd780f0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77dcd789b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77dcd78190: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77dcd784b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77dcd789b0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77dcd78af0: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77dcd78f50: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77dcd78230: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77dcd78b90: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77dcd78370: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+disconnect handler error
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/python_engineio-3.8.1-py2.7.egg/engineio/server.py", line 520, in _trigger_event
+    return self.handlers[event](*args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 504, in _handle_eio_disconnect
+    self._handle_disconnect(sid, '/')
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 413, in _handle_disconnect
+    self._trigger_event('disconnect', n, sid)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/server.py", line 467, in _trigger_event
+    event, *args)
+  File "/opt/rockstor/eggs/python_socketio-1.6.0-py2.7.egg/socketio/namespace.py", line 30, in trigger_event
+    return getattr(self, handler_name)(*args)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 870, in on_disconnect
+    self.cleanup(sid)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 70, in cleanup
+    gevent.killall(self.threads[sid])
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 699, in killall
+    alive = waiter.get()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 878, in get
+    return self.hub.switch()
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/hub.py", line 609, in switch
+    return greenlet.switch(self)
+GreenletExit
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77dde07e10: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7f77df93d910: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7f77dfe10c10>>> failed with CommandException
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+No handlers could be found for logger "smart_manager.data_collector"
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 996, in prune_logs
+    save_error=False)
+  File "/opt/rockstor/src/rockstor/cli/api_wrapper.py", line 75, in api_call
+    self.set_token()
+  File "/opt/rockstor/src/rockstor/cli/api_wrapper.py", line 44, in set_token
+    app = OauthApp.objects.get(name=settings.OAUTH_INTERNAL_APP)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: OauthApp matching query does not exist.
+<Greenlet at 0x7fe5562a25f0: <bound method SysinfoNamespace.prune_logs of <smart_manager.data_collector.SysinfoNamespace object at 0x7fe556775c10>>> failed with DoesNotExist
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/gevent-1.1.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 534, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "/opt/rockstor/src/rockstor/smart_manager/data_collector.py", line 951, in update_check
+    uinfo = update_check()
+  File "/opt/rockstor/src/rockstor/system/pkg_mgmt.py", line 214, in update_check
+    raise e
+CommandException: Error running a command. cmd = /usr/bin/yum changelog all rockstor. rc = 1. stdout = ['Loaded plugins: fastestmirror, langpacks', '']. stderr = ['No such command: changelog. Please use /usr/bin/yum --help', '']
+<Greenlet at 0x7fe5562a2370: <bound method SysinfoNamespace.update_check of <smart_manager.data_collector.SysinfoNamespace object at 0x7fe556775c10>>> failed with CommandException
+

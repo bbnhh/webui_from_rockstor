@@ -20,16 +20,16 @@
 </script>
 <div class="messages"></div>
 <div>
-  <a class="btn btn-primary" href="#" id="js-acl-edit"><i class="glyphicon glyphicon-edit "></i> Edit</a>
+  <a class="btn btn-primary" href="#" id="js-acl-edit"><i class="glyphicon glyphicon-edit "></i> 编辑</a>
 </div>
 <br><br>
 <table class="table table-bordered table-condensed">
   <tr>
-    <td>Owner</td>
+    <td>属主</td>
     <td>{{shareOwner}}</td>
   </tr>
   <tr>
-    <td>Group</td>
+    <td>属组</td>
     <td>{{shareGroup}}</td>
   </tr>
   <tr>
@@ -41,20 +41,20 @@
       <table class="noborder table-condensed">
         <tr>
           <td>&nbsp;</td>
-          <td>Owner</td>
-          <td>Group</td>
-          <td>Other</td>
+          <td>属主</td>
+          <td>属组</td>
+          <td>其他</td>
         </tr>
         <tr>
-          <td>Read</td>
+          <td>读</td>
           {{view_read_permissions}}
         </tr>
         <tr>
-          <td>Write</td>
+          <td>写</td>
           {{view_write_permissions}}
         </tr>
         <tr>
-          <td>Execute</td>
+          <td>执行</td>
           {{view_execute_permissions}}
         </tr>
 

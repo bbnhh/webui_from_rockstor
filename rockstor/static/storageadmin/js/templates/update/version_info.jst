@@ -10,12 +10,10 @@ $(document).ready(function(){
     {{#is_sub_active defaultSub}}
     <div class="alert alert-danger">
       <p>
-	Testing updates are activated. These are cutting edge updates that should
-	be applied only after careful consideration. When an update is released,
-	read the changelog and proceed with caution.
+	测试更新已激活。这些都是最前沿的更新，只有在仔细考虑后才能应用。发布更新时，请阅读更改日志并小心进行.
       </p>
       <p>
-	Alternatively, Stable updates are generally recommended as shown below.
+	或者，通常推荐如下所示的稳定更新.
       </p>
     </div>
     {{/is_sub_active}}
@@ -23,11 +21,7 @@ $(document).ready(function(){
     {{#no_sub_active}}
     <div class="alert alert-success">
       <p>
-	You can receive software updates from one of the two update channels as
-	shown in the below table. Please activate a channel that is appropriate
-	for your needs. Stable updates are generally recommended, unless you want
-	to actively test Rockstor. If you have questions, email
-	support@rockstor.com
+	您可以从两个更新频道之一接收软件更新，如下表所示。请激活适合您需要的频道。通常建议进行稳定的更新，除非您想主动测试CyStor.如果您有问题，请发送电子邮件
       </p>
     </div>
     {{/no_sub_active}}
@@ -37,16 +31,16 @@ $(document).ready(function(){
     <table class="table table-hover" id="subscription-table">
       <thead>
 	<tr class="active">
-          <th>Feature</th>
-          <th>Stable Updates</th>
-          <th>Testing Updates</th>
+          <th>特征</th>
+          <th>稳定更新</th>
+          <th>测试更新</th>
 	</tr>
       </thead>
       <tbody>
 	<tr>
-          <td>Update Frequency</td>
-          <td>3-4 Weeks</td>
-          <td>2-3 days</td>
+          <td>更新频率</td>
+          <td>3-4 周</td>
+          <td>2-3 天</td>
 	</tr>
 	<tr>
           <td>Priority of bug fixes</td>
@@ -98,7 +92,7 @@ $(document).ready(function(){
 <br>
 <div class="col-sm-offset-3 col-sm-6 col-sm-offset-3">
   <div id="updateInfo">
-    <h3><strong>Rockstor {{mostRecentVersion}}</strong> update is available! </h3>
+    <h3><strong>CYstor {{mostRecentVersion}}</strong> update is available! </h3>
   </div>
 </div>&nbsp;&nbsp;&nbsp;&nbsp;
 <br><br>
@@ -113,7 +107,7 @@ $(document).ready(function(){
     {{#is_sub_active defaultSub}}
     <p>
       You should review the
-      changelog <a href="https://github.com/rockstor/rockstor-core/commits/master"
+      changelog <a href="https://github.com/CYstor/rockstor-core/commits/master"
 		   target="_blank">here</a> before proceeding with the update.
     </p>
     {{/is_sub_active}}
@@ -124,7 +118,7 @@ $(document).ready(function(){
   {{#is_sub_active defaultSub}}
   <div class="alert alert-success" id="contrib-alert">
     <h4>We are happy to make this update available to you. Please support us by
-      <a id="donateYes" href="#version"> Donating</a> or making a <a href="http://shop.rockstor.com" target="_blank"> Purchase</a></h4>
+      <a id="donateYes" href="#version"> Donating</a> or making a <a href="http://shop.CYstor.com" target="_blank"> Purchase</a></h4>
   </div>
   {{/is_sub_active}}
   <a id="update" class="btn btn-primary" title="start update">Start Update</a>
@@ -133,13 +127,13 @@ $(document).ready(function(){
 {{else}}
 <div class="col-md-offset-3 col-md-6 col-md-offset-3">
   <div id="updateInfo">
-    <h3>System is running the latest Rockstor version: {{currentVersion}}</h3>
+    <h3>System is running the latest CYstor version: {{currentVersion}}</h3>
     <p>If you've updated recently, reload the browser<b>(Ctrl+Shift+R)</b> for latest UI changes.</p><br>
 
     {{#if autoUpdateEnabled}}
-    <a id="autoUpdateSwitch" class="btn btn-primary" title="Rockstor is configured to check for available system updates and automatically upgrade all packages on a daily basis. This will keep your entire system up to date. While it's not recommended, you can disable this feature and only update when you want to.">Disable auto update</a>
+    <a id="autoUpdateSwitch" class="btn btn-primary" title="CYstor is configured to check for available system updates and automatically upgrade all packages on a daily basis. This will keep your entire system up to date. While it's not recommended, you can disable this feature and only update when you want to.">Disable auto update</a>
     {{else}}
-    <a id="autoUpdateSwitch" class="btn btn-primary" title="Rockstor can be configured to check for available system updates and automatically upgrade all packages on a daily basis. We recommend you enable this feature to keep your entire system up to date without delay.">Enable auto update</a>
+    <a id="autoUpdateSwitch" class="btn btn-primary" title="CYstor can be configured to check for available system updates and automatically upgrade all packages on a daily basis. We recommend you enable this feature to keep your entire system up to date without delay.">Enable auto update</a>
     {{/if}}
   </div>
 </div>
@@ -161,14 +155,14 @@ $(document).ready(function(){
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-	<h4>Rockstor is being updated to the latest version. Please wait... &nbsp;&nbsp; </h4>
+	<h4>CYstor is being updated to the latest version. Please wait... &nbsp;&nbsp; </h4>
       </div>
       <div class="modal-body">
 	<div style="text-align: center">
 	  <img src="/static/storageadmin/img/ajax-loader-big.gif">
 	  <div id="time-left"></div>
 	</div>
-	<div id="user-msg" style="display: none">The Rockstor update is still going on. if the page does not automatically refresh after a few minutes, please try manually refreshing after some time.</div>
+	<div id="user-msg" style="display: none">The CYstor update is still going on. if the page does not automatically refresh after a few minutes, please try manually refreshing after some time.</div>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -178,9 +172,9 @@ $(document).ready(function(){
   <input type="hidden" name="cmd" value="_xclick" />
   <input type="hidden" name="business" value="WUDA5UNJXDCZ8" />
   <input type="hidden" name="currency_code" value="USD" />
-  <input type="hidden" name="item_name" value="Support Rockstor development" />
+  <input type="hidden" name="item_name" value="Support CYstor development" />
   <input type="hidden" name="amount" value="10" />
-  <input type="hidden" name="cn" value="Note to Rockstor developers" />
+  <input type="hidden" name="cn" value="Note to CYstor developers" />
   <input type="hidden" name="no_shipping" value="1" />
 </form>
 
@@ -195,10 +189,10 @@ $(document).ready(function(){
 	  Please follow these steps to activate Stable updates.
 	</p>
 	<ol>
-	  <li>Purchase the Activation code by clicking <a href="http://shop.rockstor.com/products/stable-release-channel-subscription#applianceid={{applianceId}}" target="_blank">here.</a>
+	  <li>Purchase the Activation code by clicking <a href="http://shop.CYstor.com/products/stable-release-channel-subscription#applianceid={{applianceId}}" target="_blank">here.</a>
 	  <li>The Activation code will be sent to you via e-mail.</li>
 	  <li>Come back to this screen and enter the Activation code.</li>
-	  <li>Enjoy Stable updates. Thanks for supporting Rockstor!</li>
+	  <li>Enjoy Stable updates. Thanks for supporting CYstor!</li>
 	</ol>
 	<form id="activate-stable-form" name="aform" class="form-horizontal">
 	  <div class="form-group">
@@ -264,7 +258,7 @@ $(document).ready(function(){
       <div class="modal-body">
 	{{#if autoUpdateEnabled}}
 	<p>
-	  Currently Rockstor is configured to check for available system updates
+	  Currently CYstor is configured to check for available system updates
 	  and automatically upgrade all packages on a daily basis. This will keep
 	  your entire system up to date. Disabling auto updates is only
 	  recommended when you have Testing updates activated.
@@ -279,7 +273,7 @@ $(document).ready(function(){
 	</div>
 	{{/is_sub_active}}
 	<p>
-	  By enabling auto updates, Rockstor will check for available system
+	  By enabling auto updates, CYstor will check for available system
 	  updates and automatically upgrade all packages on a daily
 	  basis. Enabling this feature is recommended except when Testing
 	  updates are active.

@@ -1,6 +1,6 @@
   <div class="alert alert-danger">
   {{#unless userError}}
-    <strong><h5>Houston, we've had a problem.</h5></strong>
+    <strong><h5>遇到了一个错误.</h5></strong>
   {{/unless}}
   <div class="global-err-content">
     {{detail}}
@@ -16,24 +16,24 @@
 <br>
 
 <div class="err-help reportError">
-  {{#if stable}}
-    <p>As a subscriber to Stable updates, you are eligible for commercial support. Please follow these steps to get help from the Rockstor team.</p>
+  <!--{{#if stable}}
+    <p>作为稳定更新的订阅者，您有资格获得商业支持。请按照以下步骤从CYstor团队获得帮助.</p>
   {{else}}
-    <p>If you think this is a bug or need help, follow these steps to submit a report to the Rockstor Community Forum.</p>
+    <p>如果您认为这是一个bug或需要帮助，请按照以下步骤向CYstor官网提交报告.</p>
   {{/if}}
   <ol>
-    <li>Take a screen capture of this error/screen.</li>
-    <li>Click
+    <li>捕获此错误/屏幕的屏幕截图.</li>
+    <li>点击
         <a id="clip" data-clipboard-target="#errorContent">
             <i class="fa fa-clipboard fa-lg" aria-hidden="true"></i>
         </a>
-        to copy the above traceback to your clipboard.
+        将上述回溯复制到剪贴板.
     </li>
     {{#if stable}}
-        <li>Create a support ticket with information from above two steps <a href="https://support.rockstor.com/open.php" target="_blank">here</a>.</li>
+        <li>使用上述两个步骤中的信息创建支持票证 <a href="https://support.cy.com/open.php" target="_blank">在这里</a>.</li>
     {{else}}
-        <li>Create a support topic with information from above two steps <a href="https://forum.rockstor.com/new-topic?title={{detail}}&category=support" target="_blank">here</a>.</li>
+        <li>使用上述两个步骤中的信息创建支持主题 <a href="https://forum.cy.com/new-topic?title={{detail}}&category=support" target="_blank">在这里</a>.</li>
         {{/if}}
-  </ol>
+  </ol>-->
 </div> <!-- err-help -->
 {{/unless}}

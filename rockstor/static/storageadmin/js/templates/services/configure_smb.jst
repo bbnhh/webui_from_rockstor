@@ -22,13 +22,13 @@
 <div class="row">
     <div class="col-md-12">
         <div class="panel panel-default">
-            <div class="panel-heading">Configure {{serviceName}}</div>
+            <div class="panel-heading">配置 {{serviceName}}</div>
 
             <div class="panel-body">
                 <form class="form-horizontal" id="smb-form" name="aform">
                     <div class="messages"></div>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" for="workgroup">Workgroup<span class="required"> * 
+                        <label class="col-sm-4 control-label" for="workgroup">工作组<span class="required"> * 
                             {{#isEnabledAD}}
                             <i class="fa fa-info-circle" title="Workgroup field disabled: Active Directory is running and workgroup name has been retrieved from domain"></i>
                             {{/isEnabledAD}}                          
@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" for="global_config">Custom global configuration </label>
+                        <label class="col-sm-4 control-label" for="global_config">自定义全局配置 </label>
                         <div class="col-sm-8">
                             <textarea rows="5" columns="40" id="global_config" name="global_config" class="form-control">{{display_smb_params}}</textarea>
                         </div>
@@ -48,8 +48,8 @@
 
                     <div class="form-group">
                         <div class="col-sm-8 col-sm-offset-4">
-                            <button id="cancel" class="btn btn-default">Cancel</button>
-                            <button type="Submit" id="submit" class="btn btn-primary">Submit</button>
+                            <button id="cancel" class="btn btn-default">取消</button>
+                            <button type="Submit" id="submit" class="btn btn-primary">确认</button>
                         </div>
                     </div>
                 </form>

@@ -26,7 +26,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/static/storageadmin/img/favicon.ico">
-    <title> Rockstor {% block title %}{% endblock %}</title>
+    <title> ChengyeStor {% block title %}{% endblock %}</title>
     <link href="/static/storageadmin/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/js/lib/cron/jquery-cron.css" rel="stylesheet">
     <link href="/static/js/lib/gentleSelect/jquery-gentleSelect.css" rel="stylesheet">
@@ -164,7 +164,7 @@
 
   <div id="appliance-breadcrumb">
       <a id="appliance-name" href="#"></a>
-      <div id="local-time"><i class="fa fa-clock-o fa-inverse"></i>&nbsp;Local Time:&nbsp;<span/></div>
+      <div id="local-time"><i class="fa fa-clock-o fa-inverse"></i>&nbsp;时间:&nbsp;<span/></div>
       <a id="direct-shell" href="#shell"><i class="fa fa-desktop fa-inverse"></i>&nbsp;System Shell</a>
       <div id="shutdown-status"></div>
       <div id="pool-degraded-status"></div>
@@ -203,7 +203,7 @@
 			    <div class="modal-dialog">
 					<div class="modal-content">
 					    <div class="modal-header">
-                            <h3>Yum available updates</h3>
+                            <!--<h3>Yum available updates</h3>-->
 						</div>
 						<div class="modal-body" id="yumContent" style="overflow: auto; height: 350px;">
                             <div class="panel-group" id="yum_panels"></div>
@@ -236,11 +236,11 @@
           <div class="modal-content">
               <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true" >x</button>
-                  <h3>Error!</h3>
+                  <h3>错误!</h3>
               </div>
               <div class="modal-body" id="errorContent" style="overflow: scroll; height: 200px;"></div>
               <div class="modal-footer">
-                  <button type="button" data-dismiss="modal" class="btn">Close</button>
+                  <button type="button" data-dismiss="modal" class="btn">关闭</button>
               </div>
           </div>
       </div>
@@ -255,7 +255,7 @@
     <div class="modal-content">
       <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3 id="donate-modal-label">Thank you! for supporting Rockstor development</h3>
+        <h3 id="donate-modal-label">感谢您支持橙叶存储</h3>
       </div>
       <div class="modal-body">
         <div class="radio">
@@ -274,7 +274,7 @@
         </div>
         <div class="radio">
           <label>
-        <input type="radio" name="contrib" class="contrib-other" id="contrib50" value="50">$50 (Free Rockstor USB drive)
+        <input type="radio" name="contrib" class="contrib-other" id="contrib50" value="50">$50 (Free Chengyestor USB drive)
           </label>
         </div>
         <div class="radio">

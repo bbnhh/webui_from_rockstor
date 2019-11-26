@@ -311,7 +311,6 @@ class PoolListView(PoolMixin, rfc.GenericView):
             disks = [self._validate_disk(d, request) for d in
                      request.data.get('disks')]
             logger.debug("DISSSSSSSSS")
-            logger.debug(disks)
             pname = request.data['pname']
             if (re.match('%s$' % settings.POOL_REGEX, pname) is None):
                 e_msg = ('Invalid characters in pool name. Following '
@@ -336,6 +335,7 @@ class PoolListView(PoolMixin, rfc.GenericView):
                 handle_exception(Exception(e_msg), request)
 
             for d in disks:
+                logger.debug(d.name)
                 if (d.btrfs_uuid is not None):
                     e_msg = ('Another BTRFS filesystem exists on this '
                              'disk ({}). '

@@ -22,16 +22,16 @@
   <div class="col-md-8">
     <div class="panel panel-default">
       {{#if groupname}}
-      <div class="panel-heading">Create a new group</div>
+      <div class="panel-heading">创建新的用户组</div>
       {{else}}
-      <div class="panel-heading">Edit Group</div>
+      <div class="panel-heading">编辑用户组</div>
       {{/if}}
 
     <div class="panel-body">
       <form class="form-horizontal" id="group-create-form" name="aform">
         <div class="messages"></div>
         <div class="form-group">
-          <label class="col-sm-4 control-label" for="groupname">Groupname
+          <label class="col-sm-4 control-label" for="groupname">组名
 	    {{#unless groupname}}
             <span class="required"> *</span>
 	    {{/unless}}
@@ -56,7 +56,7 @@
 		{{else}}
 		<input type="checkbox" id="admin" name="admin" placeholder="Admin">
 		{{/if}}
-		Put this group under Rockstor management?
+		把这个小组交给CYStor管理？
               </label>
             </div>
 	  </div>
@@ -69,8 +69,8 @@
 	</div>
         <div class="form-group">
 	  <div class="col-sm-offset-4 col-sm-8">
-            <button id="cancel" class="btn btn-default">Cancel</button>
-            <button type="Submit" id="create-group" class="btn btn-primary">Submit</button>
+            <button id="cancel" class="btn btn-default">取消</button>
+            <button type="Submit" id="create-group" class="btn btn-primary">确认</button>
 	  </div>
         </div>
       </form>

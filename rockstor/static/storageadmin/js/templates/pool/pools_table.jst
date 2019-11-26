@@ -2,16 +2,14 @@
 <table id="pools-table" class="table table-bordered table-striped share-table data-table" width="100%" summary="List of pools">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Size</th>
-      <th>Usage</th>
-      <th>Quotas</th>
+      <th>名称</th>
+      <th>大小</th>
+      <th>已用容量</th>
       <th>Raid</th>
-      <th>Active mount options / Status</th>
-      <th>Compression</th>
-      <th>Extra mount options</th>
-      <th>Disks</th>
-      <th>Actions</th>
+      <!--<th>压缩</th>-->
+      <!--<th>额外挂载选项</th>-->
+      <th>磁盘</th>
+      <th>操作</th>
       </tr>
   </thead>
   <tbody>
@@ -33,55 +31,25 @@
             <td>{{humanReadableSize 'usage' this.size this.reclaimable this.free}}
                 <strong>({{humanReadableSize 'usagePercent' this.size this.reclaimable this.free}} %)</strong>
             </td>
-            <td>
-                <strong>
-                    <a href="#" class="editQuotaOverview" data-name="editQuotaOverview" data-type="select"
-                       data-value="{{isEnabledDisabled this.quotas_enabled}}" data-pid="{{this.id}}"
-                       data-title="<strong>Enabled: </strong> (Rockstor default) - Used to track and limit
-                       (pending feature) pool share usage.<br><strong>Disabled: </strong> (optional) - significant
-                       performance benefits with high snapshot count (>200/share) and when balancing large
-                       pools (double digit TB).<br>Note: when quotas are disabled share usage is (currently)
-                       not tracked and can show <strong><i>0 bytes.</i></strong>">
-                        {{isEnabledDisabled this.quotas_enabled}}
-                    </a>
-                </strong>
-            </td>
+
             <td>{{this.raid}}
                 {{#unless (isRoot this.role)}}
                       &nbsp;<a href="#pools/{{this.id}}/?cView=resize"><i class="fa fa-pencil-square-o"></i></a>
                 {{/unless}}
             </td>
-            <td>{{#if this.is_mounted}}
-                    {{this.mount_status}}
-                {{else}}
-                    <strong><span style="color:red">{{this.mount_status}}</span></strong>
-                {{/if}}
-            </td>
-            <td>{{#if (isRoot this.role)}}
-                    {{this.compression}}
-                {{else}}
-                    <strong><a href="#" class="cmpOptns" data-name="cmpOptns" data-type="select" data-mntoptn="{{this.mnt_options}}"
-                               data-value="{{this.compression}}" data-pid="{{this.id}}" data-title="Pool compression algorithm.
-                               <br><strong>zlib: </strong>slower than lzo but higher compression ratio.<br><strong>lzo: </strong>
-                               faster than zlib but lower compression ratio.<br>Pool level compression applies to all it's Shares.
-                               <br>Alternatively: consider Share level compression.<br>Unchanged data remains at prior setting
-                               until balanced.">
-                    {{this.compression}}</a></strong>
-                {{/if}}
-            </td>
-            <td>{{#if (isRoot this.role)}}
-                    {{this.mnt_options}}
-                {{else}}
-                    <strong><a href="#" class="mntOptns" data-name="mntOptns" data-type="text" data-comp="{{this.compression}}"
-                               data-value="{{this.mnt_options}}" data-pid="{{this.id}}" data-title="This is for <strong>Advanced
-                               users</strong> to provide specific BTRFS mount options.<br> Type them as a comma separated string
-                               of options without any spaces.<br> Allowed options are <strong>alloc_start, autodefrag, clear_cache,
-                               commit, compress-force, degraded, discard, fatal_errors, inode_cache, max_inline, metadata_ratio,
-                               noacl, noatime, nodatacow, nodatasum, nospace_cache, nossd, ro, rw, skip_balance, space_cache, ssd,
-                               ssd_spread, thread_pool</strong>">
-                    {{this.mnt_options}}</a></strong>
-                {{/if}}
-            </td>
+            <!--<td>
+            {{#if (isRoot this.role)}}
+                    OFF
+            {{else}}
+                <strong><a href="#" class="status" data-type="select" data-mntoptn="{{this.mnt_options}}" data-pid="{{this.id}}">
+                {{this.compression}}</a></strong>
+            {{/if}}
+            </td>-->
+            <!--<td>{{#unless (isRoot this.role)}}
+                <strong><a href="#" class="mntOptns" data-type="text" data-comp="{{this.compression}}" data-pid="{{this.id}}">
+                {{this.mnt_options}}</a></strong>
+                {{/unless}}
+            </td>-->
             <td>
                 {{#if (isRoot this.role)}}
                     {{#each this.disks}}
@@ -112,12 +80,6 @@
                     "&nbsp;
                     {{/each}}
                 {{/if}}
-                {{#if this.has_missing_dev}}
-                    <strong><span style="color:red">(SOME MISSING) </span></strong>
-                {{/if}}
-                {{#unless this.dev_stats_ok}}
-                    <strong><span style="color:red">(DEV ERRORS DETECTED)</span></strong>
-                {{/unless}}
             </td>
             <td>{{#if (isRoot this.role)}}
                     N/A
@@ -132,16 +94,16 @@
           <div class="modal-content">
            <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="myModalLabel">Delete Pool ({{this.name}})</h3>
+            <h3 id="myModalLabel">删除池 ({{this.name}})</h3>
            </div>
            <div class="modal-body">
             <div class="messages"></div>
-            <h4>{{this.name}} will be deleted including it's Shares listed below and their Snapshots, NFS exports, Samba and SFTP config and Replics. Are you sure?</h4>
+            <h4>{{this.name}} 将被删除，包括下面列出的它的共享及其快照、nfs导出、samba和sftp配置和replics。你确定吗？</h4>
             <ul id="pool-shares"></ul>
            </div>
            <div class="modal-footer">
-            <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Cancel</button>
-            <button id="js-confirm-pool-delete" data-id="{{this.id}}" class="btn btn-primary">Confirm</button>
+            <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">取消</button>
+            <button id="js-confirm-pool-delete" data-id="{{this.id}}" class="btn btn-primary">确认</button>
            </div>
           </div>
          </div>
@@ -150,13 +112,13 @@
   </tbody>
 </table>
 {{ else }}
-<h4>No Pools have been created</h4>
+<h4>没有被创建的池</h4>
 {{/if}}
 <div>
     <a {{#if disksAvailable}}
             href="#add_pool"
         {{else}}
-            disabled title="There are no Disks available to create a Pool at this time.
+            disabled title="此时没有可用于创建池的磁盘。
         {{/if}}
-    id="add_pool" class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i>&nbsp;Create Pool</a>
+    id="add_pool" class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i>&nbsp;创建池</a>
 </div>

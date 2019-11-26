@@ -21,8 +21,8 @@
 <div class="messages"></div>
 <div class="pull-left custom-padding">
   {{#if collectionNotEmpty}}
-    <a class="btn btn-primary" href="#" id="js-snapshot-add"><i class="glyphicon glyphicon-edit "></i> Create</a>
-  <a class="btn btn-danger" href="#" id="js-snapshot-delete-multiple" style="visibility:hidden;"><i class="glyphicon glyphicon-trash "></i> Delete selected</a>
+    <a class="btn btn-primary" href="#" id="js-snapshot-add"><i class="glyphicon glyphicon-edit "></i> 创建</a>
+  <a class="btn btn-danger" href="#" id="js-snapshot-delete-multiple" style="visibility:hidden;"><i class="glyphicon glyphicon-trash "></i> 删除所选</a>
   {{/if}}
 </div>
 {{#if collectionNotEmpty}}
@@ -32,12 +32,12 @@
         <th>
           <input class="js-snapshot-select-all inline" type="checkbox" name="snapshot-select-all" ></input>
         </th>
-        <th>Name</th>
-        <th>Created on</th>
-        <th>Visibility to user</th>
-        <th>Writable</th>
-        <th>Total Size</th>
-	    <th>Exclusive Size</th>
+        <th>姓名</th>
+        <th>创建于</th>
+        <th>对用户的可见性</th>
+        <th>可写</th>
+        <th>总大小</th>
+	    <th>额外大小</th>
       </tr>
     </thead>
     <tbody>
@@ -46,24 +46,24 @@
               <td>{{printCheckboxes this.name this.id}}</td>
               <td><i class="glyphicon glyphicon-camera"></i> {{this.name}} &nbsp;&nbsp;&nbsp;&nbsp;
               {{#if this.writable}}
-                <a class="js-snapshot-clone" href="#" data-name="{{this.name}}"><i rel="tooltip" title="Clone snapshot" class="glyphicon glyphicon-book"></i></a>&nbsp;
+                <a class="js-snapshot-clone" href="#" data-name="{{this.name}}"><i rel="tooltip" title="克隆快照" class="glyphicon glyphicon-book"></i></a>&nbsp;
               {{/if}}
               <a href="#" class="js-snapshot-delete" id="delete_snapshot_{{this.name}}" data-name="{{this.name}}" data-size="{{getSize this.eusage}}" 
-              data-share-name="{{this.share.name}}" data-action="delete" title="Delete snapshot"><i rel="tooltip" title="Delete snapshot" class="glyphicon glyphicon-trash"></i></a>
+              data-share-name="{{this.share.name}}" data-action="delete" title="Delete snapshot"><i rel="tooltip" title="删除快照" class="glyphicon glyphicon-trash"></i></a>
               </td>
               <td>{{getToc this.toc}}</td>
                <td>
                {{#if this.uvisible}}
-                    Visible
+                    可见
                {{else}}
-                    Hidden
+                    隐藏
                {{/if}}
                </td>
                <td>
                {{#if this.writable}}
-                    Yes
+                    是
                {{else}}
-                    No
+                    否
                {{/if}}
                </td>
                <td>{{getSize this.rusage}}</td>
@@ -74,5 +74,5 @@
   </table>
 <div>{{pagination}}</div>
 {{else}}
-  <div class="share-snapWarning"><p>There are no snapshots. <a href="#" id="js-snapshot-add">click here </a>to create</p></div>
+  <div class="share-snapWarning"><p>没有快照. <a href="#" id="js-snapshot-add">点此 </a>创建</p></div>
 {{/if}}

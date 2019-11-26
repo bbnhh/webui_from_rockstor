@@ -22,20 +22,20 @@
 <div class="row">
     <div class="col-md-12">
         <div class="panel panel-default">
-            <div class="panel-heading">Configure {{serviceName}}</div>
+            <div class="panel-heading">配置 {{serviceName}}</div>
             <div class="panel-body">
                 <form class="form-horizontal" id="ldap-form" name="aform">
                     <div class="messages"></div>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" for="server">LDAP Server<span class="required"> *</span></label>
+                        <label class="col-sm-4 control-label" for="server">LDAP 服务<span class="required"> *</span></label>
                         <div class="col-sm-4">
-                            <input class="form-control" type="text" id="server" name="server" value="{{config.server}}" placeholder="LDAP Server" title="IP address of LDAP Server">
+                            <input class="form-control" type="text" id="server" name="server" value="{{config.server}}" placeholder="LDAP Server" title="LDAP服务器的IP地址">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" for="basedn">Search base DN<span class="required"> *</span></label>
+                        <label class="col-sm-4 control-label" for="basedn">搜索基础 DN<span class="required"> *</span></label>
                         <div class="col-sm-4">
-                            <input class="form-control" type="text" id="basedn" name="basedn" value="{{config.basedn}}" placeholder="Search base DN" title="Distinguished Name ">
+                            <input class="form-control" type="text" id="basedn" name="basedn" value="{{config.basedn}}" placeholder="Search base DN" title="可识别的名称 ">
                         </div>
                     </div>
                     <div class="checkbox">
@@ -45,22 +45,22 @@
                         </div>
                         {{else}}
                         <div class="col-sm-4">
-                            <input type="checkbox" name="enabletls" id="enabletls"> {{/if}} Enable TLS to encrypt connections?</div>
+                            <input type="checkbox" name="enabletls" id="enabletls"> {{/if}} 启用TLS加密连接?</div>
                     </div>
                     {{#if config.enabletls}}
                     <div class="form-group" id="cert-ph">
                         {{else}}
                         <div class="form-group" id="cert-ph" style="visibility: hidden">
                             {{/if}}
-                            <label class="col-sm-4 control-label" for="cert-utl">Certificate URL<span class="required"> *</span></label>
+                            <label class="col-sm-4 control-label" for="cert-utl">证书 URL<span class="required"> *</span></label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="cert" name="cert" value="{{config.cert}}" placeholder="Certificate URL" title="URL to download Certificate in PEM format">
+                                <input type="text" class="form-control" id="cert" name="cert" value="{{config.cert}}" placeholder="Certificate URL" title="下载PEM格式证书的URL">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-4 col-sm-8">
-                                <button id="cancel" class="btn btn-default">Cancel</button>
-                                <button type="Submit" id="create-user" class="btn btn-primary">Submit</button>
+                                <button id="cancel" class="btn btn-default">取消</button>
+                                <button type="Submit" id="create-user" class="btn btn-primary">确认</button>
                             </div>
                         </div>
                 </form>

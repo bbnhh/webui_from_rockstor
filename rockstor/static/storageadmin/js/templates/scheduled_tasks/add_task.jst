@@ -39,19 +39,19 @@
 <div class="row">
     <div class="col-md-8">
         <div class="panel panel-default">
-            <div class="panel-heading">{{#if taskDefIdNull}}Schedule a new task{{else}}Edit a scheduled task{{/if}}</div>
+            <div class="panel-heading">{{#if taskDefIdNull}}新的任务计划表{{else}}编辑任务计划表{{/if}}</div>
             <div class="panel-body">
                 {{#if taskDefIdNull}}
                 <form id="scheduled-task-create-form" name="aform">
                     <div class="messages"></div>
                     <div class="form-group">
                         <div class="row">
-                            <label class="control-label col-md-4" for="task_name">Task name<span class="required"> *</span></label>
-                            <label class="control-label col-md-4" for="task_type">Task type<span class="required"> *</span></label>
+                            <label class="control-label col-md-4" for="task_name">计划名称<span class="required"> *</span></label>
+                            <label class="control-label col-md-4" for="task_type">计划类型<span class="required"> *</span></label>
                         </div>
                         <div class="row">
                             <div class="col-sm-4">
-                                <input class="form-control col-md-4" type="text" id="name" name="name" placeholder="Task name" title="A descriptive name for this task">
+                                <input class="form-control col-md-4" type="text" id="name" name="name" placeholder="Task name">
                             </div>
                             <div class="col-sm-4">
                                 <select class="form-control" id="task_type" name="task_type">
@@ -65,13 +65,13 @@
                     {{else}}
                     <form id="scheduled-task-create-form" class="form-horizontal" name="aform" >
                     <div class="form-group">
-                        <label class="control-label col-sm-4" for="share">Task name: </label>
+                        <label class="control-label col-sm-4" for="share">人物名: </label>
                         <div class="col-sm-6">
                             <input type="text" class="form-control" value="{{> taskObj.name}}" disabled />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-4" for="share">Task type: </label>
+                        <label class="control-label col-sm-4" for="share">任务类型: </label>
                         <div class="col-sm-6">
                             <input type="text" class="form-control" id="task_type" name="task_type" value="{{> taskObj.type}}" disabled />
                         </div>
@@ -81,11 +81,11 @@
                     {{#if taskDefIdNull}}
                     <div class="checkbox" style="clear: both">
                         <label>
-                            <input type="checkbox" checked id="enabled" name="enabled" placeholder="Enable this task" title="Disabled tasks will be created but not run till they are enabled"> Enable this task?
+                            <input type="checkbox" checked id="enabled" name="enabled" placeholder="Enable this task"> 启用此任务?
                         </label>
                     </div>
                     <div class="form-group">
-                    <label for="cron">Frequency of task</label>
+                    <label for="cron">任务频率</label>
                         <div class="row">
                             <div class="col-sm-12">
                                 <div id="cron"></div>
@@ -93,9 +93,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="cron-window">Task execution time windows<i class="fa fa-info-circle" title="Execution time windows apply for minutes/hours tasks only.
-                            All limits indicated are inclusive, so a task running for example from Friday to Sunday
-                            will be executed on Friday and Sunday too."></i></label>
+                        <label for="cron-window">任务执行时间窗口<i class="fa fa-info-circle"></i></label>
                         <div class="row">
                             <div class="col-sm-12">
                                 <div id="cron-window"></div>
@@ -103,7 +101,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <a id="js-cancel" class="btn btn-default">Cancel</a>
+                        <a id="js-cancel" class="btn btn-default">取消</a>
                         <input type="Submit" id="create-scheduled-task" class="btn btn-primary" value="Submit"></input>
                     </div>
                     {{else}}
@@ -111,28 +109,26 @@
                         <div class="col-sm-offset-4 col-sm-6">
                             <div class="checkbox">
                                 <label>
-                                    <input class="checkbox" type="checkbox" id="enabled" name="enabled" {{> taskObj.enabled}} title="Disabled tasks will be created but not run till they are enabled">Enable task?
+                                    <input class="checkbox" type="checkbox" id="enabled" name="enabled" {{> taskObj.enabled}} title="此任务已被创建，它在启用之前不会运行">Enable task?
                                 </label>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-4" for="cron">Task frequency</label>
+                        <label class="control-label col-sm-4" for="cron">任务频率</label>
                         <div class="col-sm-6">
                             <div id="cron"></div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-4" for="cron">Task execution time ranges<i class="fa fa-info-circle" title="Execution time windows apply for minutes/hours tasks only.
-                            All limits indicated are inclusive, so a task running for example from Friday to Sunday
-                            will be executed on Friday and Sunday too."></i></label>
+                        <label class="control-label col-sm-4" for="cron">任务执行时间表<i class="fa fa-info-circle"></i></label>
                         <div class="col-sm-6">
                             <div id="cron-window"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="controls col-sm-offset-4 col-sm-6">
-                            <a id="js-cancel" class="btn btn-default">Cancel</a>
+                            <a id="js-cancel" class="btn btn-default">取消</a>
                             <input type="Submit" id="create-scheduled-task" class="btn btn-primary" value="Submit"></input>
                         </div>
                     </div>

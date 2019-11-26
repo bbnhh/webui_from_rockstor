@@ -22,22 +22,22 @@
 <div class="row">
 <div class="col-md-8">
 <div class="panel panel-default">
-    <div class="panel-heading">Create Pool</div>
+    <div class="panel-heading">创建存储池</div>
 
     <div class="panel-body">
         <form class="form-horizontal" name="add-pool-form" id="add-pool-form" >
             <div class="messages"></div>
             <div class="form-group">
-                <label class="col-sm-4 control-label" for="pool_name">Name<span class="required"> *</span></label>
+                <label class="col-sm-4 control-label" for="pool_name">名称<span class="required"> *</span></label>
                 <div class="col-sm-6">
-                    <input class="form-control" type="text" name="pool_name" id="pool_name" title="Following characters are allowed: letter(a-z or A-Z), digit(0-9), hyphen(-), underscore(_) or a period(.). ">
+                    <input class="form-control" type="text" name="pool_name" id="pool_name" title="F允许使用以下字符：字母（a-z或a-z）、数字（0-9）、连字符（-）、下划线（u）或句点（.） ">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-4 control-label" for="raid_level">Raid configuration<span class="required"> *</span></label>
+                <label class="col-sm-4 control-label" for="raid_level">Raid 配置<span class="required"> *</span></label>
                 <div class="col-sm-6">
                     <select class="form-control" id="raid_level" name="raid_level">
-                        <option value="single">Single</option>
+                        <option value="single">单盘</option>
                         <option value="raid0">Raid0</option>
                         <option value="raid1">Raid1</option>
                         <option value="raid10">Raid10</option>
@@ -47,32 +47,35 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-4 control-label" for="compression">Compression</label>
+                <label class="col-sm-4 control-label" for="compression">压缩</label>
                 <div class="col-sm-6">
                     <select class="form-control" id="compression" name="compression">
-                        <option value="no">Don't enable compression</option>
-                        <option value="zlib">zlib</option>
-                        <option value="lzo">lzo</option>
+                        <option value="no">不使用压缩</option>
+                        <!--<option value="zlib">on</option>
+                        <option value="lzo">lzjb</option>
+                        <option value="zlib">gzip</option>
+                        <option value="lzo">zle</option>
+                        <option value="lzo">lz4</option>-->
                     </select>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-4 control-label" for="mnt_options">Mount options</label>
                 <div class="col-sm-6">
-                    <input class="form-control" type="text" name="mnt_options" id="mnt_options" data-html="true" title="This is for <strong>Advanced users</strong> to provide specific BTRFS mount options.<br>Type them as a comma separated string of options without any spaces.<br> Allowed options are <strong>alloc_start, autodefrag, clear_cache, commit, compress-force, degraded, discard, fatal_errors, inode_cache, max_inline, metadata_ratio, noacl, noatime, nodatacow, nodatasum, nospace_cache, nossd, ro, rw, skip_balance, space_cache, ssd, ssd_spread, thread_pool</strong>">
+                    <input class="form-control" type="text" name="mnt_options" id="mnt_options" data-html="true">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-4 control-label" for="disks">Select disks<span class="required"> *</span></label>
+                <label class="col-sm-4 control-label" for="disks">选择磁盘<span class="required"> *</span></label>
                 <div class="col-sm-6">
                     <div class="poolDiskTableScroll">
                         <table id="disks-table" class="table table-condensed table-bordered share-table tablesorter" summary="List of disks">
                             <thead>
                                 <tr>
-                                <th>No.</th>
-                                <th>Disk Name</th>
-                                <th>Capacity</th>
-                                <th>Select all <input type="checkbox" id="checkAll"/></th>
+                                <th>序号</th>
+                                <th>磁盘名称</th>
+                                <th>容量</th>
+                                <th>全选 <input type="checkbox" id="checkAll"/></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -81,11 +84,11 @@
                                         <td>{{mathHelper @index}}</td>
                                         <td>{{this.name}}
                                             {{#if this.parted}}
-                                                <a href="#disks/role/{{this.id}}" class="user_role_part" data-disk-id="{{this.id}}" title="Partition (Redirect Role), click to edit. Capacity is for whole disk." rel="tooltip">
+                                                <a href="#disks/role/{{this.id}}" class="user_role_part" data-disk-id="{{this.id}}" rel="tooltip">
                                                     <i class="glyphicon glyphicon-tags"></i></a>
                                             {{/if}}
                                             {{#if (isOpenLuks this.role)}}
-                                                <a href="#disks/luks/{{this.id}}" class="open_luks_drive" data-disk-id="{{this.id}}" title="Open LUKS Volume, click to review." rel="tooltip">
+                                                <a href="#disks/luks/{{this.id}}" class="open_luks_drive" data-disk-id="{{this.id}}" rel="tooltip">
                                                     <i class="glyphicon glyphicon-eye-open"></i></a>
                                             {{/if}}
                                         </td>
@@ -101,14 +104,14 @@
                 </div>
             </div>
             <div class=form-group>
-                <label class="col-sm-4 control-label">Selected disks summary</label>
+                <label class="col-sm-4 control-label">已选磁盘总览</label>
                 <div class="col-sm-6">
                     <table id="selected-disks-table" class= "table table-condensed table-bordered share-table tablesorter"></table>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-4 col-sm-8">
-                    <a id="js-cancel" class="btn btn-default" href="#">Cancel</a>
+                    <a id="js-cancel" class="btn btn-default" href="#">取消</a>
                     <input type="Submit" id="create_pool" class="btn btn-primary" value="Submit"></input>
                 </div>
             </div>

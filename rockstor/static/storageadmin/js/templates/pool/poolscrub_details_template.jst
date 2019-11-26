@@ -18,19 +18,17 @@
  *
  */
 </script>
-<span class="h2">Scrub Details page.</span>
+<span class="h2">Scrub详细信息页.</span>
 <br>
-Formatted output from: <strong> btrfs scrub status -R /mnt2/{{poolName}} </strong>
-for the given job ID. If job is running then browser refresh for
-update.
+如果作业正在运行，则刷新浏览器以更新信息.
 <br>
-<span class="h4">Scrub Status values:</span>
+<span class="h4">Scrub 状态:</span>
 <ul>
- <li><strong>running:</strong> Ongoing, <strong>finished:</strong> Completed,
-  <strong> terminated:</strong> Job open when force scrub initiated.</li>
- <li><strong>halted:</strong> Interrupted e.g. reboot,
-  <strong>cancelled:</strong> btrfs scrub cancel /mnt2/{{poolName}} executed.</li>
- <li><strong>conn-reset:</strong> Forced scrub encountered running scrub.</li>
+ <li><strong>运行中:</strong> 正在运行, <strong>完成:</strong> 成功,
+  <strong> 终止:</strong> 工作被强制停止.</li>
+ <li><strong>打断:</strong> 被打断,
+  <strong>取消:</strong> 被取消.</li>
+ <li><strong>复位:</strong> 强行开始运行新的Scrub.</li>
 </ul>
 
 
@@ -44,21 +42,21 @@ update.
     <!-- Form Header Info -->
     <div class="form-group">
      <div class="col-sm-offset-4 col-sm-8">
-      <h4>Pool name:&nbsp;&nbsp;<strong>{{poolName}}</strong></h4>
-      <h4>Scrub Status:&nbsp;&nbsp;<strong>{{scrubStatus}}</strong></h4>
+      <h4>池名:&nbsp;&nbsp;<strong>{{poolName}}</strong></h4>
+      <h4>状态:&nbsp;&nbsp;<strong>{{scrubStatus}}</strong></h4>
      </div>
     </div>
 
     <!-- Table displaying Scrub Detail -->
     <div class="form-group" id="pool_scrub_detail_table_group">
-     <label class="col-sm-4 control-label">Scrub Statistics</label>
+     <label class="col-sm-4 control-label">统计信息</label>
      <div class="col-sm-6">
       <div class="poolScrubDetailsTable">
        <table id="pool_scrub_details_table" class="table table-condensed table-bordered share-table tablesorter" summary="Pool Scrub Details Table">
         <thead>
         <tr>
-         <th>Attribute</th>
-         <th>Value</th>
+         <th>属性</th>
+         <th>值</th>
         </tr>
         </thead>
          {{display_pool_scrub_details_table}}

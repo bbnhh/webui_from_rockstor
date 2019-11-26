@@ -1023,11 +1023,13 @@ $(document).ready(function() {
     var $loadavg = $('#appliance-loadavg');
 
     var kernelInfo = function(data) {
-        $loadavg.text('Linux: ' + data);
+        //$loadavg.text('Linux: ' + data);
+        $loadavg.text('1.0');
     };
 
     var distroInfo = function(data) {
-        $('#distro-info').text(data.distro);
+        //$('#distro-info').text(data.distro);
+        $('#distro-info').text("ChengyeStor");
         $('#distro-info').attr('title', data.version);
     };
 

@@ -20,22 +20,22 @@
 </script>
 
 <div id="ph-share-info">
-  Created on: <strong>{{shareCreatedDate}}</strong><br>
-  Pool (Active mount options / Status): <a href="#pools/{{pid}}">{{poolName}}</a>
+  创建于: <strong>{{shareCreatedDate}}</strong><br>
+  池: <a href="#pools/{{pid}}">{{poolName}}</a>
   {{#if pool_is_mounted}}
     ({{pool_mount_status}})
   {{else}}
     (<strong><span style="color:red">{{pool_mount_status}}</span></strong>)
   {{/if}}
   <br>
-  Pool Quotas:&nbsp;
+  池容量:&nbsp;
   {{#if pool_quotas_enabled}}
     Enabled
   {{else}}
     <strong><span style="color:red">Disabled</span></strong>
   {{/if}}
   <br>
-  Active mount options / Status:
+  活动挂载点/状态:
   <strong>
   {{#if share_is_mounted}}
     {{share_mount_status}}

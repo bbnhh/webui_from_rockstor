@@ -22,7 +22,7 @@
     */
     -->
     <meta charset="utf-8">
-    <title>RockStor: Store Smartly {% block title %}{% endblock %}</title>
+    <title>ChengyeStor: Store Smartly {% block title %}{% endblock %}</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="/css/style.css" rel="stylesheet">
 
@@ -45,12 +45,12 @@
                   <div id="logo">
                     <object width="100px" data="/img/rockstor_webui_logo.svg" type="image/svg+xml"></object>
                   </div>
-                  <span class="h1">Rockstor</span>
+                  <span class="h1">Chengyestor</span>
                   <h2>Store Smartly.</h2>
                 </div>
 
                 <div class="span4">
-                  Create a user to begin using RockStor.
+                  创建用户
                   <form id="login_form" method="post" action="/user_create_login" name="aform" target="_top" class="form-horizontal">
                     <div id="login-box">
                       {% csrf_token %}
@@ -62,15 +62,15 @@
                       </ul>
                       {% endif %}
                       <div class="control-group">
-                        <label>Username</label>
+                        <label>用户名</label>
                         <input type="text" id="inputUsername" name="login" placeholder="Username" >
                       </div>
                       <div class="control-group">
-                        <label>Password</label>
+                        <label>密码</label>
                         <input type="password" id="inputPassword" name="password" placeholder="Password">
                       </div>
                       <div class="control-group">
-                        <button type="submit" id="sign_in" class="btn btn-primary">Sign in</button>
+                        <button type="submit" id="sign_in" class="btn btn-primary">登录</button>
                       </div>
 
                     </div>

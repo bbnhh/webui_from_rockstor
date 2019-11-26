@@ -79,7 +79,7 @@ StorageMetricsWidget = RockStorWidgetView.extend({
 
                     var ctx = this.chart.ctx;
                     var font_size = 12;
-                    var labels = ['Shares', 'Pools', 'Disks'];
+                    var labels = ['文件系统', '存储池', '磁盘'];
                     ctx.font = Chart.helpers.fontString(font_size,
                         Chart.defaults.global.defaultFontStyle,
                         Chart.defaults.global.defaultFontFamily);
@@ -279,7 +279,7 @@ StorageMetricsWidget = RockStorWidgetView.extend({
 
 RockStorWidgets.widgetDefs.push({
     name: 'storage_metrics',
-    displayName: 'Total Capacity, Allocation and Usage',
+    displayName: '总容量、分配和使用情况',
     view: 'StorageMetricsWidget',
     description: 'Display capacity and usage',
     defaultWidget: true,

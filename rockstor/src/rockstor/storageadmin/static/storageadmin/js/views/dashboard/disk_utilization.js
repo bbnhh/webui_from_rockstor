@@ -575,7 +575,7 @@ DiskUtilizationWidget = RockStorWidgetView.extend({
 
 RockStorWidgets.widgetDefs.push({
     name: 'disk_utilization',
-    displayName: 'Disk Activity',
+    displayName: '磁盘活动',
     view: 'DiskUtilizationWidget',
     description: 'Display disk activity',
     defaultWidget: true,

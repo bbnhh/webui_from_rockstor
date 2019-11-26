@@ -3,9 +3,9 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         {{#if afpShareIdNotNull}}
-            Edit afp export
+            编辑afp导出
         {{else}}
-            Add afp export
+            添加afp导出
         {{/if}}
     </div>
     <div class="panel-body">
@@ -14,7 +14,7 @@
 
         <!-- Shares -->
         <div class="form-group">
-          <label class="col-sm-4 control-label" for="shares">Shares to export<span class="required">*</span></label>
+          <label class="col-sm-4 control-label" for="shares">导出共享<span class="required">*</span></label>
           <div class="col-sm-4">
             <select class="form-control" name="shares" id="shares" size="10" class='required' data-placeholder="Select shares to export" multiple="multiple">
             {{display_shares_dropdown}}
@@ -25,7 +25,7 @@
         <!-- Time Machine -->
 
         <div class="form-group">
-          <label class="col-sm-4 control-label" for="time_machine">Time Machine<span class="required"> *</span></label>
+          <label class="col-sm-4 control-label" for="time_machine">机器时间<span class="required"> *</span></label>
           <div class="col-sm-8">
             {{display_timeMachine_choices}}
           </div>
@@ -34,7 +34,7 @@
         <!-- Submit -->
         <div class="form-group">
           <div class="col-sm-offset-4 col-sm-8">
-            <a id="cancel" class="btn btn-default">Cancel</a>
+            <a id="cancel" class="btn btn-default">取消</a>
             <input type="Submit" id="create-afp-share" class="btn btn-primary" value="Submit"></input>
           </div>
         </div>

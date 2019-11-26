@@ -156,3 +156,35 @@
 2019-08-23 06:58:24,643 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
 2019-08-23 07:31:48,809 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
 2019-08-23 10:54:51,990 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-10-29 05:45:37,495 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-10-29 05:49:20,973 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-10-29 05:53:44,772 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-10-29 05:59:45,809 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-10-29 14:27:09,033 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-10-29 14:37:47,619 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-10-29 14:38:11,910 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-10-29 14:42:55,812 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-10-29 14:47:23,717 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-10-29 14:48:16,940 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-10-29 14:54:53,860 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-11-22 04:54:04,226 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-11-22 04:57:50,709 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-11-23 21:16:17,945 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-11-24 02:25:31,064 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-11-24 02:38:29,610 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-11-24 02:41:05,797 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-11-24 02:53:31,012 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-11-24 03:42:26,640 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-11-24 03:43:25,338 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-11-24 03:45:14,424 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-11-24 15:37:54,275 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-11-24 16:48:01,372 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-11-24 16:51:03,858 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-11-24 16:52:20,914 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-11-24 17:11:06,374 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.
+2019-11-24 18:21:09,495 - ztaskd - INFO - Calling fs.btrfs.start_balance
+2019-11-24 18:21:09,551 - ztaskd - ERROR - Error calling fs.btrfs.start_balance. Details:
+Error running a command. cmd = btrfs balance start --full-balance 0. rc = 1. stdout = ['']. stderr = ["ERROR: cannot access '0': No such file or directory", '']
+2019-11-24 18:21:14,559 - ztaskd - INFO - Count not get task with id 5ce2cc56-4e9b-415a-8b3a-1b24fc3552ec:
+Task matching query does not exist.
+2019-11-26 12:17:11,015 - ztaskd - INFO - Server starting on ipc:///var/run/rockon-ztaskd.

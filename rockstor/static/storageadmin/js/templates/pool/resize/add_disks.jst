@@ -1,22 +1,22 @@
 <div id="breadcrumb">
   <div>Select</div>
-  <div>Change RAID level?</div>
-  <div>Select disks to add</div>
+  <div>改变 RAID 级别?</div>
+  <div>选择添加的磁盘</div>
 </div>
 <br>
 <form id="add-disks-form">
     {{#if model.raidChange}}
     <div class="row">
     <div class="form-group col-md-4">
-        <label for="raid-level">Select a new raid level<br>raid5 & raid6 are not production-ready</label>
+        <label for="raid-level">选择一个新的raid级别<br>raid5 & raid6 are not production-ready</label>
         <select id="raid-level" name="raid-level" class="form-control">
-            <option value="">Select a new raid level</option>
+            <option value="">选择一个新的raid级别</option>
             {{display_raid_levels}}
         </select>
     </div>
     </div>
     {{/if}}
-    <h4>Select disks to add</h4>
+    <h4>选择添加的磁盘</h4>
     <div class="poolDiskTableScroll">
         <div id="ph-disks-table"></div>
     </div>

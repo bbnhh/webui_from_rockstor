@@ -61,7 +61,7 @@ MemoryUtilizationWidget = RockStorWidgetView.extend({
             responsive: true,
             title: {
                 display: true,
-                text: 'Memory Usage (%)',
+                text: '内存使用率 (%)',
                 padding: 5,
             },
             legend: {
@@ -169,7 +169,7 @@ MemoryUtilizationWidget = RockStorWidgetView.extend({
         this.SwapChartOptions = {
             title: {
                 display: true,
-                text: 'Swap Usage',
+                text: '交换区使用率',
                 padding: 5,
             },
             showLines: true,
@@ -382,7 +382,7 @@ MemoryUtilizationWidget = RockStorWidgetView.extend({
 
 RockStorWidgets.widgetDefs.push({
     name: 'memory_utilization',
-    displayName: 'Memory',
+    displayName: '内存',
     view: 'MemoryUtilizationWidget',
     description: 'Display memory utilization',
     defaultWidget: true,

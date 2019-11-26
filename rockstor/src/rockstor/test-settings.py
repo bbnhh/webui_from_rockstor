@@ -260,8 +260,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
    "django.core.context_processors.request"
 )
 
-MNT_PT = '/mnt2/'
-NFS_EXPORT_ROOT = '/export/'
+#MNT_PT = '/mnt2/'
+MNT_PT = '/'
+#NFS_EXPORT_ROOT = '/export/'
+NFS_EXPORT_ROOT = '/'
 SFTP_MNT_ROOT = '/mnt3/'
 
 # System volume label when no btrfs volume label is set as per default openSUSE
@@ -344,7 +346,7 @@ CONFROOT = '/opt/rockstor/conf'
 CERTDIR = '/opt/rockstor/certs'
 COMPRESSION_TYPES = ('lzo', 'zlib', 'no',)
 
-SUPPORTED_KERNEL_VERSION = '4.12.4-1.el7.elrepo.x86_64'
+SUPPORTED_KERNEL_VERSION = '4.14.35-1902.4.8.el7uek.x86_64'
 
 SNAP_TS_FORMAT = '%Y%m%d%H%M'
 ROOT_POOL = 'rockstor_rockstor'

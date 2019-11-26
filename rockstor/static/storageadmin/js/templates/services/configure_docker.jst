@@ -20,20 +20,20 @@
 </script>
 
 <div class="alert alert-warning">
-    <p>We strongly recommend that you create a separate Share(at least 5GB size) for this purpose. During the lifetime of Rock-ons, several snapshots will be created and space could fill up quickly. It is best managed in a separate Share to avoid clobbering other data.</p>
-    <p>To create a new Share, <a href="#add_share">click here.</a></p>
+    <p>我们强烈建议您为此目的创建单独的共享（至少5GB大小），并且最好在单独的共享中进行管理，以避免破坏其他数据。.</p>
+    <p>创建一个新的共享, <a href="#add_share">点击此处.</a></p>
 </div>
 
 <div class="row">
     <div class="col-md-12">
         <div class="panel panel-default">
-            <div class="panel-heading">Configure {{serviceName}} Service</div>
+            <div class="panel-heading">配置 {{serviceName}} 服务</div>
             <div class="panel-body">
                 <form class="form-horizontal" id="docker-form" name="aform">
                     <div class="messages"></div>
 
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" for="root_share">Root Share<span class="required"> *</span></label>
+                        <label class="col-sm-4 control-label" for="root_share">Root 共享<span class="required"> *</span></label>
                         <div class="col-sm-4">
                             {{display_rockon_shares}}
                         </div>
@@ -42,8 +42,8 @@
 
                     <div class="form-group">
                         <div class="col-sm-offset-4 col-sm-8">
-                            <button id="cancel" class="btn btn-default">Cancel</button>
-                            <button type="Submit" id="create-user" class="btn btn-primary">Submit</button>
+                            <button id="cancel" class="btn btn-default">取消</button>
+                            <button type="Submit" id="create-user" class="btn btn-primary">确认</button>
                         </div>
                     </div>
                 </form>

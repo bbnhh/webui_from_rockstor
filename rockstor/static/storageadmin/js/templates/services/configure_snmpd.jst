@@ -23,34 +23,34 @@
     <div class="col-md-12">
         <div class="panel panel-default">
 
-            <div class="panel-heading">Configure {{serviceName}}</div>
+            <div class="panel-heading">配置 {{serviceName}}</div>
 
             <div class="panel-body">
                 <form class="form-horizontal" id="snmpd-form" name="aform">
                     <div class="messages"></div>
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" for="syslocation">System Location<span class="required"> *</span></label>
+                        <label class="col-sm-4 control-label" for="syslocation">系统位置<span class="required"> *</span></label>
                         <div class="col-sm-4">
                             <input class="form-control" type="text" id="syslocation" name="syslocation" value="{{config.syslocation}}" placeholder="System Location" title="A string indicating the location of the system">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" for="syscontact">System Contact<span class="required"> *</span></label>
+                        <label class="col-sm-4 control-label" for="syscontact">系统联结<span class="required"> *</span></label>
                         <div class="col-sm-4">
                             <input class="form-control" type="text" id="syscontact" name="syscontact" value="{{config.syscontact}}" placeholder="System Contact" title="contact(e-mail) information for the administrator">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" for="rocommunity">RO Community<span class="required"> *</span></label>
+                        <label class="col-sm-4 control-label" for="rocommunity">RO 社区<span class="required"> *</span></label>
                         <div class="col-sm-4">
                             <input class="form-control" type="text" id="rocommunity" name="rocommunity" value="{{config.rocommunity}}" placeholder="RO Community" title="a community name to allow read-only access">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" for="options">Below directives will be put in /etc/snmp/snmpd.conf file</label>
+                        <label class="col-sm-4 control-label" for="options">下面的指令将放在/etc/snmp/snmpd.conf文件中</label>
                         <div class="col-sm-8">
                             <textarea class="form-control" id="options" name="options" rows="5" columns="40">{{config.aux}}</textarea>
                         </div>
@@ -59,8 +59,8 @@
                     <!-- Submit -->
                     <div class="form-group">
                         <div class="col-sm-offset-4 col-sm-8">
-                            <button id="cancel" class="btn btn-default">Cancel</button>
-                            <button type="Submit" id="create-user" class="btn btn-primary">Submit</button>
+                            <button id="cancel" class="btn btn-default">取消</button>
+                            <button type="Submit" id="create-user" class="btn btn-primary">确认</button>
                         </div>
                     </div>
 

@@ -378,7 +378,7 @@ def scan_disks(min_size, test_mode=False):
                 # Root on 'sda3' gives base_root_disk 'sda'.
                 if re.match('sd|vd', dmap['NAME']) is not None:
                     # eg 'sda' or 'vda' with >= one additional digit,
-                    logger.debug('AAAAAAAAAAAAAAAAAA: %s' %base_root_disk)
+                    #logger.debug('AAAAAAAAAAAAAAAAAA: %s' %base_root_disk)
                     part_regex = base_root_disk + '\d+'
                 else:
                     # md126 or nvme0n1 with 'p' + >= one additional digit eg:
@@ -496,7 +496,6 @@ def scan_disks(min_size, test_mode=False):
     # Transfer our collected disk / dev entries of interest to the disks list.
     for d in dnames.keys():
         disks.append(Disk(*dnames[d]))
-        # logger.debug('disks item = %s ', Disk(*dnames[d]))
     return disks
 
 

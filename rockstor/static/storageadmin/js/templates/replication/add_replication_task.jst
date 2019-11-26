@@ -39,21 +39,21 @@ $(document).ready(function() {
 <div class="row">
   <div class="col-md-8">
 <div class="panel panel-default">
-<div class="panel-heading">Add a new replication task</div>
+<div class="panel-heading">添加新的同步任务</div>
 
     <div class="panel-body">
       <form  class="form-horizontal" id="replication-task-create-form" name="aform">
 	<div class="messages"></div>
 	<div class="form-group">
-	  <label class="col-sm-4 control-label" for="task_name">Task name<span class="required"> *</span></label>
+	  <label class="col-sm-4 control-label" for="task_name">人物名<span class="required"> *</span></label>
 	  <div class="col-sm-6">
-	    <input class="form-control" type="text" id="task_name" name="task_name" placeholder="Task name" title="A unique name for this replication task" >
+	    <input class="form-control" type="text" id="task_name" name="task_name" placeholder="Task name">
 	  </div>
 	</div>
 	<div class="form-group">
-	  <label class="col-sm-4 control-label" for="share">Share to replicate<span class="required"> *</span></label>
+	  <label class="col-sm-4 control-label" for="share">源端文件系统<span class="required"> *</span></label>
 	  <div class="col-sm-6">
-	    <select class="form-control" id="share" name="share" title="Share to replicate">
+	    <select class="form-control" id="share" name="share">
 	      {{#each shares}}
 	      <option value="{{this.name}}"> {{this.name}} </option>
 	      {{/each}}
@@ -62,9 +62,9 @@ $(document).ready(function() {
 	  </div>
 	</div>
 	<div class="form-group">
-	  <label class="col-sm-4 control-label" for="appliance">Remote appliance<span class="required"> *</span></label>
+	  <label class="col-sm-4 control-label" for="appliance">对端文件系统<span class="required"> *</span></label>
 	  <div class="col-sm-6">
-	    <select class="form-control" id="appliance" name="appliance" title="Share will be replicated to this remote Rockstor appliance.">
+	    <select class="form-control" id="appliance" name="appliance">
 	      {{#each appliances}}
 	      {{#unless this.current_appliance}}
 	      <option value="{{this.ip}}"> {{this.ip}} </option>
@@ -75,21 +75,21 @@ $(document).ready(function() {
 	  </div>
 	</div>
 	<div class="form-group">
-	  <label class="col-sm-4 control-label" for="listener_ip">Remote Listener Address</label>
+	  <label class="col-sm-4 control-label" for="listener_ip">对端IP地址</label>
 	  <div class="col-sm-6">
-	  <input class="form-control" type="text" id="listener_ip" name="listener_ip" value="{{listener_ip}}"title="If remote appliance's replication service is listening on a different IP address, provide here. If not, appliance's IP address will be used.">
+	  <input class="form-control" type="text" id="listener_ip" name="listener_ip" value="{{listener_ip}}"title="如果远程设备的复制服务正在侦听不同的IP地址,请在此填写. 否则，将使用设备的IP地址。">
 	  </div>
 	</div>
 	<div class="form-group">
-	  <label class="col-sm-4 control-label" for="port">Remore Listener Port<span class="required"> *</span></label>
+	  <label class="col-sm-4 control-label" for="port">对端端口<span class="required"> *</span></label>
 	  <div class="col-sm-6">
-	    <input class="form-control" type="text" id="listener_port" name="listener_port" value="{{listener_port}}" title="Replication meta port on the target appliance. (Default is {{listener_port}})">
+	    <input class="form-control" type="text" id="listener_port" name="listener_port" value="{{listener_port}}" title="目标设备上的复制元端口. (默认为 {{listener_port}})">
 	  </div>
 	</div>
 	<div class="form-group">
-	  <label class="col-sm-4 control-label" for="pool">Remote pool<span class="required"> *</span></label>
+	  <label class="col-sm-4 control-label" for="pool">对端存储池<span class="required"> *</span></label>
 	  <div class="col-sm-6">
-	    <select class="form-control" id="pool" name="pool" title="Share will be replicated to this Pool on the remote Rockstor appliance.">
+	    <select class="form-control" id="pool" name="pool" >
 	      {{#each remote_pools}}
 	      <option value="{{this}}"> {{this}}</option>
 	      {{/each}}
@@ -97,7 +97,7 @@ $(document).ready(function() {
 	  </div>
 	</div>
 	<div class="form-group">
-         <label class="col-sm-4 control-label" for="cron">Replication Frequency</label>
+         <label class="col-sm-4 control-label" for="cron">同步频率</label>
          <div class="row">
            <div class="col-sm-6">
              <div id="cron"></div>
@@ -107,7 +107,7 @@ $(document).ready(function() {
 
 	<div class="form-group">
 	  <div class="col-sm-offset-4 col-sm-8">
-	    <a id="js-cancel" class="btn btn-default">Cancel</a>
+	    <a id="js-cancel" class="btn btn-default">取消</a>
 	    <input type="Submit" id="create_replication_task" class="btn btn-primary" value="Submit"></input>
 	  </div>
 	</div>
@@ -121,48 +121,48 @@ $(document).ready(function() {
 <div class="row">
   <div class="col-md-8">
     <div class="panel panel-default">
-      <div class="panel-heading">Edit Replication task</div>
+      <div class="panel-heading">编辑同步任务</div>
       <div class="panel-body">
 	<form class="form-horizontal" id="replication-task-create-form" name="aform">
 	  <div class="messages"></div>
 	  <div class="form-group">
-	    <label class="col-sm-4 control-label" for="task_name">Task name:</label>
+	    <label class="col-sm-4 control-label" for="task_name">任务名称:</label>
 	    <div class="col-sm-6">
 	      <input type="text" class="form-control" value="{{replica.task_name}}" disabled="disabled">
 	    </div>
 	  </div>
 	  <div class="form-group">
-	    <label class="col-sm-4 control-label" for="share">Share to replicate:</label>
+	    <label class="col-sm-4 control-label" for="share">远端文件系统:</label>
 	    <div class="col-sm-6">
 	      <input type="text" class="form-control" value="{{replica.share}}" disabled="disabled">
 	    </div>
 	  </div>
 	  <div class="form-group">
-	    <label class="col-sm-4 control-label" for="appliance">Remote appliance:</label>
+	    <label class="col-sm-4 control-label" for="appliance">对端文件系统:</label>
 	    <div class="col-sm-6">
 	      <input type="text" class="form-control" value="{{replica.appliance}}" disabled="disabled">
 	    </div>
 	  </div>
 	  <div class="form-group">
-	    <label class="col-sm-4 control-label" for="listener_ip">Remote Listener Address:</label>
+	    <label class="col-sm-4 control-label" for="listener_ip">对端IP地址:</label>
 	    <div class="col-sm-6">
 	      <input type="text" class="form-control" name="listener_ip" value="{{replica.replication_ip}}">
 	    </div>
 	  </div>
 	  <div class="form-group">
-	    <label class="col-sm-4 control-label" for="listener_port">Remote Listener Port:</label>
+	    <label class="col-sm-4 control-label" for="listener_port">对端端口:</label>
 	    <div class="col-sm-6">
 	      <input type="text" class="form-control" name="listener_port" value="{{replica.data_port}}">
 	    </div>
 	  </div>
 	  <div class="form-group">
-	    <label class="col-sm-4 control-label" for="pool">Remote pool:</label>
+	    <label class="col-sm-4 control-label" for="pool">对端存储池:</label>
 	    <div class="col-sm-6">
 	      <input type="text" class="form-control" value="{{replica.dpool}}" disabled="disabled">
 	    </div>
 	  </div>
 	  <div class="form-group">
-            <label class="col-sm-4 control-label" for="cron">Replication Frequency</label>
+            <label class="col-sm-4 control-label" for="cron">同步频率</label>
             <div class="row">
               <div class="col-sm  -6">
 		<div id="cron"></div>
@@ -171,7 +171,7 @@ $(document).ready(function() {
 	  </div>
 	  <div class="form-group">
 	    <div class="col-sm-offset-4 col-sm-8">
-	      <a id="js-cancel" class="btn btn-default">Cancel</a>
+	      <a id="js-cancel" class="btn btn-default">取消</a>
 	      <input type="Submit" id="create_replication_task" class="btn btn-primary" value="Submit"></input>
 	    </div>
 	  </div>

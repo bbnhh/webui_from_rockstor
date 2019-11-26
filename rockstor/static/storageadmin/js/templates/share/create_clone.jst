@@ -22,11 +22,11 @@
 <div class="row">
   <div class="col-md-8">
 <div class="panel panel-default">
-<div class="panel-heading">Create clone from 
+<div class="panel-heading">创建克隆于 
 {{#if sourceTypeIsShare}}
-  share <strong>{{shareName}}
+  目录 <strong>{{shareName}}
 {{else}}
-  snapshot <strong>{{snapName}}</strong> of share <strong>{{shareName}}
+  快照 <strong>{{snapName}}</strong> 于目录 <strong>{{shareName}}
 {{/if}}
 </strong></div>
 
@@ -34,14 +34,14 @@
       <form class="form-horizontal" name="create-clone-form" id="create-clone-form">
         <div class="messages"></div>
         <div class="form-group">
-          <label class="col-sm-4 control-label" for="name">Clone Name<span class="required"> *</span></label>
+          <label class="col-sm-4 control-label" for="name">克隆名<span class="required"> *</span></label>
           <div class="col-sm-4">
             <input type="text" class="form-control" name="name" id="name" title="Desired name of the Clone">
           </div>
         </div>
         <div class="form-group">
           <div class="col-sm-8 col-sm-offset-4">
-            <a id="js-cancel" class="btn btn-default">Cancel</a>
+            <a id="js-cancel" class="btn btn-default">取消</a>
             <input type="Submit" id="create-clone" class="btn btn-primary" value="Submit"></input>
           </div>
         </div>

@@ -24,32 +24,30 @@
 
 {{#if diskSmartNotAvailable}}
 <div class="alert alert-danger">
-  <h4>S.M.A.R.T support is not available for this disk ({{diskName}}).<br>
-	Please see the S.M.A.R.T column entry for this disk on the Storage - Disks
-	page; custom options may be required.</h4>
+  <h4>S.M.A.R.T支持不适用于此磁盘 ({{diskName}}).<br>
+	请参阅Storage-Disks上此磁盘的S.M.A.R.T列条目页面；可能需要自定义选项.</h4>
 </div>
 {{else if diskSmartNotEnabled}}
 <div class="alert alert-warning">
-  <h4>Warning! S.M.A.R.T support is not enabled for this disk ({{diskName}}).
-	<br>If available it can be enabled in the S.M.A.R.T column entry for this disk
-	on the Storage - Disks page.</h4>
+  <h4>警告! S.M.A.R.T支持不适用于此磁盘 ({{diskName}}).
+	<br>如果可用，可以在存储-磁盘页面上此磁盘的S.M.A.R.T列条目中启用它.</h4>
 </div>
 {{else}}
 <div class="pull-right">
-  <button id="smartinfo" class="btn btn-primary pull-right" title="Refresh for latest information"><i class="glyphicon glyphicon-refresh "></i>Refresh</button>
+  <button id="smartinfo" class="btn btn-primary pull-right" title="Refresh for latest information"><i class="glyphicon glyphicon-refresh "></i>刷新</button>
 </div>
-<span class="h2">S.M.A.R.T details for <strong>{{diskName}}</strong></span>
+<span class="h2">S.M.A.R.T 详细信息 <strong>{{diskName}}</strong></span>
 <br>
-<span class="h4"><i>{{lastScannedOn}}<strong>(Refresh button to update)</strong></i></span>
+<span class="h4"><i>{{lastScannedOn}}<strong>(刷新按钮进行更新)</strong></i></span>
 {{/if}}
 
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#smartidentity" data-toggle="tab">Identity</a></li>
-  <li><a href="#smartattributes" data-toggle="tab">Attributes</a></li>
-  <li><a href="#smartcapabilities" data-toggle="tab">Capabilities</a></li>
-  <li><a href="#smarterrorlogs" data-toggle="tab">Error Logs</a></li>
-  <li><a href="#smarttestlogs" data-toggle="tab">Self-Test Logs</a></li>
-  <li><a href="#smarttests" data-toggle="tab">Perform Tests</a></li>
+  <li class="active"><a href="#smartidentity" data-toggle="tab">身份</a></li>
+  <li><a href="#smartattributes" data-toggle="tab">属性</a></li>
+  <li><a href="#smartcapabilities" data-toggle="tab">性能</a></li>
+  <li><a href="#smarterrorlogs" data-toggle="tab">错误日志</a></li>
+  <li><a href="#smarttestlogs" data-toggle="tab">自检日志</a></li>
+  <li><a href="#smarttests" data-toggle="tab">执行自检</a></li>
 </ul>
 
 <div class="css-panes">
@@ -60,73 +58,73 @@
       <table id="smartidentity-table" class="table table-condensed table-bordered table-hover table-striped tablesorter" summary="List of S.M.A.R.T identity attributes">
 	<thead>
 	  <tr>
-	    <th>Attribute</th>
-	    <th>Value</th>
+	    <th>属性</th>
+	    <th>值</th>
 	  </tr>
 	</thead>
 	<tbody>
 	  <tr>
-	    <td><strong>Model Family</strong></td>
+	    <td><strong>模型族</strong></td>
 	    <td>{{identity.model_family}}</td>
 	  </tr>
 	  <tr>
-	    <td><strong>Device Model</strong></td>
+	    <td><strong>设备型号</strong></td>
 	    <td>{{identity.device_model}}</td>
 	  </tr>
 	  <tr>
-	    <td><strong>Serial Number</strong></td>
+	    <td><strong>序列号</strong></td>
 	    <td>{{identity.serial_number}}</td>
 	  </tr>
 	  <tr>
-	    <td><strong>World Wide Name</strong></td>
+	    <td><strong>WWN</strong></td>
 	    <td>{{identity.world_wide_name}}</td>
 	  </tr>
 	  <tr>
-	    <td><strong>Firmware Version</strong></td>
+	    <td><strong>固件版本</strong></td>
 	    <td>{{identity.firmware_version}}</td>
 	  </tr>
 	  <tr>
-	    <td><strong>Capacity</strong></td>
+	    <td><strong>容量</strong></td>
 	    <td>{{identity.capacity}}</td>
 	  </tr>
 	  <tr>
-	    <td><strong>Sector Size</strong></td>
+	    <td><strong>扇区大小</strong></td>
 	    <td>{{identity.sector_size}}</td>
 	  </tr>
 	  <tr>
-	    <td><strong>Rotation Rate</strong></td>
+	    <td><strong>转速</strong></td>
 	    <td>{{identity.rotation_rate}}</td>
 	  </tr>
 	  <tr>
-	    <td><strong>In Smartctl Database</strong></td>
+	    <td><strong>在smartctl数据库中</strong></td>
 	    <td>{{identity.in_smartdb}}</td>
 	  </tr>
 	  <tr>
-	    <td><strong>ATA Version</strong></td>
+	    <td><strong>ATA版本</strong></td>
 	    <td>{{identity.ata_version}}</td>
 	  </tr>
 	  <tr>
-	    <td><strong>SATA Version</strong></td>
+	    <td><strong>SATA版本</strong></td>
 	    <td>{{identity.sata_version}}</td>
 	  </tr>
 	  <tr>
-	    <td><strong>Scanned on</strong></td>
+	    <td><strong>扫描时间</strong></td>
 	    <td>{{identity.scanned_on}}</td>
 	  </tr>
 	  <tr>
-	    <td><strong>SMART Supported</strong></td>
+	    <td><strong>SMART支持</strong></td>
 	    <td>{{identity.supported}}</td>
 	  </tr>
 	  <tr>
-	    <td><strong>SMART Enabled</strong></td>
+	    <td><strong>SMART可用</strong></td>
 	    <td>{{identity.enabled}}</td>
 	  </tr>
 	  <tr>
-	    <td><strong>Smartctl Version</strong></td>
+	    <td><strong>Smartctl版本</strong></td>
 	    <td>{{identity.version}}</td>
 	  </tr>
 	  <tr>
-	    <td><strong>Overall Health Self-Assessment Test</strong></td>
+	    <td><strong>整体健康自我评估测验</strong></td>
 	    <td>{{identity.assessment}}</td>
 	  </tr>
 	</tbody>
@@ -140,15 +138,15 @@
       <table id="smartattributes-table" class="table table-condensed table-bordered table-hover table-striped tablesorter" summary="List of S.M.A.R.T attributes">
 	<thead>
 	  <tr>
-	    <th>Name</th>
-	    <th>Failed</th>
-	    <th>Norm-ed Value</th>
-	    <th>Worst</th>
-	    <th>Threshold</th>
-	    <th>Raw Value</th>
-	    <th>Type</th>
-	    <th>Updated</th>
-	    <th>Flag</th>
+	    <th>名称</th>
+	    <th>错误</th>
+	    <th>标准值</th>
+	    <th>最差值</th>
+	    <th>阈值</th>
+	    <th>原值</th>
+	    <th>类型</th>
+	    <th>更新</th>
+	    <th>标志</th>
       <th>Id</th>
 	  </tr>
 	</thead>
@@ -179,9 +177,9 @@
       <table id="smartcapabilites-table" class="table table-condensed table-bordered table-hover table-striped tablesorter" summary="Table of S.M.A.R.T capabilities">
 	<thead>
 	  <tr>
-	    <th>Name</th>
-	    <th>Flag</th>
-	    <th>Capabilities</th>
+	    <th>名称</th>
+	    <th>标志</th>
+	    <th>性能</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -192,7 +190,7 @@
 	    <td>{{capability.capabilities}}</td>
 	  </tr>
 	  {{else}}
-	  <h3>No S.M.A.R.T Capabilities found (ATA/SATA only)</h3>
+	  <h3>没有找到S.M.A.R.T性能 (仅支持ATA/SATA)</h3>
 	  {{/each}}
 	</tbody>
       </table>
@@ -203,9 +201,9 @@
     <div class="row">
       {{#if errorLogSummaryNull}}
       {{#isAboveMinLength 4 errorlog}}
-      <h3>No error summary available, please see the raw log below.</h3>
+      <h3>没有可用的错误摘要，请查看下面的原始日志.</h3>
       {{else}}
-      <h3>There are no errors.</h3>
+      <h3>没有错误.</h3>
       {{/isAboveMinLength}}
       {{else}}
       <p>{{errorlogZero}}</p>
@@ -215,11 +213,11 @@
 	     summary="Table of S.M.A.R.T error log summary">
 	<thead>
 	  <tr>
-	    <th>Error #</th>
-	    <th>Lifetime hours</th>
-	    <th>State</th>
-	    <th>Type</th>
-	    <th>Details</th>
+	    <th>错误 #</th>
+	    <th>距离之间（小时）</th>
+	    <th>状态</th>
+	    <th>类型</th>
+	    <th>细节</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -249,18 +247,18 @@
   <div id="smarttestlogs">
     <div class="row">
       {{#if testLogNull}}
-      <h3>There are no Self-Test logs.</h3>
+      <h3>没有自检日志.</h3>
       {{else}}
-      <p>Number of entries in the log: {{testlogLength}}</p>
+      <p>日志中的条目数: {{testlogLength}}</p>
       <table id="smarttestlog-table" class="table table-condenced table-bordered table-hover table-striped tablesorter" summary="Table of S.M.A.R.T test log">
 	<thead>
 	  <tr>
-	    <th>Test #</th>
-	    <th>Type</th>
-	    <th>Status</th>
-	    <th>% Completed</th>
-	    <th>Lifetime hours</th>
-	    <th>LBA of the first error</th>
+	    <th>自检 #</th>
+	    <th>类型</th>
+	    <th>状态</th>
+	    <th>% 已完成</th>
+	    <th>距离时间（小时）</th>
+	    <th>第一个错误的LBA</th>
 	  </tr>
 	</thead>
 	<tbody>
@@ -289,15 +287,11 @@
     <div class="row">
       {{#if smartNotAvailableEnabled}}
       <div class="alert alert-danger">
-	<h4>Tests cannot be run because S.M.A.R.T support is either unavailable or
-		disabled.</h4>
+	<h4>无法运行测试，因为S.M.A.R.T支持不可用或已禁用.</h4>
       </div>
       {{else}}
       <p>
-	Self-tests are built-in tests within the drive designed to recognize
-	drive fault conditions. All self-tests are safe to user data. The tests
-	can be performed during normal system operation, but will take longer
-	to complete if the drive is not idle.
+	自检是驱动器内的内置测试，旨在识别驱动器故障情况。所有自检对用户数据都是安全的。可以在正常系统操作期间执行测试，但如果驱动器未处于空闲状态，则需要更长时间才能完成.
       </p>
       <div class="col-md-8">
 	<label class="control-label"></label>
@@ -306,7 +300,7 @@
 	    <div class="messages"></div>
 	    <div class="form-group">
 	      {{#if notRunningTest}}
-	      <label class="control-label" for="test_type">Test Type </label>
+	      <label class="control-label" for="test_type">自检类型 </label>
 	      <div class="">
 		<select id="test_name" name="test_name" title="select the test you want to run">
 		  {{#each tests}}
@@ -317,13 +311,13 @@
 	    </div>
 	    <div class="form-group">
 	      <div class="">
-		<button id="test-start" class="btn btn-primary" title="Start the test">Start Test</button>
+		<button id="test-start" class="btn btn-primary" title="Start the test">开始自检</button>
 	      </div>
 	    </div>
 	    {{else}}
 	    <div class="form-group">
 	      <h4>{{running_test}}</h4>
-	      <p>Wait until this test finishes to start a new one. Refresh for an update.</p>
+	      <p>等到此测试完成后再开始新的测试.刷新更新.</p>
 	    </div>
 	    {{/if}}
 	  </form>

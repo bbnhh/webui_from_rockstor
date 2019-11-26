@@ -22,13 +22,13 @@
 <div class="row">
     <div class="col-md-12">
         <div class="panel panel-default">
-            <div class="panel-heading">Configure {{serviceName}} Service</div>
+            <div class="panel-heading">配置 {{serviceName}} 服务</div>
             <div class="panel-body">
                 <form class="form-horizontal" id="shellinaboxd-form" name="aform">
                     <div class="messages"></div>
 
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" for="shelltype">Shell connection service<span class="required"> *</span></label>
+                        <label class="col-sm-4 control-label" for="shelltype">Shell 连接服务<span class="required"> *</span></label>
                         <div class="col-sm-4">
                             <select class="form-control" id="shelltype" name="shelltype">
                 {{display_shelltype_options}}
@@ -37,7 +37,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" for="css">Shell color scheme<span class="required"> *</span></label>
+                        <label class="col-sm-4 control-label" for="css">Shell颜色方案<span class="required"> *</span></label>
                         <div class="col-sm-4">
                             <select class="form-control" id="css" name="css">
                 {{display_shellstyle_options}}
@@ -48,15 +48,15 @@
                     <div class="form-group">
                         <div class="col-sm-offset-4 col-sm-8">
                             <label class="checkbox inline">
-              <input type="checkbox" id="detach" name="detach" {{#if config.detach}}checked{{/if}}> Open shell in a popup window
+              <input type="checkbox" id="detach" name="detach" {{#if config.detach}}checked{{/if}}> 在弹出窗口中打开shell
             </label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-sm-offset-4 col-sm-8">
-                            <button id="cancel" class="btn btn-default">Cancel</button>
-                            <button type="Submit" id="create-user" class="btn btn-primary">Submit</button>
+                            <button id="cancel" class="btn btn-default">取消</button>
+                            <button type="Submit" id="create-user" class="btn btn-primary">确认</button>
                         </div>
                     </div>
                 </form>

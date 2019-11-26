@@ -21,12 +21,12 @@
 <div class="messages"></div>
 <div class="pull-left">
   {{#if snapshotsNotEmpty}}
-  <a class="btn btn-danger" href="#" id="js-snapshot-delete-multiple" style="visibility:hidden;"><i class="glyphicon glyphicon-trash "></i> Delete selected</a>
+  <a class="btn btn-danger" href="#" id="js-snapshot-delete-multiple" style="visibility:hidden;"><i class="glyphicon glyphicon-trash "></i> 删除所选</a>
   {{/if}}
 </div>
 <div class="pull-right">
-  <a class="btn btn-primary" href="#" id="js-snapshot-add"><i class="glyphicon glyphicon-edit "></i> Create</a>
-  <a class="btn btn-primary" href="#scheduled-tasks" ><i class="glyphicon glyphicon-tasks "></i> Schedule </a>
+  <a class="btn btn-primary" href="#" id="js-snapshot-add"><i class="glyphicon glyphicon-edit "></i> 创建</a>
+  <a class="btn btn-primary" href="#scheduled-tasks" ><i class="glyphicon glyphicon-tasks "></i> 计划任务 </a>
 </div>
 </br>
 </br>
@@ -39,13 +39,13 @@
       <th>
         <input class="js-snapshot-select-all inline" type="checkbox" name="snapshot-select-all" ></input>
       </th>
-      <th>Snapshot Name</th>
-      <th>Total Size</th>
-      <th>Exclusive Size</th>
-      <th>Created on</th>
-      <th>Share (Active mount options / Status)</th>
-      <th>Visibility</th>
-      <th>Writable</th>
+      <th>快照名</th>
+      <th>总大小</th>
+      <th>额外大小</th>
+      <th>创建于</th>
+      <th>目录</th>
+      <th>可见</th>
+      <th>可写</th>
     </tr>
   </thead>
   <tbody>
@@ -57,11 +57,11 @@
               <td><i class="glyphicon glyphicon-camera"></i>&nbsp;{{this.name}}
                {{#if this.writable}}
                     <a class="js-snapshot-clone" href="#" data-name="{{this.name}}" data-share-name="{{this.share_name}}" data-share-id="{{this.share}}">
-                    <i rel="tooltip" title="Clone snapshot" class="glyphicon glyphicon-book"></i></a>
+                    <i rel="tooltip" title="克隆快照" class="glyphicon glyphicon-book"></i></a>
                {{/if}}
                 <a href="#" class="js-snapshot-delete" id="delete_snapshot_{{this.name}}" data-name="{{this.name}}" data-size="{{getSize this.eusage}}" 
                 data-share-name="{{this.share_name}}" data-share-id="{{this.share}}" data-action="delete" title="Delete snapshot">
-                <i rel="tooltip" title="Delete snapshot" class="glyphicon glyphicon-trash"></i></a>
+                <i rel="tooltip" title="删除快照" class="glyphicon glyphicon-trash"></i></a>
               </td>
               <td>{{getSize this.rusage}}</td>
               <td>{{getSize this.eusage}}</td>
@@ -75,16 +75,16 @@
               </td>
                <td>
                {{#if this.uvisible}}
-                    Visible
+                    可见
                {{else}}
-                    Hidden
+                    隐藏
                {{/if}}
                </td>
                <td>
                {{#if this.writable}}
-                    Yes
+                    是
                {{else}}
-                    No
+                    否
                {{/if}}
                </td>
           </tr>
@@ -92,7 +92,7 @@
   </tbody> 
   </table>
   {{else}}
-  <div class="alert alert-warning"><h4>There are no snapshots to display</h4></div>
+  <div class="alert alert-warning"><h4>没有要显示的快照</h4></div>
   {{/if}}
  
   

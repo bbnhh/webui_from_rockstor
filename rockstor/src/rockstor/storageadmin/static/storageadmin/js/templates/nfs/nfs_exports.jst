@@ -25,7 +25,7 @@
   <div id="details-header">
       <table>
         <tr>
-          <td><span class="h3">NFS Service&nbsp;&nbsp;&nbsp;</span></td>
+          <td><span class="h3">NFS 服务&nbsp;&nbsp;&nbsp;</span></td>
           <td>
           <input type="checkbox" name="nfs-export-checkbox" data-size="mini">
         </td>
@@ -33,7 +33,7 @@
       </table>
     </div>
     <div id="nfs-warning" class="alert alert-warning" style="display:none">
-    	<strong>Warning! NFS Service is not running</strong>. Clients won't be able to mount unless NFS is running.
+    	<strong>警告! NFS 服务没有在运行</strong>. 除非nfs正在运行，否则客户端将无法装载.
     </div>
     <br>
     <div class="messages"></div>
@@ -42,11 +42,11 @@
       <table id="nfs-exports-table" class="table table-bordered table-striped share-table data-table" width="100%" summary="List of nfs exports">
         <thead>
           <tr>
-            <th scope="col" abbr="Shares">Shares</th>
-            <th scope="col" abbr="Host String">Host String</th>
-            <th scope="col" abbr="Read only">Read only</th>
+            <th scope="col" abbr="Shares">共享</th>
+            <th scope="col" abbr="Host String">主机字符串</th>
+            <th scope="col" abbr="Read only">只读</th>
             <th scope="col" abbr="Sync">Sync / Async</th>
-            <th scope="col" abbr="Actions">Actions</th>
+            <th scope="col" abbr="Actions">操作</th>
           </tr>
         </thead>
         <tbody>
@@ -72,7 +72,7 @@
         <tbody>
           <tr>
             <td colspan="5">
-              <h4>No nfs exports have been created</h4>
+              <h4>尚未创建任何nfs导出</h4>
             </td>
           </tr>
         </tbody>
@@ -80,12 +80,41 @@
    {{/if}}
   
     {{#if collectionNotEmpty}}
-      Mount a share using <code>mount {{currentApplianceIp}}:/export/&lt;share_name&gt; &lt;mount_pt&gt;</code>
+      客户端使用以下命令 <code>mount {{currentApplianceIp}}:/poolname/&lt;share_name&gt;</code>
     {{/if}}
     <!-- End Content -->
   </div> <!-- col-md-12 -->
 </div> <!-- row -->
 <br>
-<a href="##nfs-exports/edit/-1" id="add-nfs-export" class="btn btn-primary"><i class="glyphicon glyphicon-edit "></i> Add NFS Export</a>
-<a href="#nfs-advanced-edit" id="nfs-advanced-edit" title="Edit /etc/exports file directly" class="btn btn-primary"><i class="glyphicon glyphicon-edit "></i> Advanced Edit</a>
+<a href="##nfs-exports/edit/-1" id="add-nfs-export" class="btn btn-primary"><i class="glyphicon glyphicon-edit "></i> 添加NFS导出</a>
+<a href="#nfs-advanced-edit" id="nfs-advanced-edit" title="Edit /etc/exports file directly" class="btn btn-primary"><i class="glyphicon glyphicon-edit "></i> 高级设置</a>
+
+<div id="delete-nfs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal-header-danger">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 class="modal-title">删除?</h3>
+      </div>
+      <div class="modal-body">
+        <div class="messages"></div>
+        <p>将删除此共享，确定?</p>
+	<!--<label><input type="checkbox" id="force-delete" name="force-delete"> 强制删除 &nbsp;<i class="fa fa-info-circle fa-lg" 
+	title="Forces the deletion of undetected Snapshots and then deletes the Share. Useful to forcefully delete the Rock-on root share, for example." rel="tooltip"></i></label>-->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">否</button>
+        <button id="js-confirm-nfs-delete" class="btn btn-primary">是</button>
+      </div><!--end modal-fooetr-->
+    </div><!--end modal-content-->
+  </div><!--end modal-dialog-->
+</div>
+
+
+
+
+
+
+
+
 <!-- end module body -->

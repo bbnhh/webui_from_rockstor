@@ -150,7 +150,7 @@ PoolUsageWidget = RockStorWidgetView.extend({
 
 RockStorWidgets.widgetDefs.push({
     name: 'pool_usage',
-    displayName: 'Pool Capacity and Usage',
+    displayName: '存储池',
     view: 'PoolUsageWidget',
     description: 'Display pool usage',
     defaultWidget: true,

@@ -1819,3 +1819,222 @@ SyntaxError: invalid syntax
 /opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
   """)
 
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+Traceback (most recent call last):
+  File "/opt/rockstor/bin/django", line 43, in <module>
+    sys.exit(djangorecipe.manage.main('rockstor.settings'))
+  File "/opt/rockstor/eggs/djangorecipe-1.9-py2.7.egg/djangorecipe/manage.py", line 9, in main
+    management.execute_from_command_line(sys.argv)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/management/__init__.py", line 354, in execute_from_command_line
+    utility.execute()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/management/__init__.py", line 328, in execute
+    django.setup()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/__init__.py", line 18, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/registry.py", line 108, in populate
+    app_config.import_models(all_models)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/config.py", line 198, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/__init__.py", line 19, in <module>
+    from pool import Pool  # noqa E501
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 21, in <module>
+    from fs.btrfs import pool_usage, usage_bound, \
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 106
+    logger.debug('Cmd %s' % cmd))
+                                ^
+SyntaxError: invalid syntax
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+Traceback (most recent call last):
+  File "/opt/rockstor/bin/django", line 43, in <module>
+    sys.exit(djangorecipe.manage.main('rockstor.settings'))
+  File "/opt/rockstor/eggs/djangorecipe-1.9-py2.7.egg/djangorecipe/manage.py", line 9, in main
+    management.execute_from_command_line(sys.argv)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/management/__init__.py", line 354, in execute_from_command_line
+    utility.execute()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/management/__init__.py", line 328, in execute
+    django.setup()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/__init__.py", line 18, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/registry.py", line 108, in populate
+    app_config.import_models(all_models)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/config.py", line 198, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/__init__.py", line 19, in <module>
+    from pool import Pool  # noqa E501
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 21, in <module>
+    from fs.btrfs import pool_usage, usage_bound, \
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 106
+    logger.debug('Cmd %s' % cmd))
+                                ^
+SyntaxError: invalid syntax
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+Traceback (most recent call last):
+  File "/opt/rockstor/bin/django", line 43, in <module>
+    sys.exit(djangorecipe.manage.main('rockstor.settings'))
+  File "/opt/rockstor/eggs/djangorecipe-1.9-py2.7.egg/djangorecipe/manage.py", line 9, in main
+    management.execute_from_command_line(sys.argv)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/management/__init__.py", line 354, in execute_from_command_line
+    utility.execute()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/management/__init__.py", line 328, in execute
+    django.setup()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/__init__.py", line 18, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/registry.py", line 108, in populate
+    app_config.import_models(all_models)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/config.py", line 198, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/__init__.py", line 19, in <module>
+    from pool import Pool  # noqa E501
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 21, in <module>
+    from fs.btrfs import pool_usage, usage_bound, \
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 106
+    logger.debug('Cmd %s' % cmd))
+                                ^
+SyntaxError: invalid syntax
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+Traceback (most recent call last):
+  File "/opt/rockstor/bin/django", line 43, in <module>
+    sys.exit(djangorecipe.manage.main('rockstor.settings'))
+  File "/opt/rockstor/eggs/djangorecipe-1.9-py2.7.egg/djangorecipe/manage.py", line 9, in main
+    management.execute_from_command_line(sys.argv)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/management/__init__.py", line 354, in execute_from_command_line
+    utility.execute()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/core/management/__init__.py", line 328, in execute
+    django.setup()
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/__init__.py", line 18, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/registry.py", line 108, in populate
+    app_config.import_models(all_models)
+  File "/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/apps/config.py", line 198, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib64/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/opt/rockstor/src/rockstor/storageadmin/models/__init__.py", line 19, in <module>
+    from pool import Pool  # noqa E501
+  File "/opt/rockstor/src/rockstor/storageadmin/models/pool.py", line 21, in <module>
+    from fs.btrfs import pool_usage, usage_bound, \
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 106
+    logger.debug('Cmd %s' % cmd))
+                                ^
+SyntaxError: invalid syntax
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/fields/__init__.py:1474: RuntimeWarning: DateTimeField Task.created received a naive datetime (2019-11-24 23:21:09.427610) while time zone support is active.
+  RuntimeWarning)
+
+WARNING:py.warnings:/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/fields/__init__.py:1474: RuntimeWarning: DateTimeField Task.created received a naive datetime (2019-11-24 23:21:09.427610) while time zone support is active.
+  RuntimeWarning)
+
+INFO:ztaskd:Calling fs.btrfs.start_balance
+DEBUG:fs.btrfs:Balance command (['btrfs', 'balance', 'start', '--full-balance', 0]).
+ERROR:ztaskd:Error calling fs.btrfs.start_balance. Details:
+Error running a command. cmd = btrfs balance start --full-balance 0. rc = 1. stdout = ['']. stderr = ["ERROR: cannot access '0': No such file or directory", '']
+/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/fields/__init__.py:1474: RuntimeWarning: DateTimeField Task.failed received a naive datetime (2019-11-24 23:21:09.554118) while time zone support is active.
+  RuntimeWarning)
+
+WARNING:py.warnings:/opt/rockstor/eggs/Django-1.8.16-py2.7.egg/django/db/models/fields/__init__.py:1474: RuntimeWarning: DateTimeField Task.failed received a naive datetime (2019-11-24 23:21:09.554118) while time zone support is active.
+  RuntimeWarning)
+
+Traceback (most recent call last):
+  File "/opt/rockstor/eggs/django_ztask-0.1.5-py2.7.egg/django_ztask/management/commands/ztaskd.py", line 117, in _call_function
+    function(*args, **kwargs)
+  File "/opt/rockstor/src/rockstor/fs/btrfs.py", line 1682, in start_balance
+    run_command(cmd)
+  File "/opt/rockstor/src/rockstor/system/osi.py", line 121, in run_command
+    raise CommandException(cmd, out, err, rc)
+CommandException: Error running a command. cmd = btrfs balance start --full-balance 0. rc = 1. stdout = ['']. stderr = ["ERROR: cannot access '0': No such file or directory", '']
+INFO:ztaskd:Count not get task with id 5ce2cc56-4e9b-415a-8b3a-1b24fc3552ec:
+Task matching query does not exist.
+/opt/rockstor/eggs/psycopg2-2.7.4-py2.7-linux-x86_64.egg/psycopg2/__init__.py:146: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+

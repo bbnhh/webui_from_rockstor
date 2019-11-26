@@ -359,7 +359,7 @@ CONFROOT = '/opt/rockstor/conf'
 CERTDIR = '/opt/rockstor/certs'
 COMPRESSION_TYPES = ('lzo', 'zlib', 'no',)
 
-SUPPORTED_KERNEL_VERSION = '4.12.4-1.el7.elrepo.x86_64'
+SUPPORTED_KERNEL_VERSION = '4.14.35-1902.4.8.el7uek.x86_64'
 
 SNAP_TS_FORMAT = '%Y%m%d%H%M'
 

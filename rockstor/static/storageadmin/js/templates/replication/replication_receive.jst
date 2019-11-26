@@ -23,7 +23,7 @@
 <div id="details-header">
 <table>
   <tr>
-    <td><span class="h3">Replication Service&nbsp;&nbsp;&nbsp;</span></td>
+    <td><span class="h3">同步服务&nbsp;&nbsp;&nbsp;</span></td>
     <td><input type="checkbox" name="replica-service-checkbox" data-size="mini"></td>
 </tr>
 </table>
@@ -31,12 +31,12 @@
 
 
 <div id="replication-warning" class="alert alert-warning" style="display:none">
-<strong>Warning! The Replication service is not turned on.</strong>
+<strong>警告！同步服务未打开。</strong>
 </div>
 
 <div class="messages"></div>
 <div id="details-header">
-<span class="h3">Replication Receive Tasks on this appliance</span>
+<span class="h3">此设备上的接收任务</span>
 </div>
 {{#if collectionNotEmpty}}
     <div class="row">
@@ -46,19 +46,19 @@
     <table id="replica-receives-table" class="table table-bordered table-striped share-table data-table" width="100%" summary="List of replica receives">
     <thead>
     <tr>
-    <th scope="col" abbr="Received Task ID">Received Task ID </th>
-    <th scope="col" abbr="Source Appliance">Source Appliance </th>
-    <th scope="col" abbr="Source Share">Source Share </th>
-    <th scope="col" abbr="Destination Pool">Destination Pool</th>
-    <th scope="col" abbr="Destination Share">Destination Share</th>
-    <th scope="col" abbr="Last">Last receive</th>
+    <th scope="col" abbr="Received Task ID">接收任务ID </th>
+    <th scope="col" abbr="Source Appliance">源设备 </th>
+    <th scope="col" abbr="Source Share">源端文件系统 </th>
+    <th scope="col" abbr="Destination Pool">目标池</th>
+    <th scope="col" abbr="Destination Share">目标文件系统</th>
+    <th scope="col" abbr="Last">上一次同步接收</th>
     </tr>
     </thead>
     <tbody>
     {{#each replicaColl}}
         <tr>
             <td>{{this.id}}<a href="#" data-rshare-name="{{this.share}}" data-rshare-id="{{this.id}}" data-action="delete">
-                <i class="glyphicon glyphicon-trash" rel="tooltip" title="Delete"></i></a>
+                <i class="glyphicon glyphicon-trash" rel="tooltip" title="删除"></i></a>
             </td>
             <td>{{this.appliance}}</td>
             <td>{{this.src_share}}</td>
@@ -72,7 +72,7 @@
     </div> <!-- col-md-12 -->
     </div> <!-- row -->
 {{else}} 
-    <div class="alert alert-warning"><h4>No replication receives on this appliance</h4></div>
+    <div class="alert alert-warning"><h4>此设备上没有接收任务</h4></div>
 {{/if}}
 </div> <!-- col-md-12 -->
 </div> <!-- row -->

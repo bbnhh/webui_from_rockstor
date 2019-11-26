@@ -46,7 +46,7 @@ CpuUsageWidget = RockStorWidgetView.extend({
         this.AllCpuChartOptions = {
             title: {
                 display: true,
-                text: 'Individual CPU Usage (%)',
+                text: '单CPU使用率 (%)',
                 padding: 5,
             },
             showLines: true,
@@ -124,7 +124,7 @@ CpuUsageWidget = RockStorWidgetView.extend({
             responsive: true,
             title: {
                 display: true,
-                text: 'Average CPU Usage (%)',
+                text: '平均CPU使用率 (%)',
                 padding: 5
             },
             legend: {

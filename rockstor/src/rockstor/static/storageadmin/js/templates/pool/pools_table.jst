@@ -2,14 +2,14 @@
 <table id="pools-table" class="table table-bordered table-striped share-table data-table" width="100%" summary="List of pools">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Size</th>
-      <th>Usage</th>
+      <th>名称</th>
+      <th>大小</th>
+      <th>已用容量</th>
       <th>Raid</th>
-      <th>Compression</th>
-      <th>Extra mount options</th>
-      <th>Disks</th>
-      <th>Actions</th>
+      <!--<th>压缩</th>-->
+      <!--<th>额外挂载选项</th>-->
+      <th>磁盘</th>
+      <th>操作</th>
       </tr>
   </thead>
   <tbody>
@@ -94,16 +94,16 @@
           <div class="modal-content">
            <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="myModalLabel">Delete Pool ({{this.name}})</h3>
+            <h3 id="myModalLabel">删除池 ({{this.name}})</h3>
            </div>
            <div class="modal-body">
             <div class="messages"></div>
-            <h4>{{this.name}} will be deleted including it's Shares listed below and their Snapshots, NFS exports, Samba and SFTP config and Replics. Are you sure?</h4>
+            <h4>{{this.name}} 将被删除，包括下面列出的它的共享及其快照、nfs导出、samba和sftp配置和replics。你确定吗？</h4>
             <ul id="pool-shares"></ul>
            </div>
            <div class="modal-footer">
-            <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Cancel</button>
-            <button id="js-confirm-pool-delete" data-id="{{this.id}}" class="btn btn-primary">Confirm</button>
+            <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">取消</button>
+            <button id="js-confirm-pool-delete" data-id="{{this.id}}" class="btn btn-primary">确认</button>
            </div>
           </div>
          </div>
@@ -112,7 +112,7 @@
   </tbody>
 </table>
 {{ else }}
-<h4>No Pools have been created</h4>
+<h4>没有被创建的池</h4>
 {{/if}}
 <div>
     <a {{#if disksAvailable}}

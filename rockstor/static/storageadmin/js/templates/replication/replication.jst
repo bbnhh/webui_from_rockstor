@@ -24,7 +24,7 @@
 <div id="details-header">
 <table>
 <tr>
-<td><span class="h3">Replication Service&nbsp;&nbsp;&nbsp;</span></td>
+<td><span class="h3">同步服务&nbsp;&nbsp;&nbsp;</span></td>
 <td><input type="checkbox" name="replica-service-checkbox" data-size="mini"></td>
 </tr>
 </table>
@@ -32,13 +32,13 @@
 
 
 <div id="replication-warning" class="alert alert-warning" style="display:none">
-<strong>Warning! The Replication service is not turned on. </strong>
+<strong>警告！同步服务未打开. </strong>
 </div>
 
 
 <div class="messages"></div>
 <div id="details-header">
-<span class="h3">Replication Send Tasks on this appliance</span>
+<span class="h3">此设备上的发送任务</span>
 </div>
 {{#if collectionNotEmpty}}
     <div class="row">
@@ -48,13 +48,13 @@
     <table id="replicas-table" class="table table-bordered table-striped share-table data-table" width="100%" summary="List of replicas">
     <thead>
     <tr>
-    <th scope="col" abbr="Share">Task name </th>
-    <th scope="col" abbr="Share">Source (Share) </th>
-    <th scope="col" abbr="Appliance">Destination Appliance</th>
-    <th scope="col" abbr="Appliance">Destination Pool</th>
-    <th scope="col" abbr="Frequency">Frequency</th>
-    <th scope="col" abbr="Last">Last backup</th>
-    <th scope="col" abbr="Actions">Enable/Disable</th>
+    <th scope="col" abbr="Share">任务名 </th>
+    <th scope="col" abbr="Share">源端 </th>
+    <th scope="col" abbr="Appliance">目标设备</th>
+    <th scope="col" abbr="Appliance">目标池</th>
+    <th scope="col" abbr="Frequency">频率</th>
+    <th scope="col" abbr="Last">上次同步</th>
+    <th scope="col" abbr="Actions">启用状态</th>
     </tr>
     </thead>
     <tbody>
@@ -62,7 +62,7 @@
         <tr>
             <td><a href="#edit-replication-task/{{this.id}}">{{this.task_name}}</a>&nbsp;
                 <a href="#" data-task-name="{{this.task_name}}" data-task-id="{{this.id}}" data-action="delete">
-                <i class="glyphicon glyphicon-trash" rel="tooltip" title="Delete"></i></a>
+                <i class="glyphicon glyphicon-trash" rel="tooltip" title="删除"></i></a>
             </td>
             <td>{{this.share}}</td>
             <td>{{this.appliance}}</td>
@@ -77,16 +77,16 @@
     </div> <!-- col-md-12 -->
     </div> <!-- row -->
 {{else}}
-    <div class="alert alert-warning"><h4>No replication tasks have been created</h4></div>
+    <div class="alert alert-warning"><h4>尚未创建同步任务</h4></div>
 {{/if}}
 {{#if otherAppliances_FreeShares}}
-    <a href="#add_replication_task" class="btn btn-primary">Add Replication Task</a>
+    <a href="#add_replication_task" class="btn btn-primary">添加同步任务</a>
 {{else}}
     {{#if noOtherAppliances}}
-        <div class="alert alert-warning"><h4>No other Rockstor appliances have been connected. At least one other appliance must be connected to setup a replication task. You can connect to an appliance on the <a href=#appliances>Appliances</a> page.</h4></div>
+        <div class="alert alert-warning"><h4>没有连接其他CyStor设备。必须至少连接一个其他设备才能设置复制任务。您可以从此连接到<a href=#appliances>设备</a> 页.</h4></div>
     {{/if}}
     {{#if noFreeShares}}
-        <div class="alert alert-warning"><h4>All existing shares have replication tasks setup. Create a new share to setup a new replication task.</h4>
+        <div class="alert alert-warning"><h4>所有现有的文件系统都存在同步任务。创建新文件系统以设置新的同步任务</h4>
     {{/if}}
 {{/if}}
 </div> <!-- col-md-12 -->

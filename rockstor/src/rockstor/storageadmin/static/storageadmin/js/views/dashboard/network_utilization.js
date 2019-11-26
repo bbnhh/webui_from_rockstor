@@ -41,7 +41,7 @@ NetworkUtilizationWidget = RockStorWidgetView.extend({
         this.numSamples = 180;
         this.colors = ['18, 36, 227', '242, 88, 5', '4, 214, 214', '245, 204, 115'];
         this.netDataFields = ['kb_rx', 'kb_tx', 'packets_rx', 'packets_tx'];
-        this.netDataLabels = ['Data rec', 'Data sent', 'Packets rec', 'Packets sent'];
+        this.netDataLabels = ['数据接收', '数据发送', '发送包', '接收包'];
 
         //Chart.js Network Widget default options
         Chart.defaults.global.tooltips.enabled = false;
@@ -78,7 +78,7 @@ NetworkUtilizationWidget = RockStorWidgetView.extend({
                     scaleLabel: {
                         display: true,
                         fontSize: 11,
-                        labelString: 'Data'
+                        labelString: '数据量'
                     },
                     ticks: {
                         fontSize: 9,
@@ -97,7 +97,7 @@ NetworkUtilizationWidget = RockStorWidgetView.extend({
                     scaleLabel: {
                         display: true,
                         fontSize: 11,
-                        labelString: 'Packets'
+                        labelString: '数据包'
                     },
                     ticks: {
                         fontSize: 9,
@@ -367,7 +367,7 @@ NetworkUtilizationWidget = RockStorWidgetView.extend({
 
 RockStorWidgets.widgetDefs.push({
     name: 'network',
-    displayName: 'Network',
+    displayName: '网络',
     view: 'NetworkUtilizationWidget',
     description: 'Display network utilization',
     defaultWidget: true,

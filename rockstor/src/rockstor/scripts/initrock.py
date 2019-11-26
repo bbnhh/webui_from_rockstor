@@ -337,6 +337,7 @@ def main():
         logging.error('Exception while updating sshd_config: %s' % e.__str__())
     print STAMP
     print os.path.isfile(STAMP)
+    '''
     if (not os.path.isfile(STAMP)):
         logging.info('Please be patient. This script could take a few minutes')
         print BASE_DIR
@@ -428,7 +429,7 @@ def main():
     logging.info('Running prepdb...')
     run_command([PREP_DB, ])
     logging.info('Done')
-
+    '''
     logging.info('stopping firewalld...')
     run_command([SYSCTL, 'stop', 'firewalld'])
     run_command([SYSCTL, 'disable', 'firewalld'])

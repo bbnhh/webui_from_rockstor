@@ -1,7 +1,7 @@
 
 <table class="table table-bordered table-condensed">
   <tr>
-    <td>Owner</td>
+    <td>属主</td>
     <td>
     <div class="col-md-3">
       <select id="share-owner" class="form-control">
@@ -13,7 +13,7 @@
     </td>
   </tr>
   <tr>
-    <td>Group</td>
+    <td>属组</td>
     <td>
     <div class="col-md-3">
       <select id="share-group" class="form-control">
@@ -26,32 +26,32 @@
   </tr>
   <tr>
     <td>
-      Permissions<br>
+      权限<br>
       (<span id="permStrEdit">{{sharePerms}}</span>)
     </td>
     <td>
       <table class="noborder table-condensed">
         <tr>
           <td>&nbsp;</td>
-          <td>Owner</td>
-          <td>Group</td>
-          <td>Other</td>
+          <td>属主</td>
+          <td>属组</td>
+          <td>其他</td>
         </tr>
         <tr>
-          <td>Read</td>
+          <td>读</td>
           {{edit_read_permissions}}
         </tr>
         <tr>
-          <td>Write</td>
+          <td>写</td>
           {{edit_write_permissions}}
         </tr>
         <tr>
-          <td>Execute</td>
+          <td>执行</td>
           {{edit_execute_permissions}}
         </tr>
       </table>
     </td>
   </tr>
 </table>
-<a class="btn btn-default" href="#" id="js-acl-cancel"> Cancel</a>
-<a class="btn btn-primary" href="#" id="js-acl-save"> Save</a>
+<a class="btn btn-default" href="#" id="js-acl-cancel"> 取消</a>
+<a class="btn btn-primary" href="#" id="js-acl-save"> 保存</a>

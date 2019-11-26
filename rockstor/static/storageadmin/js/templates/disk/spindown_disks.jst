@@ -1,22 +1,15 @@
-<h3>Add drive specific Spin down time</h3>
-<li><p>This is the time a drive must remains <strong>Idle</strong> before
-  spinning down it's disks / platters to save on power and reduce drive noise.
-<li><p>Idle periods a disk activity can be encouraged by adding <strong>Task
-    execution time windows</strong> to relevant <strong>Scheduled Tasks</strong>.
-  <i>See System - Scheduled Tasks</i>
+<h3>添加驱动器特定的降速时间</h3>
+<li><p>这是驱动器必须保持空闲状态之前的时间
+降低磁盘/盘片的转速以节省电源和降低驱动器噪音.
+<li><p>空闲时间可以通过将任务执行时间窗口添加到相关的计划任务中来鼓励磁盘活动.
+  <i>请参阅系统-计划任务</i>
 </p></li>
 
-<p class="text-warning">Please note that a drive's <i>initial</i> response time when in
-  <strong>standby</strong> mode is typically increased by tens of seconds
-  as the disk motor takes time to re-energize the platters.</p>
+<p class="text-warning">请注意，驱动器的初始响应时间 <i>初始</i> 响应时间
+  <strong>standby</strong> 模式 通常会增加数十秒，因为磁盘电机需要时间重新给磁盘通电.</p>
   
-<p class="bg-info"><strong>Note: </strong>The value entered here will be used by hdparm -S to set this drives Spin
-  down delay. If this delay is set too small for a specific work load then the
-  the drive will spend more time than necessary spinning up and down and have
-  an unnecessary impact on performance and wear levels. Conversely a high or
-  non existent spin down time may waste energy and cause a drive to create
-  unwanted noise and heat. For HOME or SMALL OFFICE consider values in the
-  range of 20 minutes. For larger installs consider values greater than 1 hour.
+<p class="bg-info"><strong>注: </strong>这里输入的值将被hdparm-s用来设置这个驱动器的自旋停机延迟。如果此延迟对于特定的工作负载设置得太小，则驱动器将花费比必要的上下旋转更多的时间，
+对性能和磨损程度产生不必要的影响。相反地不存在的自旋时间可能浪费能量并导致驱动器的产生。不需要的噪音和热量。对于家庭或小型办公室，请考虑范围为20分钟。对于较大的安装，请考虑大于1小时的值.
 </p>
 
 <div class="row">
@@ -29,8 +22,8 @@
         <!-- Form Header Info -->
         <div class="form-group">
           <div class="col-sm-offset-4 col-sm-8">
-            <h4>Drive name:&nbsp;&nbsp;<strong>{{diskName}}</strong></h4>
-            <h4>Serial number:&nbsp;&nbsp;<strong>{{serialNumber}}</strong></h4>
+            <h4>设备名:&nbsp;&nbsp;<strong>{{diskName}}</strong></h4>
+            <h4>序列号:&nbsp;&nbsp;<strong>{{serialNumber}}</strong></h4>
           </div>
         </div>
 
@@ -51,7 +44,7 @@
           <div class="col-sm-offset-4 col-sm-8">
             <label class="checkbox inline">
               <input type="checkbox" id="enable_apm" checked="true"
-                     name="enable_apm"> Enable APM setting
+                     name="enable_apm"> 启用 APM 设置
             </label>
           </div>
         </div>
@@ -59,7 +52,7 @@
         <!-- APM setting group of Slider + Text box for value  -->
         <div class="form-group" id="slider-entry">
           <label class="col-sm-4 control-label" for="apm_value">APM
-            setting</label>
+            设置</label>
           <div class="col-sm-8">
             <div id="slider" class="control-label" style="width: 400px;"></div>
             <input class="col-sm-3" type="text"
@@ -92,7 +85,7 @@
 
         <div class="form-group">
           <div class="col-sm-offset-4 col-sm-8">
-            <a id="cancel" class="btn btn-default">Cancel</a>
+            <a id="cancel" class="btn btn-default">取消</a>
             <input type="Submit" id="spindown-disk" class="btn btn-primary"
                    value="Submit"></input>
           </div>

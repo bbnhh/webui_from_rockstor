@@ -96,10 +96,15 @@ AddPoolView = Backbone.View.extend({
         $(this.el).empty();
         var _this = this;
         this.filteredCollection = _.reject(this.collection.models, function (disk) {
-            return _.isNull(disk.get('pool')) &&
-                !disk.get('offline') && _.isNull(disk.get('btrfs_uuid')) &&
-                isSerialUsable(disk.get('serial')) &&
-                isRoleUsable(disk.get('role'));
+            //return _.isNull(disk.get('pool')) &&
+            //    !disk.get('offline') && _.isNull(disk.get('btrfs_uuid')) &&
+            //    isSerialUsable(disk.get('serial')) &&
+            //    isRoleUsable(disk.get('role'));
+
+            return _.isNull(disk.get('pool')) && 
+                   !disk.get('offline') &&
+                   _.isNull(disk.get('btrfs_uuid')) &&
+                   isSerialUsable(disk.get('serial'))
         });
 
         // N.B. isSerialUsable() and isRoleUsable() are duplicated in the
@@ -133,6 +138,7 @@ AddPoolView = Backbone.View.extend({
             if (role == null) {
                 return true;
             }
+            console.log(JSON);
             // try json conversion and return false if it fails
             // @todo not sure if this is redundant?
             try {
@@ -192,13 +198,13 @@ AddPoolView = Backbone.View.extend({
         this.$('#raid_level').tooltip({
             html: true,
             placement: 'right',
-            title: 'Software RAID level<br><strong>Single</strong>: No RAID - one or more devices (-m dup enforced).<br><strong>Raid0</strong>, <strong>Raid1</strong>, <strong>Raid10</strong>, and the parity based <strong>Raid5</strong> & <strong>Raid6</strong> levels are all similar to conventional raid but chunk based, not device based. See docs for more info.<br><strong>WARNING: Raid5 and Raid6 are not production-ready</strong>'
+            //title: 'Software RAID level<br><strong>Single</strong>: No RAID - one or more devices (-m dup enforced).<br><strong>Raid0</strong>, <strong>Raid1</strong>, <strong>Raid10</strong>, and the parity based <strong>Raid5</strong> & <strong>Raid6</strong> levels are all similar to conventional raid but chunk based, not device based. See docs for more info.<br><strong>WARNING: Raid5 and Raid6 are not production-ready</strong>'
         });
 
         this.$('#compression').tooltip({
             html: true,
             placement: 'right',
-            title: 'Choose a Pool compression algorithm.<br><strong>zlib: </strong>slower than lzo but higher compression ratio.<br><strong>lzo: </strong>faster than zlib but lower compression ratio.<br>Pool level compression applies to all it\'s Shares.<br>Alternatively: consider Share level compression.<br>This setting can be changed at any time.'
+            //title: 'Choose a Pool compression algorithm.<br><strong>zlib: </strong>slower than lzo but higher compression ratio.<br><strong>lzo: </strong>faster than zlib but lower compression ratio.<br>Pool level compression applies to all it\'s Shares.<br>Alternatively: consider Share level compression.<br>This setting can be changed at any time.'
         });
 
         $('#add-pool-form').validate({
