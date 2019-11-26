@@ -80,7 +80,7 @@ setup(
         'python-socketio == 1.6.0',
         'pytz == 2014.3',
         'pyzmq == 15.0.0',
-        'requests == 1.1.0',
+        'requests == 2.20.0',
         'six == 1.10.0',
         'distro',
     ]
