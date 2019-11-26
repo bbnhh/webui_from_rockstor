@@ -58,3 +58,5 @@ LOG:  database system is shut down
 LOG:  database system was shut down at 2019-08-17 14:58:57 PDT
 LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
