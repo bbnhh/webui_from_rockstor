@@ -1,11 +1,27 @@
-LOG:  database system was shut down at 2019-08-07 23:04:53 PDT
-LOG:  autovacuum launcher started
+LOG:  database system was shut down at 2019-11-27 02:44:39 PST
 LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
 LOG:  received fast shutdown request
 LOG:  aborting any active transactions
 LOG:  autovacuum launcher shutting down
 LOG:  shutting down
 LOG:  database system is shut down
-LOG:  database system was shut down at 2019-08-07 23:04:56 PDT
+LOG:  database system was shut down at 2019-11-27 02:44:42 PST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2019-11-27 02:46:21 PST
 LOG:  autovacuum launcher started
 LOG:  database system is ready to accept connections
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+FATAL:  terminating connection due to administrator command
+FATAL:  terminating connection due to administrator command
+FATAL:  terminating connection due to administrator command
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
