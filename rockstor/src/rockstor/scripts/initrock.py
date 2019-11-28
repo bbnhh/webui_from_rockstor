@@ -285,13 +285,13 @@ def main():
     if (len(sys.argv) > 1 and sys.argv[1] == '-x'):
         loglevel = logging.DEBUG
     logging.basicConfig(format='%(asctime)s: %(message)s', level=loglevel)
-    set_def_kernel(logging)
-    try:
-        delete_old_kernels(logging)
-    except Exception as e:
-        logging.debug('Exception while deleting old kernels. Soft error. '
-                      'Moving on.')
-        logging.exception(e)
+    #set_def_kernel(logging)
+    #try:
+    #    delete_old_kernels(logging)
+    #except Exception as e:
+    #    logging.debug('Exception while deleting old kernels. Soft error. '
+    #                  'Moving on.')
+    #    logging.exception(e)
 
     cert_loc = '%s/certs/' % BASE_DIR
     if (os.path.isdir(cert_loc)):
