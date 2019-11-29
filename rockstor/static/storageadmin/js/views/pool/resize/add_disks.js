@@ -54,7 +54,8 @@ PoolAddDisks = RockstorWizardPage.extend({
 
     renderDisks: function () {
         var disks = this.disks.filter(function (disk) {
-            return disk.available() && disk.isSerialUsable() && disk.isRoleUsable();
+            //return disk.available() && disk.isSerialUsable() && disk.isRoleUsable();
+            return disk.available();
         }, this);
         //convert the array elements which are backbone models/collections to JSON object
         for (var i = 0; i < disks.length; i++) {
@@ -143,7 +144,7 @@ PoolAddDisks = RockstorWizardPage.extend({
         Handlebars.registerHelper('display_raid_levels', function(){
             var html = '';
             var _this = this;
-            var levels = ['single', 'raid0', 'raid1', 'raid10', 'raid5', 'raid6'];
+            var levels = ['spare', 'log', 'cache', 'raid1', 'raid5', 'raid6','raid0'];
             _.each(levels, function(level) {
                 if (_this.raidLevel != level) {
                     html += '<option value="' + level + '">' + level + '</option>';

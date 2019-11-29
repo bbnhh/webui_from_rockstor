@@ -26,7 +26,7 @@ from rest_framework.decorators import api_view
 from django.db import transaction
 from storageadmin.serializers import PoolInfoSerializer
 from storageadmin.models import (Disk, Pool, Share, PoolBalance)
-from fs.btrfs import (del_pool, add_pool, pool_usage, resize_pool, umount_root,
+from fs.btrfs import (del_pool, add_pool, pool_usage, resize_pool, umount_root, add_other_disks,
                       btrfs_uuid, mount_root, start_balance, usage_bound,
                       remove_share, enable_quota, disable_quota, rescan_quotas)
 from system.osi import (remount, trigger_udev_update, set_disk_spindown, enter_standby, get_dev_byid_name, wipe_disk, blink_disk, scan_disks, get_whole_dev_uuid, get_byid_name_map, trigger_systemd_update, systemd_name_escape)
@@ -493,17 +493,18 @@ class PoolDetailView(PoolMixin, rfc.GenericView):
                     handle_exception(Exception(e_msg), request)
 
                 # TODO: run resize_pool() as async task like start_balance()
-                resize_pool(pool, dnames)  # None if no action
+                #resize_pool(pool, dnames)  # None if no action
+                add_other_disks(pool, dnames, new_raid)
                 force = False
                 # During dev add we also offer raid level change, if selected
                 # blanket apply '-f' to allow for reducing metadata integrity.
-                if new_raid != pool.raid:
-                    force = True
-                tid = self._balance_start(pool, force=force, convert=new_raid)
-                ps = PoolBalance(pool=pool, tid=tid)
-                ps.save()
+                #if new_raid != pool.raid:
+                #    force = True
+                #tid = self._balance_start(pool, force=force, convert=new_raid)
+                #ps = PoolBalance(pool=pool, tid=tid)
+                #ps.save()
 
-                pool.raid = new_raid
+                #pool.raid = new_raid
                 for d_o in disks:
                     d_o.pool = pool
                     d_o.save()

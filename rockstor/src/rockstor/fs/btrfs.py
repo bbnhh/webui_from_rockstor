@@ -36,8 +36,10 @@ system level helper methods to interact with the btrfs filesystem
 logger = logging.getLogger(__name__)
 
 MKFS_BTRFS = '/usr/sbin/mkfs.btrfs'
-ZPOOL = '/usr/sbin/zpool'
-ZFS = '/usr/sbin/zfs'
+#ZPOOL = '/usr/sbin/zpool'
+ZPOOL = '/usr/local/sbin/zpool'
+ZFS = '/usr/local/sbin/zfs'
+#ZFS = '/usr/sbin/zfs'
 #BTRFS = '/usr/sbin/btrfs'
 BTRFS = 'sss'
 MOUNT = '/usr/bin/mount'
@@ -357,7 +359,26 @@ def cur_devices(mnt_pt):
             dev_byid, is_byid = get_dev_byid_name(l.split()[-1])
             dev_list_byid.append(dev_byid)
     return dev_list_byid
+    
+    
+    
+def add_other_disks(pool, dnames, new_raid):
 
+    poolname = pool.name
+    if new_raid == "raid0":
+        new_raid = ''
+    elif new_raid == "raid1":
+        new_raid = 'mirror'
+    elif new_raid == "raid5":
+        new_raid = 'raidz1' 
+    elif new_raid == "raid6":
+        new_raid = 'raidz2' 
+    add_cmd = [ZPOOL, 'add', poolname, new_raid, ]
+    resize = False
+    for d in dnames:
+        add_cmd.append(d)
+    #add_cmd.append(poolname)
+    return run_command(add_cmd)
 
 def resize_pool(pool, dev_list_byid, add=True):
     """
@@ -1497,6 +1518,8 @@ def pool_usage(mnt_pt):
     - All space currently used by data;
     - All space currently allocated for metadata and system data.
     """
+    if mnt_pt == "rockstor_rockstor":
+        return 0
 #    cmd = [BTRFS, 'fi', 'usage', '-b', mnt_pt]
     #"zpool list -H -o free po"
     #cmd = [ZPOOL, 'list', '-H', '-o', 'free', mnt_pt]
