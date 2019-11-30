@@ -4,13 +4,13 @@
        summary="List of disks">
   <thead>
     <tr>
-      <th scope="col" abbr="slot">NO.</th>
+      <th scope="col" abbr="Slot">NO</th>
       <th scope="col" abbr="Name">名称</th>
-      <th scope="col" abbr="Serial">序列号</th>
+      <th scope="col" abbr="Serial">系列号</th>
       <th scope="col" abbr="Capacity">容量</th>
       <th scope="col" abbr="Pool">池</th>
       <th scope="col" abbr="SpinDown">电源状态</th>
-      <th scope="col" abbr="APM">APM</th>
+      <!--<th scope="col" abbr="NO.">NO.</th>-->
       <th scope="col" abbr="Model">Model</th>
       <th scope="col" abbr="Transport">Transport</th>
       <th scope="col" abbr="Vendor">厂商</th>
@@ -21,6 +21,7 @@
     {{#each diskCollection}}
     <tr>
       <td>{{diskslotnum this.disk_slot}}</td>
+      <!--<td>{{diskslotnum this.disk_slot}}</td>-->
       <td><a href="#disks/{{this.id}}"><i class="glyphicon glyphicon-hdd"></i>&nbsp;{{this.name}}</a>
         {{#if this.offline}}
             {{#if this.pool_name}}
@@ -139,7 +140,8 @@
         {{/if}}
         {{this.hdparm_setting}}
       </td>
-      <td>{{humanReadableAPM this.apm_level}}</td>
+      <!--<td>{{humanReadableAPM this.apm_level}}</td>-->
+      <!--<td>{{diskslotnum this.disk_slot}}</td>-->
       <td>{{this.model}}</td>
       <td>{{this.transport}}</td>
       <td>{{this.vendor}}</td>
@@ -155,7 +157,7 @@
       {{else}}
       <input type="checkbox" data-disk-id="{{this.id}}" data-size="mini" {{#if smart_enabled}}checked{{/if}}></input>
       {{/unless}}
-      </td>
+      </td> 
     </tr>
     {{/each}}
   </tbody>
