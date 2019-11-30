@@ -37,6 +37,7 @@ from django.contrib.auth.models import User as DjangoUser
 class DiskInfoSerializer(serializers.ModelSerializer):
     pool_name = serializers.CharField()
     power_state = serializers.CharField()
+    disk_slot = serializers.CharField()
     hdparm_setting = serializers.CharField()
     apm_level = serializers.CharField()
     temp_name = serializers.CharField()

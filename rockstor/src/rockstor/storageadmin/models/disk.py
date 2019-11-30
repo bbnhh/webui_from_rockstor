@@ -18,7 +18,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import json
 from django.db import models
-from fs.btrfs import get_dev_io_error_stats
+from fs.btrfs import get_dev_io_error_stats, get_all_slot, dev_id_to_slot
 from storageadmin.models import Pool
 from system.osi import get_disk_power_status, read_hdparm_setting, \
     get_disk_APM_level, get_dev_temp_name
@@ -86,6 +86,14 @@ class Disk(models.Model):
     def power_state(self, *args, **kwargs):
         try:
             return get_disk_power_status(str(self.name))
+        except:
+            return None
+
+    @property
+    def disk_slot(self, *args, **kwargs):
+        try:
+            dl = get_all_slot()
+            return dev_id_to_slot(str(self.name),dl)
         except:
             return None
 

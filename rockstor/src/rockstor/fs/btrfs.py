@@ -1892,3 +1892,47 @@ def get_oldest_snap(subvol_path, num_retain, regex=None):
 
 def get_lastest_snap(subvol_path, regex=None):
     return get_snap(subvol_path, regex=regex)
+
+def get_all_slot():
+    #true_id = dev_by_id.replace('wwn-','')
+    cmd = "lsscsi -d |grep enclosu"
+    #o, e, rc = run_command2(cmd)
+    output, rc = shell_call_rc(cmd)
+    for line in output.strip().split("\n"):
+       tmp = line.strip().split('  ')
+    if rc != 0:
+       #print "zzz"
+       return -1
+    #print tmp[0]
+    id_num = tmp[0].replace('[','').replace(']','')
+
+    cmd_ses = "sg_ses -j /dev/bsg/%s |grep ArrayDevice" % id_num
+    output_ses, rc_ses = shell_call_rc(cmd_ses)
+    device_list = []
+    for line in output_ses.strip().split("\n"):
+        tmp = line.strip().split(' ')
+        if tmp[0] == 'ArrayDevicesInSubEnclsr0':
+            pass
+        else:
+            cmd_cat = "cat /sys/class/enclosure/%s/%s/device/wwid" % (id_num,tmp[0])
+            output_cat, rc_cat = shell_call_rc(cmd_cat)
+            wwn_id = output_cat.replace('naa.','wwn-0x').replace('\n','')
+            arraynum = tmp[1].replace('[','').replace(',','.').replace(']','')
+            device_list.append({'arrayname':tmp[0],'arraynum':arraynum,'arraywwn':wwn_id})
+    #print device_list
+    return device_list
+
+def dev_id_to_slot(wwn,device_list):
+    for line in device_list:
+        if wwn == line['arraywwn']:
+            return line['arraynum']
+
+
+
+
+
+
+
+
+
+

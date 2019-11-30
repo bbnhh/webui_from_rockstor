@@ -2179,19 +2179,84 @@ def tgmk_rvs(s, base = 1000):
 
 
 def shell_call_rc(cmd, quiet=True, add_prefix=False, timeout=None, data=None, nologging=False, executable=None):
-    if add_prefix:
-        if isinstance(cmd, str):
-            cmd = EXE_ROOT_DIR + cmd
-        else:
-            cmd[0] = EXE_ROOT_DIR + cmd[0]
+    #if add_prefix:
+    #    if isinstance(cmd, str):
+    #        cmd = EXE_ROOT_DIR + cmd
+    #    else:
+    #        cmd[0] = EXE_ROOT_DIR + cmd[0]
     cmd = Command(cmd, shell=True)
     out, err = cmd.run(data=data, timeout = timeout, executable=executable)
     return_code = cmd.returncode
-    if not nologging:
-        logging.getLogger().debug("%d:%s%s" % (return_code, err, out))
-    if not quiet:
-        print err + out
+    #if not nologging:
+    #    logging.getLogger().debug("%d:%s%s" % (return_code, err, out))
+    #if not quiet:
+    #    print err + out
     return (err + out, return_code)
+'''
+def get_all_slot():
+    #true_id = dev_by_id.replace('wwn-','')
+    cmd = "lsscsi -d |grep enclosu"
+    output, rc = shell_call_rc(cmd)
+    for line in output.strip().split("\n"):
+       tmp = line.strip().split('  ')
+    if rc != 0:
+       #print "zzz"
+       return -1
+    #print tmp[0]
+    id_num = tmp[0].replace('[','').replace(']','')
+
+    cmd_ses = "sg_ses -j /dev/bsg/%s |grep ArrayDevice" % id_num
+    output_ses, rc_ses = shell_call_rc(cmd_ses)
+    device_list = []
+    for line in output_ses.strip().split("\n"):
+        tmp = line.strip().split(' ')
+        if tmp[0] == 'ArrayDevicesInSubEnclsr0':
+            pass
+        else:
+            cmd_cat = "cat /sys/class/enclosure/%s/%s/device/wwid" % (id_num,tmp[0])
+            output_cat, rc_cat = shell_call_rc(cmd_cat)
+            wwn_id = output_cat.replace('naa.','wwn-0x').replace('\n','')
+            arraynum = tmp[1].replace('[','').replace(',','.').replace(']','')
+            device_list.append({'arrayname':tmp[0],'arraynum':arraynum,'arraywwn':wwn_id})
+    #print device_list
+    return device_list
+
+def dev_id_to_slot(wwn,device_list):
+    for line in device_list:
+        if wwn == line['arraywwn']:
+            return line['arraynum']
+'''
+
+def run_command2(cmd, shell=False, stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE, stdin=subprocess.PIPE, throw=True,
+                log=False, input=None):
+    try:
+        # We force run_command to always use en_US
+        # to avoid issues on date and number formats
+        # on not Anglo-Saxon systems (ex. it, es, fr, de, etc)
+        fake_env = dict(os.environ)
+        fake_env['LANG'] = 'en_US.UTF-8'
+        #cmd = map(str, cmd)
+        if log:
+            logger.debug('Running command: {}'.format(' '.join(cmd)))
+        p = subprocess.Popen(cmd, shell=shell, stdout=stdout, stderr=stderr,
+                             stdin=stdin, env=fake_env)
+        out, err = p.communicate(input=input)
+        out = out.split('\n')
+        err = err.split('\n')
+        rc = p.returncode
+    except Exception as e:
+        raise Exception(
+            'Exception while running command({}): {}'.format(cmd, e))
+
+    if rc != 0:
+        if log:
+            e_msg = ('non-zero code({0}) returned by command: {1}. output: '
+                     '{2} error: {3}'.format(rc, cmd, out, err))
+            logger.error(e_msg)
+        if throw:
+            raise CommandException(cmd, out, err, rc)
+    return (out, err, rc)
 
 
 class Command(object):

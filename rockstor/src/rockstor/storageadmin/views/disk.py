@@ -21,7 +21,7 @@ from rest_framework.response import Response
 from django.db import transaction
 from storageadmin.models import (Disk, Pool, Share)
 from fs.btrfs import (enable_quota, mount_root,
-                      get_pool_info, pool_raid)
+                      get_pool_info, pool_raid, get_all_slot, dev_id_to_slot)
 from storageadmin.serializers import DiskInfoSerializer
 from storageadmin.util import handle_exception
 from share_helpers import (import_shares, import_snapshots)
@@ -122,6 +122,7 @@ class DiskMixin(object):
         # Our db now has no device name info: all dev names are place holders.
         # Iterate over attached drives to update the db's knowledge of them.
         # Kernel dev names are unique so safe to overwrite our db unique name.
+        disk_slot_list = get_all_slot()
         for d in disks:
             # start with an empty disk object
             dob = None
@@ -132,6 +133,9 @@ class DiskMixin(object):
             # Convert our transient but just scanned so current sda type name
             # to a more useful by-id type name as found in /dev/disk/by-id
             byid_disk_name, is_byid = get_dev_byid_name(d.name, True)
+            #logger.error('UPPPPPPPPP: %s' % byid_disk_name)
+            dev_slot = dev_id_to_slot(byid_disk_name,disk_slot_list)
+            #logger.error('SOLLLLLLL: %s' % dev_slot) 
             # If the db has an entry with this disk's serial number then
             # use this db entry and update the device name from our new scan.
             if (Disk.objects.filter(serial=d.serial).exists()):
@@ -379,7 +383,7 @@ class DiskMixin(object):
                 # not have a by-id type name expected by the smart subsystem.
                 # This has only been observed in no serial virtio devices.
                 if (re.match('fake-serial-', do.serial) is not None) or (
-                    re.match('virtio-|md-|mmc-|nvme-|dm-name-luks-|bcache|nbd',
+                    re.match('virtio-|md-|mmc-|dm-name-luks-|bcache|nbd',
                              do.name) is not None):
                     # Virtio disks (named virtio-*), md devices (named md-*),
                     # and an sdcard reader that provides devs named mmc-* have

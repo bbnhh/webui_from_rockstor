@@ -266,6 +266,17 @@ DisksView = RockstorLayoutView.extend({
             return false;
         });
 
+
+        Handlebars.registerHelper('diskslotnum', function (dsn) {
+            if (dsn == 'null' || dsn == null ) {
+                return new Handlebars.SafeString('Disk');;
+            }
+            return new Handlebars.SafeString('D'+dsn);
+
+        });
+
+
+
         // Simple helper to return true / false on powerState = active/idle
         // Untested. Presumably we do:
         // {{#if (powerStateActiveIdle this.power_state)}}

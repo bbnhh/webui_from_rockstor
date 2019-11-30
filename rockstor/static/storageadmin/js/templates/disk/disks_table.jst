@@ -4,8 +4,9 @@
        summary="List of disks">
   <thead>
     <tr>
+      <th scope="col" abbr="slot">NO.</th>
       <th scope="col" abbr="Name">名称</th>
-      <th scope="col" abbr="Serial">系列号</th>
+      <th scope="col" abbr="Serial">序列号</th>
       <th scope="col" abbr="Capacity">容量</th>
       <th scope="col" abbr="Pool">池</th>
       <th scope="col" abbr="SpinDown">电源状态</th>
@@ -19,6 +20,7 @@
   <tbody>
     {{#each diskCollection}}
     <tr>
+      <td>{{diskslotnum this.disk_slot}}</td>
       <td><a href="#disks/{{this.id}}"><i class="glyphicon glyphicon-hdd"></i>&nbsp;{{this.name}}</a>
         {{#if this.offline}}
             {{#if this.pool_name}}
