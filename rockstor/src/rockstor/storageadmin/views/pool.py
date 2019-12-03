@@ -28,7 +28,7 @@ from storageadmin.serializers import PoolInfoSerializer
 from storageadmin.models import (Disk, Pool, Share, PoolBalance)
 from fs.btrfs import (del_pool, add_pool, pool_usage, resize_pool, umount_root, add_other_disks,
                       btrfs_uuid, mount_root, start_balance, usage_bound,
-                      remove_share, enable_quota, disable_quota, rescan_quotas)
+                      remove_share, enable_quota, disable_quota, rescan_quotas, shell_call_rc)
 from system.osi import (remount, trigger_udev_update, set_disk_spindown, enter_standby, get_dev_byid_name, wipe_disk, blink_disk, scan_disks, get_whole_dev_uuid, get_byid_name_map, trigger_systemd_update, systemd_name_escape)
 from storageadmin.util import handle_exception
 from django.conf import settings
@@ -43,6 +43,18 @@ logger = logging.getLogger(__name__)
 class PoolMixin(object):
     serializer_class = PoolInfoSerializer
     RAID_LEVELS = ('single', 'raid0', 'raid1', 'raid10', 'raid5', 'raid6')
+
+
+    @staticmethod
+    def get_pool_names():
+        cmd = "/usr/sbin/zpool list -H -o name"
+        output, rc = shell_call_rc(cmd)
+        poolname=[]
+        for line in output.strip().split("\n"):
+            #listtmp = line.strip().split("\t")
+            poolname.append(line)
+        #print poolname
+        return poolname
 
     @staticmethod
     def _validate_disk(d, request):
@@ -292,14 +304,33 @@ class PoolMixin(object):
 class PoolListView(PoolMixin, rfc.GenericView):
     def get_queryset(self, *args, **kwargs):
         sort_col = self.request.query_params.get('sortby', None)
+        logger.debug('POOOOOOOOOOOOLIST: %s' % sort_col)
         if (sort_col is not None and sort_col == 'usage'):
             reverse = self.request.query_params.get('reverse', 'no')
             if (reverse == 'yes'):
                 reverse = True
             else:
                 reverse = False
-            return sorted(Pool.objects.all(), key=lambda u: u.cur_usage(),
-                          reverse=reverse)
+        pnames = self.get_pool_names()
+        for pn in pnames:          
+            p = Pool(name=pn, raid='raid0', compression='',mnt_options='')
+            try:
+                my_obj = Pool.objects.get(name=pn)
+            except:
+                #if can not find this pool
+                #my_obj = Pool.objects.get(name=pn)
+                p.save()
+            #else:
+            #    my_obj = Pool.objects.get(name=pn)
+            #    my_obj.delete()
+            #    p.save()
+                
+            #p.save()
+            logger.debug('POOOOOOOOOOOOOBJ: %s' % my_obj)
+            #p.delete()
+            #p.save()
+        #return sorted(Pool.objects.all(), key=lambda u: u.cur_usage(),reverse=reverse)
+        
         return Pool.objects.all()
 
     @transaction.atomic
