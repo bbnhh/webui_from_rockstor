@@ -374,8 +374,10 @@ def add_other_disks(pool, dnames, new_raid):
     elif new_raid == "raid6":
         new_raid = 'raidz2' 
     add_cmd = [ZPOOL, 'add', poolname, new_raid, ]
+    disksname = ''
     resize = False
     for d in dnames:
+        disksname = disksname + d + ' '
         add_cmd.append(d)
     #add_cmd.append(poolname)
     return run_command(add_cmd)
