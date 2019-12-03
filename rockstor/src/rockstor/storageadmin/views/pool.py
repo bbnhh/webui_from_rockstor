@@ -29,7 +29,7 @@ from storageadmin.models import (Disk, Pool, Share, PoolBalance)
 from fs.btrfs import (del_pool, add_pool, pool_usage, resize_pool, umount_root, add_other_disks,
                       btrfs_uuid, mount_root, start_balance, usage_bound,
                       remove_share, enable_quota, disable_quota, rescan_quotas, shell_call_rc)
-from system.osi import (remount, trigger_udev_update, set_disk_spindown, enter_standby, get_dev_byid_name, wipe_disk, blink_disk, scan_disks, get_whole_dev_uuid, get_byid_name_map, trigger_systemd_update, systemd_name_escape)
+from system.osi import (remount, trigger_udev_update, set_disk_spindown, enter_standby, get_dev_byid_name, wipe_disk, blink_disk, scan_disks, get_whole_dev_uuid, get_byid_name_map, trigger_systemd_update, systemd_name_escape, tgmk_rvs)
 from storageadmin.util import handle_exception
 from django.conf import settings
 import rest_framework_custom as rfc
@@ -44,7 +44,6 @@ class PoolMixin(object):
     serializer_class = PoolInfoSerializer
     RAID_LEVELS = ('single', 'raid0', 'raid1', 'raid10', 'raid5', 'raid6')
 
-
     @staticmethod
     def get_pool_names():
         cmd = "/usr/sbin/zpool list -H -o name"
@@ -55,6 +54,27 @@ class PoolMixin(object):
             poolname.append(line)
         #print poolname
         return poolname
+
+    @staticmethod
+    def get_pool_size(poolname):
+        cmd_get_size = "/usr/sbin/zpool list -H -o name,size |grep %s" % poolname
+        #cmd_get_used = "/usr/sbin/zfs list -H -o name,used |grep %s" % poolname
+        output_size, rc_size = shell_call_rc(cmd_get_size)
+        #output_used, rc_used = shell_call_rc(cmd_get_used)
+        poolpara = []
+        for line in output_size.strip().split("\n"):
+            listtmp = line.strip().split("\t")
+            #print listtmp
+            poolpara.append(listtmp[1])
+                               
+        #for line in output_used.strip().split("\n"):
+        #    listtmp = line.strip().split("\t")
+        #    print listtmp
+        #    poolpara.append({'used':listtmp[1]})
+        #print poolpara
+        pused = tgmk_rvs(poolpara[0],1024)
+        return pused / 1024
+
 
     @staticmethod
     def _validate_disk(d, request):
@@ -304,7 +324,7 @@ class PoolMixin(object):
 class PoolListView(PoolMixin, rfc.GenericView):
     def get_queryset(self, *args, **kwargs):
         sort_col = self.request.query_params.get('sortby', None)
-        logger.debug('POOOOOOOOOOOOLIST: %s' % sort_col)
+        #logger.debug('POOOOOOOOOOOOLIST: %s' % sort_col)
         if (sort_col is not None and sort_col == 'usage'):
             reverse = self.request.query_params.get('reverse', 'no')
             if (reverse == 'yes'):
@@ -312,21 +332,25 @@ class PoolListView(PoolMixin, rfc.GenericView):
             else:
                 reverse = False
         pnames = self.get_pool_names()
-        for pn in pnames:          
-            p = Pool(name=pn, raid='raid0', compression='',mnt_options='')
+        poolpara = []
+        for pn in pnames:
+            poolsize = self.get_pool_size(pn)
+            #pused = poolpara[0].used
+            logger.debug('POOOOOOOOOOOOLIST: %s' % poolsize)
+            p = Pool(name=pn, raid='raid0', compression='',mnt_options='',size=poolsize)
             try:
                 my_obj = Pool.objects.get(name=pn)
             except:
                 #if can not find this pool
                 #my_obj = Pool.objects.get(name=pn)
                 p.save()
-            #else:
-            #    my_obj = Pool.objects.get(name=pn)
-            #    my_obj.delete()
-            #    p.save()
+            else:
+                my_obj = Pool.objects.get(name=pn)
+                my_obj.delete()
+                p.save()
                 
             #p.save()
-            logger.debug('POOOOOOOOOOOOOBJ: %s' % my_obj)
+            #logger.debug('POOOOOOOOOOOOOBJ: %s' % my_obj)
             #p.delete()
             #p.save()
         #return sorted(Pool.objects.all(), key=lambda u: u.cur_usage(),reverse=reverse)
