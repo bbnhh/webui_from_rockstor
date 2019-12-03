@@ -104,10 +104,10 @@ class SambaServiceView(BaseServiceDetailView):
                     systemd_name = '%s.service' % self.service_name
                     ss_dest = ('/etc/systemd/system/%s' % systemd_name)
                     ss_src = ('%s/%s' % (settings.CONFROOT, systemd_name))
-                    sum1 = md5sum(ss_dest)
-                    sum2 = md5sum(ss_src)
-                    if (sum1 != sum2):
-                        shutil.copy(ss_src, ss_dest)
+                    #sum1 = md5sum(ss_dest)
+                    #sum2 = md5sum(ss_src)
+                    #if (sum1 != sum2):
+                    #    shutil.copy(ss_src, ss_dest)
                     systemctl('smb', 'enable')
                     systemctl('nmb', 'enable')
                 systemctl('nmb', command)
