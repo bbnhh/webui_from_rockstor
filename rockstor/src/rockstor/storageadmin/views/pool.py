@@ -61,7 +61,7 @@ class PoolMixin(object):
         #cmd_get_used = "/usr/sbin/zfs list -H -o name,used |grep %s" % poolname
         output_size, rc_size = shell_call_rc(cmd_get_size)
         #output_used, rc_used = shell_call_rc(cmd_get_used)
-        poolpara = []
+        poolpara=[] 
         for line in output_size.strip().split("\n"):
             listtmp = line.strip().split("\t")
             #print listtmp
@@ -334,6 +334,8 @@ class PoolListView(PoolMixin, rfc.GenericView):
         pnames = self.get_pool_names()
         poolpara = []
         for pn in pnames:
+            if pn == '':
+                return Pool.objects.all()
             poolsize = self.get_pool_size(pn)
             #pused = poolpara[0].used
             logger.debug('POOOOOOOOOOOOLIST: %s' % poolsize)
@@ -344,10 +346,10 @@ class PoolListView(PoolMixin, rfc.GenericView):
                 #if can not find this pool
                 #my_obj = Pool.objects.get(name=pn)
                 p.save()
-            else:
-                my_obj = Pool.objects.get(name=pn)
-                my_obj.delete()
-                p.save()
+            #else:
+            #    my_obj = Pool.objects.get(name=pn)
+            #    my_obj.delete()
+            #    p.save()
                 
             #p.save()
             #logger.debug('POOOOOOOOOOOOOBJ: %s' % my_obj)
