@@ -36,10 +36,8 @@ system level helper methods to interact with the btrfs filesystem
 logger = logging.getLogger(__name__)
 
 MKFS_BTRFS = '/usr/sbin/mkfs.btrfs'
-#ZPOOL = '/usr/sbin/zpool'
-ZPOOL = '/usr/local/sbin/zpool'
-ZFS = '/usr/local/sbin/zfs'
-#ZFS = '/usr/sbin/zfs'
+ZPOOL = '/usr/sbin/zpool'
+ZFS = '/usr/sbin/zfs'
 #BTRFS = '/usr/sbin/btrfs'
 BTRFS = 'sss'
 MOUNT = '/usr/bin/mount'
@@ -373,13 +371,18 @@ def add_other_disks(pool, dnames, new_raid):
         new_raid = 'raidz1' 
     elif new_raid == "raid6":
         new_raid = 'raidz2' 
-    add_cmd = [ZPOOL, 'add', poolname, new_raid, ]
+    add_cmd = [ZPOOL, 'add', poolname, new_raid ]
+    #resize = False
     disksname = ''
-    resize = False
+    #add_cmd = '%s add %s ' %(ZPOOL,poolname)
     for d in dnames:
         disksname = disksname + d + ' '
         add_cmd.append(d)
-    #add_cmd.append(poolname)
+    #add_cmd.append(poolname) 
+    #add_cmd = '%s add %s %s %s ' %(ZPOOL, poolname, new_raid, disksname)
+    logger.debug('ADDDDDDDDDDDDDDDDDD: %s' % add_cmd)
+    #shell_call_rc(add_cmd)
+    #return shell_call_rc(add_cmd)
     return run_command(add_cmd)
 
 def resize_pool(pool, dev_list_byid, add=True):
@@ -1531,10 +1534,13 @@ def pool_usage(mnt_pt):
     #out, rc = shell_call_rc(cmd)
     #cmd = ZPOOL, 'list', '-H', '-o', 'free', mnt_pt
 #    out, err, rc = run_command(cmd)
-    out, err, rc = run_command(cmd)
+    try:
+        out, err, rc = run_command(cmd)
     #logger.debug('mntpt: %s' % out)
-    used = 0
-    used = tgmk_rvs(out[0],1024)
+        used = 0
+        used = tgmk_rvs(out[0],1024)
+    except:
+        return 0
 
     #logger.debug('KTTT: %s' % used)
 
@@ -1895,10 +1901,10 @@ def get_oldest_snap(subvol_path, num_retain, regex=None):
 def get_lastest_snap(subvol_path, regex=None):
     return get_snap(subvol_path, regex=regex)
 
+
 def get_all_slot():
     #true_id = dev_by_id.replace('wwn-','')
     cmd = "lsscsi -d |grep enclosu"
-    #o, e, rc = run_command2(cmd)
     output, rc = shell_call_rc(cmd)
     for line in output.strip().split("\n"):
        tmp = line.strip().split('  ')
@@ -1924,10 +1930,9 @@ def get_all_slot():
     #print device_list
     return device_list
 
-def dev_id_to_slot(wwn,device_list):
-    for line in device_list:
-        if wwn == line['arraywwn']:
-            return line['arraynum']
+
+
+
 
 
 
