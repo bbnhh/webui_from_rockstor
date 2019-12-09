@@ -56,6 +56,19 @@ class PoolMixin(object):
         return poolname
 
     @staticmethod
+    def get_pool_health(poolname):
+        cmd_get_size = "/usr/sbin/zpool list -H -o name,health |grep %s" % poolname
+        output_size, rc_size = shell_call_rc(cmd_get_size)
+        poolpara=[]
+        for line in output_size.strip().split("\n"):
+            listtmp = line.strip().split("\t")
+            poolpara.append(listtmp[1])
+
+        poolhealth = poolpara[0]
+        return poolhealth
+    
+
+    @staticmethod
     def get_pool_size(poolname):
         cmd_get_size = "/usr/sbin/zpool list -H -o name,size |grep %s" % poolname
         #cmd_get_used = "/usr/sbin/zfs list -H -o name,used |grep %s" % poolname
@@ -337,19 +350,21 @@ class PoolListView(PoolMixin, rfc.GenericView):
             if pn == '':
                 return Pool.objects.all()
             poolsize = self.get_pool_size(pn)
+            poolhealth = self.get_pool_health(pn)
             #pused = poolpara[0].used
             logger.debug('POOOOOOOOOOOOLIST: %s' % poolsize)
-            p = Pool(name=pn, raid='raid0', compression='',mnt_options='',size=poolsize)
+            p = Pool(name=pn, raid='raid0', compression='',mnt_options='',size=poolsize,health=poolhealth)
             try:
                 my_obj = Pool.objects.get(name=pn)
             except:
                 #if can not find this pool
                 #my_obj = Pool.objects.get(name=pn)
                 p.save()
-            #else:
-            #    my_obj = Pool.objects.get(name=pn)
-            #    my_obj.delete()
-            #    p.save()
+            else:
+                my_obj = Pool.objects.get(name=pn)
+                my_obj.size = poolsize
+                my_obj.health = poolhealth
+                my_obj.save()
                 
             #p.save()
             #logger.debug('POOOOOOOOOOOOOBJ: %s' % my_obj)

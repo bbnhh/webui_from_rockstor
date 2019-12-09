@@ -6,6 +6,7 @@
       <th>大小</th>
       <th>已用容量</th>
       <th>Raid</th>
+      <th>状态</th>
       <!--<th>压缩</th>-->
       <!--<th>额外挂载选项</th>-->
       <th>磁盘</th>
@@ -37,6 +38,7 @@
                       &nbsp;<a href="#pools/{{this.id}}/?cView=resize"><i class="fa fa-pencil-square-o"></i></a>
                 {{/unless}}
             </td>
+            <td>{{this.health}}</td>
             <!--<td>
             {{#if (isRoot this.role)}}
                     OFF

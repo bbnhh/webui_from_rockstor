@@ -38,6 +38,7 @@ class Pool(models.Model):
     mnt_options = models.CharField(max_length=4096, null=True)
     """optional aux info. eg: role = root for OS Pool"""
     role = models.CharField(max_length=256, null=True)
+    health = models.CharField(max_length=256, null=True)
 
     def __init__(self, *args, **kwargs):
         super(Pool, self).__init__(*args, **kwargs)
@@ -84,8 +85,8 @@ class Pool(models.Model):
         #return self.size - pool_usage('%s%s' % (settings.MNT_PT, self.name))
         logger = logging.getLogger(__name__)
         s = pool_usage('%s' % (self.name))
-        logger.debug("POOLLLLLL")
-        logger.debug(s)
+        #logger.debug("POOLLLLLL")
+        #logger.debug(s)
         return pool_usage('%s' % (self.name))
 
     @property
