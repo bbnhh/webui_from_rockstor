@@ -51,7 +51,8 @@ class ShareACLView(ShareListView):
             share.perms = options['perms']
             share.save()
 
-            mnt_pt = ('%s%s' % (settings.MNT_PT, share.name))
+            #mnt_pt = ('%s%s' % (settings.MNT_PT, share.name))
+            mnt_pt = ('/%s/%s' % (share.poolname, share.name))
             force_mount = False
             if not share.is_mounted:
                 mount_share(share, mnt_pt)
