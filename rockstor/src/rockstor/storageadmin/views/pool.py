@@ -28,7 +28,7 @@ from storageadmin.serializers import PoolInfoSerializer
 from storageadmin.models import (Disk, Pool, Share, PoolBalance)
 from fs.btrfs import (del_pool, add_pool, pool_usage, resize_pool, umount_root, add_other_disks,
                       btrfs_uuid, mount_root, start_balance, usage_bound,
-                      remove_share, enable_quota, disable_quota, rescan_quotas, shell_call_rc)
+                      remove_share, enable_quota, disable_quota, rescan_quotas, shell_call_rc,remove_dev)
 from system.osi import (remount, trigger_udev_update, set_disk_spindown, enter_standby, get_dev_byid_name, wipe_disk, blink_disk, scan_disks, get_whole_dev_uuid, get_byid_name_map, trigger_systemd_update, systemd_name_escape, tgmk_rvs)
 from storageadmin.util import handle_exception
 from django.conf import settings
@@ -39,6 +39,8 @@ import json
 import logging
 logger = logging.getLogger(__name__)
 
+ZPOOL = '/usr/sbin/zpool'
+ZFS = '/usr/sbin/zfs'
 
 class PoolMixin(object):
     serializer_class = PoolInfoSerializer
@@ -46,7 +48,8 @@ class PoolMixin(object):
 
     @staticmethod
     def get_pool_names():
-        cmd = "/usr/sbin/zpool list -H -o name"
+        #cmd = "/usr/sbin/zpool list -H -o name"
+        cmd = "%s list -H -o name" %(ZPOOL)
         output, rc = shell_call_rc(cmd)
         poolname=[]
         for line in output.strip().split("\n"):
@@ -57,7 +60,8 @@ class PoolMixin(object):
 
     @staticmethod
     def get_pool_health(poolname):
-        cmd_get_size = "/usr/sbin/zpool list -H -o name,health |grep %s" % poolname
+        #cmd_get_size = "/usr/sbin/zpool list -H -o name,health |grep %s" % poolname
+        cmd_get_size = "%s list -H -o name,health |grep %s" % (ZPOOL,poolname)
         output_size, rc_size = shell_call_rc(cmd_get_size)
         poolpara=[]
         for line in output_size.strip().split("\n"):
@@ -70,7 +74,8 @@ class PoolMixin(object):
 
     @staticmethod
     def get_pool_size(poolname):
-        cmd_get_size = "/usr/sbin/zpool list -H -o name,size |grep %s" % poolname
+        #cmd_get_size = "/usr/sbin/zpool list -H -o name,size |grep %s" % poolname
+        cmd_get_size = "%s list -H -o name,size |grep %s" % (ZPOOL,poolname)
         #cmd_get_used = "/usr/sbin/zfs list -H -o name,used |grep %s" % poolname
         output_size, rc_size = shell_call_rc(cmd_get_size)
         #output_used, rc_used = shell_call_rc(cmd_get_used)
@@ -640,12 +645,12 @@ class PoolDetailView(PoolMixin, rfc.GenericView):
                 size_cut = 0
                 for d in disks:
                     size_cut += d.size
-                if size_cut >= (pool.size - usage):
-                    e_msg = ('Removing disks ({}) may shrink the pool by '
-                             '{} KB, which is greater than available free '
-                             'space {} KB. This is '
-                             'not supported.').format(dnames, size_cut, usage)
-                    handle_exception(Exception(e_msg), request)
+                #if size_cut >= (pool.size - usage):
+                #    e_msg = ('Removing disks ({}) may shrink the pool by '
+                #             '{} KB, which is greater than available free '
+                #             'space {} KB. This is '
+                #             'not supported.').format(dnames, size_cut, usage)
+                #    handle_exception(Exception(e_msg), request)
 
                 # TODO: run resize_pool() as async task like start_balance(),
                 # particularly important on device delete as it initiates an
@@ -654,7 +659,8 @@ class PoolDetailView(PoolMixin, rfc.GenericView):
                 # See https://github.com/rockstor/rockstor-core/issues/1722
                 # Hence we need also to add a 'DIY' status / percentage
                 # reporting method.
-                resize_pool(pool, dnames, add=False)  # None if no action
+                #resize_pool(pool, dnames, add=False)  # None if no action
+                remove_dev(pool, dnames)
                 # Unlike resize_pool() with add=True a delete has an implicit
                 # balance where the deleted disks contents are re-distributed
                 # across the remaining disks.
