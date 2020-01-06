@@ -60,7 +60,7 @@ class CommandView(DiskMixin, NFSExportMixin, APIView):
             # If our pool has no disks, detached included, then delete it.
             # We leave pools with all detached members in place intentionally.
             if (p.disk_set.count() == 0):
-                p.delete()
+                #p.delete()
                 continue
             # Log if no attached members are found, ie all devs are detached.
             if p.disk_set.attached().count() == 0:
