@@ -25,7 +25,8 @@ from storageadmin.models import (Share, Pool, Snapshot, NFSExport, SambaShare,
 from smart_manager.models import Replica
 from fs.btrfs import (add_share, remove_share, update_quota, volume_usage,
                       set_property, mount_share, qgroup_id, qgroup_create,
-                      share_pqgroup_assign)
+                      share_pqgroup_assign, shell_call_rc)
+from system.osi import tgmk_rvs
 from system.services import systemctl
 from storageadmin.serializers import ShareSerializer, SharePoolSerializer
 from storageadmin.util import handle_exception
@@ -44,6 +45,20 @@ PQGROUP_DEFAULT = settings.MODEL_DEFS['pqgroup']
 
 
 class ShareMixin(object):
+
+    @staticmethod
+    def get_pool_names():
+        cmd = "/usr/sbin/zpool list -H -o name"
+        output, rc = shell_call_rc(cmd)
+        poolname=[]
+        for line in output.strip().split("\n"):
+            #listtmp = line.strip().split("\t")
+            poolname.append(line)
+        #print poolname
+        return poolname
+
+
+
 
     @staticmethod
     def _validate_share_size(request, pool):
@@ -92,6 +107,7 @@ class ShareListView(ShareMixin, rfc.GenericView):
     def get_queryset(self, *args, **kwargs):
         with self._handle_exception(self.request):
             sort_col = self.request.query_params.get('sortby', None)
+            '''
             if (sort_col is not None):
                 reverse = self.request.query_params.get('reverse', 'no')
                 if (reverse == 'yes'):
@@ -103,6 +119,7 @@ class ShareListView(ShareMixin, rfc.GenericView):
                 return sorted(Share.objects.all(),
                               key=lambda u: getattr(u, sort_col),
                               reverse=reverse)
+            '''
             # If this box is receiving replication backups, the first full-send
             # is interpreted as a Share(because it does not have a parent
             # subvol/snapshot) It is a transient subvolume that gets rolled
@@ -111,6 +128,11 @@ class ShareListView(ShareMixin, rfc.GenericView):
             # for cosmetic and UX reasons.
             # TODO: This currently fails to work, needs investigating, leaving
             # TODO: for now as good for indicting the initial rep phases.
+
+            logger.debug('SHHHHHHH: %s' % Share.objects.get)
+
+
+
             return Share.objects.exclude(
                 name__regex=r'^\.snapshots/.*/.*_replication_').order_by('-id')
 

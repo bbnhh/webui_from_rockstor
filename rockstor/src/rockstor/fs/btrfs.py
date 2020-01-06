@@ -420,22 +420,23 @@ def resize_pool(pool, dev_list_byid, add=True):
     resize_flag = 'add'
     if (not add):
         resize_flag = 'delete'
-    resize_cmd = [BTRFS, 'device', resize_flag, ]
+    resize_cmd = [ZPOOL, 'detach', pool, ]
     # Until we verify that all devices are or are not already members of the
     # given pool, depending on if we are adding (default) or removing
     # (add=False), we set our resize flag to false.
     resize = False
+
+
+def remove_dev(pool, dev_list_byid):
+    resize_cmd = [ZPOOL, 'detach', pool.name, ]
     for d in dev_list_byid:
-        if (resize_flag == 'add' and (d not in cur_dev)) or \
-                (resize_flag == 'delete' and ((d in cur_dev) or
-                                              d == 'missing')):
-            resize = True  # Basic disk member of pool sanity check passed.
-            resize_cmd.append(d)
-    if (not resize):
-        logger.debug('Note: resize_pool() taking no action.')
-        return None
-    resize_cmd.append(root_mnt_pt)
+        resize_cmd.append(d)
     return run_command(resize_cmd)
+
+
+
+
+
 
 
 def mount_root(pool):
@@ -1931,7 +1932,10 @@ def get_all_slot():
     return device_list
 
 
-
+def dev_id_to_slot(wwn,device_list):
+    for line in device_list:
+        if wwn == line['arraywwn']:
+            return line['arraynum']
 
 
 
