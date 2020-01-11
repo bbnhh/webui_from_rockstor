@@ -1933,9 +1933,13 @@ def get_all_slot():
 
 
 def dev_id_to_slot(wwn,device_list):
-    for line in device_list:
-        if wwn == line['arraywwn']:
-            return line['arraynum']
+    #return 0
+    try:
+        for line in device_list:
+            if wwn == line['arraywwn']:
+                return line['arraynum']
+    except:
+        return 0
 
 
 
