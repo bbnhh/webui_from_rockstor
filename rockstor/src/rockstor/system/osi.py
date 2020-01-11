@@ -135,6 +135,8 @@ def scan_disks(min_size, test_mode=False):
     :param test_mode: Used by unit tests for deterministic 'fake-serial-' mode.
     :return: List containing drives of interest
     """
+    #zzzzz = root_disk()
+    #logger.debug('ROOTTTTTTTTTTTTTTTTTT%s' % zzzzz)
     base_root_disk = root_disk()
     cmd = [LSBLK, '-P', '-o',
            'NAME,MODEL,SERIAL,SIZE,TRAN,VENDOR,HCTL,TYPE,FSTYPE,LABEL,UUID']
@@ -237,18 +239,19 @@ def scan_disks(min_size, test_mode=False):
             # looking at the root drive directly, rather than the / partition.
             # N.B. assumption is lsblk first displays devices then partitions,
             # this is the observed behaviour so far.
-            root_serial = dmap['SERIAL']
-            root_model = dmap['MODEL']
-            root_transport = dmap['TRAN']
-            root_vendor = dmap['VENDOR']
-            root_hctl = dmap['HCTL']
+            #root_serial = dmap['SERIAL']
+            #root_model = dmap['MODEL']
+            #root_transport = dmap['TRAN']
+            #root_vendor = dmap['VENDOR']
+            #root_hctl = dmap['HCTL']
             # Set readability flag as base_dev identified.
             is_root_disk = True  # root as returned by root_disk()
             # And until we find a partition on this root disk we will label it
             # as our root, this then allows for non partitioned root devices
             # such as mdraid installs where root is directly on eg /dev/md126.
             # N.B. this assumes base devs are listed before their partitions.
-            dmap['root'] = True
+            #dmap['root'] = True
+            continue
         # Normal partitions are of type 'part', md partitions are of type 'md'
         # normal disks are of type 'disk' md devices are of type eg 'raid1'.
         # Disk members of eg intel bios raid md devices
@@ -910,50 +913,52 @@ def root_disk():
     with open('/proc/mounts') as fo:
         for line in fo.readlines():
             fields = line.split()
-            if (fields[1] == '/' and fields[2] == 'xfs'):
+            if (fields[1] == '/boot' and fields[2] == 'xfs'):
+                #logger.debug('ROOOOOOOOOOOO222 %s' %fields)
                 # We have found our '/' and it's of fs type btrfs
-                if (re.match('/dev/mapper/luks-', fields[0]) is not None):
-                    # Our root is on a mapped open LUKS container so we need
-                    # not resolve the symlink, ie /dev/dm-0, as we loose info
-                    # and lsblk's name output also uses the luks-<uuid> name.
-                    # So we return the name minus it's /dev/mapper/ component
-                    # as there are no partitions within these devices so it is
-                    # it's own base device. N.B. we do not resolve to the
-                    # parent device hosting the LUKS container itself.
-                    return fields[0][12:]
+                #if (re.match('/dev/mapper/luks-', fields[0]) is not None):
+                #    # Our root is on a mapped open LUKS container so we need
+                #    # not resolve the symlink, ie /dev/dm-0, as we loose info
+                #    # and lsblk's name output also uses the luks-<uuid> name.
+                #    # So we return the name minus it's /dev/mapper/ component
+                #    # as there are no partitions within these devices so it is
+                #    # it's own base device. N.B. we do not resolve to the
+                #    # parent device hosting the LUKS container itself.
+                #    return fields[0][12:]
                 # resolve symbolic links to their targets.
                 disk = os.path.realpath(fields[0])
-                if (re.match('/dev/md', disk) is not None):
-                    # We have an Multi Device naming scheme which is a little
-                    # different ie 3rd partition = md126p3 on the md126 device,
-                    # or md0p3 as third partition on md0 device.  As md devs
-                    # often have 1 to 3 numerical chars we search for one or
-                    # more numeric characters, this assumes our dev name has no
-                    # prior numerical components ie starts /dev/md but then we
-                    # are here due to that match.  Find the indexes of the
-                    # device name without the partition.  Search for where the
-                    # numbers after "md" end.  N.B. the following will also
-                    # work if root is not in a partition ie on md126 directly.
-                    end = re.search('\d+', disk).end()
-                    return disk[5:end]
-                if (re.match('/dev/nvme', disk) is not None):
-                    # We have an nvme device. These have the following naming
-                    # conventions.
-                    # Base device examples: nvme0n1 or nvme1n1
-                    # First partition on the first device would be nvme0n1p1
-                    # The first number after 'nvme' is the device number.
-                    # Partitions are indicated by the p# combination ie 'p1'.
-                    # We need to also account for a root install on the base
-                    # device itself as with the /dev/md parsing just in case,
-                    # so look for the end of the base device name via 'n1'.
-                    end = re.search('n1', disk).end()
-                    return disk[5:end]
+                #if (re.match('/dev/md', disk) is not None):
+                #    # We have an Multi Device naming scheme which is a little
+                #    # different ie 3rd partition = md126p3 on the md126 device,
+                #    # or md0p3 as third partition on md0 device.  As md devs
+                #    # often have 1 to 3 numerical chars we search for one or
+                #    # more numeric characters, this assumes our dev name has no
+                #    # prior numerical components ie starts /dev/md but then we
+                #    # are here due to that match.  Find the indexes of the
+                #    # device name without the partition.  Search for where the
+                #    # numbers after "md" end.  N.B. the following will also
+                #    # work if root is not in a partition ie on md126 directly.
+                #    end = re.search('\d+', disk).end()
+                #    return disk[5:end]
+                #if (re.match('/dev/nvme', disk) is not None):
+                #    # We have an nvme device. These have the following naming
+                #    # conventions.
+                #    # Base device examples: nvme0n1 or nvme1n1
+                #    # First partition on the first device would be nvme0n1p1
+                #    # The first number after 'nvme' is the device number.
+                #    # Partitions are indicated by the p# combination ie 'p1'.
+                #    # We need to also account for a root install on the base
+                #    # device itself as with the /dev/md parsing just in case,
+                #    # so look for the end of the base device name via 'n1'.
+                #    end = re.search('n1', disk).end()
+                #    return disk[5:end]
                 # catch all that assumes we have eg /dev/sda3 and want "sda"
                 # so start from 6th char and remove the last char
                 # /dev/sda3 = sda
                 # TODO: consider changing to same method as in md devs above
                 # TODO: to cope with more than one numeric in name.
                 return disk[5:-1]
+                #logger.debug('ROOOOOOOOOOOO %s' % disk[5:-1])
     msg = ('root filesystem is not BTRFS. During Rockstor installation, '
            'you must select BTRFS instead of LVM and other options for '
            'root filesystem. Please re-install Rockstor properly.')
