@@ -429,7 +429,10 @@ def resize_pool(pool, dev_list_byid, add=True):
 
 def remove_dev(pool, dev_list_byid):
     resize_cmd = [ZPOOL, 'detach', pool.name, ]
+    delete_label_cmd = [ZPOOL, 'labelclear', '-f', ]
     for d in dev_list_byid:
+        delete_label_cmd.addpen(d)
+        run_command(delete_label_cmd)
         resize_cmd.append(d)
     return run_command(resize_cmd)
 
@@ -1646,8 +1649,12 @@ def scrub_status(pool):
     other -R invoked details are returned as key value pairs.
     """
     stats = {'status': 'unknown', }
-    mnt_pt = mount_root(pool)
-    out, err, rc = run_command([BTRFS, 'scrub', 'status', '-R', mnt_pt])
+    #mnt_pt = mount_root(pool)
+    #out, err, rc = run_command([BTRFS, 'scrub', 'status', '-R', mnt_pt])
+    out, err, rc = run_command([ZPOOL, 'scrub', pool])
+    out, err, rc = run_command([ZPOOL, 'status', pool])
+    
+    '''
     if err != [''] and len(err) > 0:
         if err[0] == "WARNING: failed to read status: Connection reset by " \
                      "peer":
@@ -1688,6 +1695,7 @@ def scrub_status(pool):
             stats['kb_scrubbed'] = int(fields[1]) / 1024
         else:
             stats[fields[0]] = int(fields[1])
+    '''
     return stats
 
 
