@@ -196,7 +196,7 @@ def get_dev_io_error_stats(target, json_format=True):
     return json.dumps(stats)
     '''
 
-def is_pool_missing_dev(label):
+def is_pool_missing_dev(poolname):
     """
     Simple and fast wrapper around 'btrfs fi show --raw label' to return True /
     False depending on if a device is reported missing from the given pool by
@@ -209,13 +209,22 @@ def is_pool_missing_dev(label):
     :param label: Pool label.
     :return: True if at least one device was found to be missing, False if not.
     """
-    if label is None:
-        return False
+    #zpool_state = ['ZPOOL' , 'status']
+    cmd_get_size = "%s list -H -o name,health |grep %s" % (ZPOOL,poolname)
+    output_size, rc_size = shell_call_rc(cmd_get_size)
+    poolpara=[]
+    for line in output_size.strip().split("\n"):
+        listtmp = line.strip().split("\t")
+        poolpara.append(listtmp[1])
+    poolhealth = poolpara[0]
+    
+    #if label is None:
+    #    return False
     # --raw used to minimise pre-processing of irrelevant 'used' info (units).
-    cmd = [BTRFS, 'fi', 'show', '--raw', label]
-    o, e, rc = run_command(cmd)
-    if o[-3].endswith('missing') or o[0].endswith('missing'):
-        return True
+    #cmd = [BTRFS, 'fi', 'show', '--raw', label]
+    #o, e, rc = run_command(cmd)
+    #if o[-3].endswith('missing') or o[0].endswith('missing'):
+    #    return True
     return False
 
 
@@ -250,8 +259,19 @@ def degraded_pools_found():
             in_pool = False
     '''
     #return degraded_pool_count
-    return 0
-
+    #zpool_state = ['ZPOOL' , 'status']
+    cmd_get_hel = "%s list -H -o name,health" % (ZPOOL)
+    output_hel, rc_hel = shell_call_rc(cmd_get_hel)
+    degraded_pool_count = 0
+    poolpara=[]
+    for line in output_size.strip().split("\n"):
+        listtmp = line.strip().split("\t")
+        poolpara.append(listtmp[1])
+        poolhealth = poolpara[0]
+        if poolhealth == 'degraded':
+            degraded_pool_count = degraded_pool_count + 1
+    return degraded_pool_count
+           
 def get_pool_info(disk, root_pool=False):
     """
     Extracts pool information by running btrfs fi show <disk> and collates
