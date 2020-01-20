@@ -114,10 +114,10 @@ class Disk(models.Model):
     @property
     def io_error_stats(self, *args, **kwargs):
         # json charfield format
-        #try:
-            #return get_dev_io_error_stats(str(self.target_name))
-        #except:
-        return None
+        try:
+            return get_dev_io_error_stats(str(self.target_name))
+        except:
+            return None
 
     @property
     def temp_name(self, *args, **kwargs):

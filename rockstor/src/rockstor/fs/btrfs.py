@@ -195,6 +195,23 @@ def get_dev_io_error_stats(target, json_format=True):
         return stats
     return json.dumps(stats)
     '''
+    stats = {'write_io_errs': '0',
+             'read_io_errs': '0',
+             'flush_io_errs': '0',
+             'corruption_errs': '0',
+             'generation_errs': '0'}
+    cmd = '%s status |grep %s' %(ZPOOL,target)
+    output, rc = shell_call_rc(cmd)
+    for line in output.strip().split("\n"):
+        listtmp_re = line.strip().replace("     ", "#")
+        try:
+            listtmp = listtmp_re.strip().split("#")
+            stats['write_io_errs'] == listtmp[1].replace(" ", "")
+            stats['read_io_errs'] == listtmp[2]
+        except:
+            stats['write_io_errs'] == 'x'
+            stats['read_io_errs'] == 'x'
+    return json.dumps(stats)
 
 def is_pool_missing_dev(poolname):
     """
