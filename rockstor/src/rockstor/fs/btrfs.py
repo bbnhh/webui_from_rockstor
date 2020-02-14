@@ -354,6 +354,28 @@ def get_pool_info(disk, root_pool=False):
 
 
 def pool_raid(mnt_pt):
+
+    cmd = '%s status %s |grep raid' %(ZPOOL,poolname)
+    output, rc = shell_call_rc(cmd)
+    if 'raid' in output:
+        for line in output.strip().split("\n"):
+            listtmp_re = line.strip().replace("     ", "#")
+            listtmp = listtmp_re.strip().split("#")
+            #print listtmp
+            #print listtmp[0].replace(" ", "")
+            raid_lev = listtmp[0].replace(" ", "")
+    elif:
+        cmd = '%s status %s |grep mirror' %(ZPOOL,poolname)
+        output, rc = shell_call_rc(cmd)
+        if 'mirror' in output:
+            raid_lev = 'raid1'
+    else:
+        raid_lev = 'raid0' 
+
+    raid_d = {}
+    raid_d['data'] = raid_lev
+    return raid_d
+    '''
     # TODO: propose name change to get_pool_raid_levels(mnt_pt)
     o, e, rc = run_command([BTRFS, 'fi', 'df', mnt_pt])
     # data, system, metadata, globalreserve
@@ -368,6 +390,8 @@ def pool_raid(mnt_pt):
     if (raid_d['metadata'] == 'single'):
         raid_d['data'] = raid_d['metadata']
     return raid_d
+    '''
+    
 
 
 def cur_devices(mnt_pt):
