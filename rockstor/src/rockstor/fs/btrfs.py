@@ -364,13 +364,13 @@ def pool_raid(mnt_pt):
             #print listtmp
             #print listtmp[0].replace(" ", "")
             raid_lev = listtmp[0].replace(" ", "")
-    elif:
+    else:
         cmd = '%s status %s |grep mirror' %(ZPOOL,poolname)
         output, rc = shell_call_rc(cmd)
         if 'mirror' in output:
             raid_lev = 'raid1'
-    else:
-        raid_lev = 'raid0' 
+        else:
+            raid_lev = 'raid0' 
 
     raid_d = {}
     raid_d['data'] = raid_lev

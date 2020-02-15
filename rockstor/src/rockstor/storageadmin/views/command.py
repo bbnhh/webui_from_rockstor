@@ -88,7 +88,8 @@ class CommandView(DiskMixin, NFSExportMixin, APIView):
                 p.name = pool_name
                 p.save()
                 #mount_root(p)
-                p.raid = pool_raid('%s%s' % (settings.MNT_PT, p.name))['data']
+                #p.raid = pool_raid('%s%s' % (settings.MNT_PT, p.name))['data']
+                p.raid = pool_raid('%s' % p.name)['data']
                 p.size = p.usage_bound()
                 # Consider using mount_status() parse to update root pool db on
                 # active (fstab initiated) compression setting.

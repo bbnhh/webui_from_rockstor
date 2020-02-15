@@ -745,7 +745,8 @@ class DiskDetailView(rfc.GenericView):
                         do.role = '{"redirect": "%s"}' % device.name
                 do.save()
                 mount_root(po)
-            po.raid = pool_raid('%s%s' % (settings.MNT_PT, po.name))['data']
+            #po.raid = pool_raid('%s%s' % (settings.MNT_PT, po.name))['data']
+            po.raid = pool_raid('%s' % po.name)['data']
             po.size = po.usage_bound()
             po.save()
             enable_quota(po)
