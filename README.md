@@ -37,7 +37,7 @@ yum search epel-release
 yum info epel-release   
 yum install epel-release   
 yum install openssl shellinabox   
-
+(非root权限登陆)     
 
 二.v1.0更新   
 对界面进行了汉化     
