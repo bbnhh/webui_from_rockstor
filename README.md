@@ -32,7 +32,11 @@ sudo systemctl start postgresql
 /opt/rockstor/bin/django makemigrations storageadmin  
 (若上一步报错，则执行此命令)/opt/rockstor/bin/django makemigrations --merge       
 /opt/rockstor/bin/django migrate storageadmin           
-
+7.安装shellinabox  
+yum search epel-release   
+yum info epel-release   
+yum install epel-release   
+yum install openssl shellinabox   
 
 
 二.v1.0更新   
