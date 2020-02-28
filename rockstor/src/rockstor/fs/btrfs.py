@@ -66,8 +66,15 @@ def get_all_pool():
 
 
 def del_pool(pool):
+
+    dl = []
+    dl = get_label_disks(pool)
+
     cmd = [ZPOOL, "destroy", pool]
     out, err, rc = run_command(cmd, log=True)
+
+    labelclear(dl)
+
     if rc == 0:
         return out, err, rc
     else:
@@ -76,6 +83,55 @@ def del_pool(pool):
                      % (rc, cmd, out, err))
     return out, err, rc
 
+def get_label_disks(pool):
+    cmd = 'ls /dev/disk/by-id/'
+    output, rc = shell_call_rc(cmd)
+
+    ld = []
+    #cmd_st = '%s status %s' %(ZPOOL,pool)
+    #output_st, rc_st = shell_call_rc(cmd_st)
+    for line in output.strip().split("\n"):
+        cmd_st = '%s status %s|grep %s' %(ZPOOL,pool,line)
+        output_st, rc_st = shell_call_rc(cmd_st)
+        if output_st == '':
+            pass
+        else:
+            ld.append(line)
+
+    return ld
+
+#def labelclear(pool, disk):
+def labelclear(disklist):
+    #cmd_lc = '%s labelclear %s' %(ZPOOL, disk)
+    #output_lc, rc_lc = shell_call_rc(cmd_lc)
+    for line in disklist:
+        cmd_lc = '%s labelclear %s' %(ZPOOL, line)
+        output_lc, rc_lc = shell_call_rc(cmd_lc)
+    
+'''
+#   disk = 'wwn-0x6000c29b387c2bb9ca2f4e65ea9f9c8d'
+    cmd = '%s status %s |grep %s' %(ZPOOL, pool ,disk)
+    output, rc = shell_call_rc(cmd)
+    for line in output.strip().split("\n"):
+        listtmp_re = line.strip().replace(" ", "#")
+        #print listtmp_re
+        listtmp = listtmp_re.strip().split("#")
+        #print listtmp[0].replace(" ", "")
+        lt = listtmp[0].replace(" ", "")
+        #if lt == '':
+        #    print 1
+        #else:
+        #    print 0
+
+        if lt == '':
+            continue
+        else:
+            cmd_lc = '%s labelclear %s' %(ZPOOL, disk)
+            output_lc, rc_lc = shell_call_rc(cmd_lc)
+        
+    return 0
+'''
+    
 
 def add_pool(pool, disks):
     """
