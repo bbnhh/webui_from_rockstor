@@ -70,7 +70,7 @@ setup(
         'django-oauth-toolkit == 0.9.0',
         'django-pipeline == 1.6.9',
         'django-ztask == 0.1.5',
-        'djangorestframework == 3.1.1',
+        'djangorestframework == 3.9.1',
         'gevent == 1.1.2',
         'gevent-websocket == 0.9.5',
         'mock == 1.0.1',
